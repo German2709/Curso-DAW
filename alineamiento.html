@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alineamientos</title>
+    <!-- el link asigna un archivo de CSS externo para darle un estilo visual al documento -->
+    <link rel="stylesheet" href="general.css">
+    <style>
+        /* p, h1, h2, span{
+            border: 2px solid black;
+        } */
+        div {
+            border: 3px solid green;
+            padding: 10%;
+        }
+
+        /* si un div(contenedor) tiene una clase como por ejemplo el de la linea 56 se tiene que poner el "." y la clase, se puede alinear  */
+        .center {
+            margin: auto;
+            width: 50%;
+        }
+
+        .text-centered {
+            text-align: center;
+        }
+
+        .img-centered {
+            display: block;
+            margin: auto;
+        }
+
+        .div-right {
+            width: 300px;
+            position: absolute;
+            /* la posicion absoluta toma como referencia el esquina superior izquierda del div */
+            right: 0;
+        }
+
+        .center {
+            width: 200%;
+            position: absolute;
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+        .float-right {
+            width: 250px;
+            float: right;
+        }
+
+        .float-left {
+            width: 250px;
+            float: left;
+        }
+
+    /* flexbox */
+    /* flexbox debe de tener un contenedor SIEMPRE */
+        .flex-container{
+            border: none;
+            background-color: cornflowerblue;
+            height: 200px;
+
+            display: flex;
+            /* Alinear elementos horizontalmente */
+            justify-content: center;
+            /* Alinear elementos verticalmente */
+            align-items: center;
+        }
+        /* Esto afecta a los divs que esten dentro del contenedor */
+        .flex-container div{
+            border: none;
+            background-color: azure;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Alineamiento de elementos HTML usando CSS</h1>
+    <h2>Alineamiento de texto</h2>
+    <p>Los elementos de bloque que contienen unicamente texto se pueden alinear facilmente con la propiedad
+        <code>text-align: left/center/right</code>
+    </p>
+
+    <p style="text-align: center">
+        Este es un parrafo con el texto centrado.
+    </p>
+    <p style="text-align: right">
+        Este parrafo estan alineado hacia la derecha.
+    </p>
+    <!-- El "span" no tiene espacios en el cuadro para alinear con "style=text-aling..." para ello tendria que hacerse con padding o margin -->
+    <span>
+        Esto en un span.
+    </span>
+
+    <hr>
+    <h2>Alineamiento de elementos HTML</h2>
+    <p>
+        Hay varias formas de alinear bloques de elementos usando CSS:
+    </p>
+    <p>
+        Para centrar horizontalmente un elemento de bloque, se usa la propiedad <code>margin: auto;</code>
+    </p>
+    <p>
+        Definiendo el ancho (width) del elemento, evitaremos que éste expanda.
+    </p>
+    <p>
+        Por lo tanto, el elemento ocupará el ancho asignado y el resto de espacio de la pantalla se repartirá
+        automaticamente entre sus márgenes.
+    </p>
+
+    <div class="center">
+        Este elemento div esta centrado.
+    </div>
+    <div class="text-centered">
+        Este texto esta centrado dentro del div.
+    </div>
+    <img class="img-centered" width="60%" src="https://images.pexels.com/photos/13935769/pexels-photo-13935769.jpeg"
+        alt="">
+
+    <h3>Usando <code>position:absolute</code></h3>
+
+    <div style="height:200%;">
+
+        <div class="div-right">
+            <!-- escribiendo el atributo "Lorem" te genera un texto aleatorio para hacer ejemplo y/o compravaciones -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores tempora facere eos harum laudantium animi
+            amet excepturi eveniet cumque, magni architecto maiores! Tempora voluptatem dolorem doloribus facere?
+            Aperiam, nisi quae.
+        </div>
+
+        <div class="div-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id similique atque eos perferendis. Rerum
+            voluptatibus et velit hic magni, facere suscipit iusto, eius iure animi voluptate! Nesciunt aperiam
+            reprehenderit eos?
+        </div>
+
+    </div>
+
+    <h3>Usando <code>float</code></h3>
+
+    <div style="height: 200px;">
+        <div class="float-left">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, nisi.
+        </div>
+
+        <div class="float-right">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, facilis?
+        </div>
+    </div>
+
+    <h3>Usando flexbox</h3>
+    <p>
+        Para alinear elementos usando flexbox. Estos deben de estar dentro de un elemento padre (al que vamos a llamar contenedor) con la propiedad <code>display: flex;</code>
+    </p>
+    <p>
+        Los elementos hijos (que estén dentro) de un contenedor flex se convertirán, automaticamente, en elementos flexibles.
+    </p>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+
+</body>
+
+</html>

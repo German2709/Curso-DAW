@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes</title>
+    <!-- para poder importar fuente de texto desde "google font". Despues del "family=" poner el nombre del tipo de fuente igual como esta en la pagina con MAY y MIN-->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Fasthand">
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        div h2{
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: white;
+
+            font-family: "Fasthand";
+            font-size: 30px;
+            width: 200px;
+            
+        }
+        /* para poner sombreado a la imagen */
+        div img{
+            width: 400px;
+            border-radius: 30px;
+            box-shadow: 10px 10px 10px rgb(65, 64, 64);
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabajar con imagenes en HTML y CSS</h1>
+    <h2>Ubicar texto dentro de una imagen</h2>
+
+    <div>
+        <img width="100%"
+        src="./recursos/paisaje.jpeg" alt="">
+        <h2>Un barco llamado LIBERTAD</h2>
+    </div>
+</body>
+</html>

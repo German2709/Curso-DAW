@@ -1,0 +1,21 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: darkorchid;
+    font-family: Impact;
+    font-size: 300%;
+}
+
+h2{
+    border: 2px solid black;
+    /* Los valores de border se dividen en: 
+    2px define el grosor del borde
+    solid define la textura
+    black el color */
+
+    padding-left: 30px;
+    margin-left: 20px;
+}

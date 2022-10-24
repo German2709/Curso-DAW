@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de imagenes</title>
+    <style>
+        .container{
+            display: flex;
+            width: 100%;
+        }
+        div{
+            border: 1px solid black;
+        }
+        .drc{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: space-around;   
+        }
+        .izq{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 12.5px 10px;
+        }
+        .column{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Ordenando imagenes usando &lt;flexbox&gt;</h1>
+
+    <div class="container">
+        <div class="izq">
+            <img 
+           width="100%" src="https://images.pexels.com/photos/132428/pexels-photo-132428.jpeg" alt="">
+        </div>
+        <div class="drc">
+            <div class="column">
+                <img width="50%" src="https://images.pexels.com/photos/754949/pexels-photo-754949.jpeg" alt="">
+                <img width="50%" src="https://images.pexels.com/photos/105804/pexels-photo-105804.jpeg" alt="">   
+                <img width="50%" src="https://images.pexels.com/photos/8703465/pexels-photo-8703465.jpeg" alt="">
+            </div>  
+            <div class="column">  
+                <img width="50%" src="https://images.pexels.com/photos/5707718/pexels-photo-5707718.jpeg" alt="">
+                <img width="50%" src="https://images.pexels.com/photos/5967959/pexels-photo-5967959.jpeg" alt="">
+                <img width="50%" src="https://images.pexels.com/photos/772478/pexels-photo-772478.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

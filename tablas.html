@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas en HTML</title>
+
+    <style>
+        table.tabla1{
+            border: 4px solid black;
+            /* Esta linea ↓↓ hace que las celdas se junten, eliminando los espacios */
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .tabla1 th{
+            border: 2px solid black;
+            padding: 5px;
+            background-color: lightgrey;
+            width: 100px;
+        }
+        .tabla1 td{
+            border: 1.5px solid gray;
+        }
+
+        hr {
+            /* esto es por si quiero que la linea divisora sea más gruesa */
+            height: 5px;
+            background-color: black;
+            border: 0;
+
+        }
+
+        table.tabla2{
+            border: 4px solid black;
+            /* Esta linea ↓↓ hace que las celdas se junten, eliminando los espacios */
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .tabla2 th{
+            text-align: left !important;
+            border: 2px solid black;
+            padding: 5px;
+            background-color: rgb(143, 145, 148);
+            width: 150px;
+        }
+        .tabla2 td{
+            border: 2px solid gray;
+            padding: 5px;
+        }
+        .nom{
+            background-color: lightgrey;
+            /* font-weight: bold;*/
+            /* (esto es para que los nombres esten en negrita sin necesidad de ponerles la etiqueta "b"*/
+        }
+        .age{
+            text-align: end;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Tablas en HTML</h1>
+
+    <table class="tabla1">
+        <tr>
+            <!-- Fila de cabeceros de la tabla -->
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+
+        <tr>
+            <td>María</td>
+            <td>Cepeda</td>
+            <td>18</td>
+        </tr>
+
+        <tr>
+            <td>Juan</td>
+            <td>Recio</td>
+            <td>25</td>
+        </tr>
+
+        <tr>
+            <td>Jairo</td>
+            <td>Morales</td>
+            <td>24</td>
+        </tr>
+
+        <tr>
+            <td>Tatiana</td>
+            <td>Rodríguez </td>
+            <td>23</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table class="tabla2">
+        <tr>
+            <th>Person</th>
+            <th>Age</th>
+        </tr>
+
+        <tr>
+            <td class="nom"><b>Chris</b></td>
+            <td class="age">38</td>
+        </tr>
+        <tr>
+            <td class="nom"><b>Dennis</b></td>
+            <td class="age">45</td>
+        </tr>
+        <tr>
+            <td class="nom"><b>Sarah</b></td>
+            <td class="age">29</td>
+        </tr>
+        <tr>
+            <td class="nom"><b>Karen</b></td>
+            <td class="age">47</td>
+        </tr>
+
+    </table>
+</body>
+</html>

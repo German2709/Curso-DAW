@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de pagina web</title>
+
+    <style>
+        /* El asterisco selecciona a TODOS los elementos de la pagina (dentro del body) */
+        section, div{
+            /* border: 1px solid black; */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            margin: 0;
+        }
+        header{
+            background-color: #1abc9c;
+            color: white;
+            padding: 4%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section{
+            display: flex;
+        }
+        section div{
+            padding: 20px;
+        }
+        footer{
+            text-align: center;
+            background-color: #ddd;
+            /* height: 75px; */
+            padding: 1%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .izq{
+            width: 30%;
+            background-color: #f1f1f1;
+        }
+        .drc{
+            width: 70%;
+        }
+        nav{
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            
+        }
+        nav a{
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+           
+        }
+        nav a:hover{
+            color: #333;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+ 
+    <header>
+         <!-- ESte es la cabecera de la pagina  -->
+        <h1>My Website</h1>
+        <p>A website created by me.</p>
+    </header>
+
+    <nav>
+        <!-- Esto es le menu de navegación -->
+        <div>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        </div>
+        <div>
+        <a href="#">Link</a>
+        </div>    
+        
+    </nav>
+
+    <section>
+        <div class="izq">
+            <!-- Esto es el contenedor de la izquierda -->
+            <h2>About Me</h2>
+
+            <h5>Photo of me:</h5>
+
+            <img width="100%" height="250px" src="https://besthqwallpapers.com/Uploads/26-7-2021/171735/thumb2-gray-background-with-lines-gray-texture-gray-lines-texture-gray-carbon-texture-gray-lines-fabric-texture.jpg" alt="">
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            
+            <h3>More Text</h3>
+
+            <p>Lorem ipsum dolor sit ame.</p>
+
+            
+            <img width="100%" height="80px" src="https://images4.alphacoders.com/594/594600.jpg" alt="">
+            <img width="100%" height="80px" src="https://images4.alphacoders.com/594/594600.jpg" alt="">
+            <img width="100%" height="80px" src="https://images4.alphacoders.com/594/594600.jpg" alt="">
+            
+            
+        </div>
+        <div class="drc">
+            <!-- Esto es el contenedor de la derecha -->
+            <h2>TITLE HEADING</h2>
+            <p><b>Title description, Dec 7, 2017</b></p>
+            <img width="100%" height="250px" src="https://thumbs.dreamstime.com/b/fondo-gris-elegante-simple-cl%C3%A1sico-de-luz-agradable-monocromo-textural-para-banderas-un-sencillo-y-vers%C3%A1til-193416056.jpg" alt="">
+            <p>
+                Some text.
+            </p>
+            <p>
+                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            </p>
+            <h2>TITLE HEADING</h2>
+            <p><b>Title description, Dec 7, 2017</b></p>
+            <img width="100%" height="250px" src="https://thumbs.dreamstime.com/b/fondo-gris-elegante-simple-cl%C3%A1sico-de-luz-agradable-monocromo-textural-para-banderas-un-sencillo-y-vers%C3%A1til-193416056.jpg" alt="">
+            <p>
+                Some text.
+            </p>
+            <p>
+                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+    
+</body>
+</html>

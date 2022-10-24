@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera pagina</title>
+
+    <!-- En style el lenguaje utilizado es CSS Es el lenguaje destinado a definir el aspecto visual del documento web, -->
+    <style>
+        /* Esto es un comentario en CSS al escribir "code" estamos un estilo para TODAS las etiquetas code */
+        code{
+            background-color: rgb(55,55,55);
+            color: rgb(110,155,240);
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <h1>Formateo del texto en HTML</h1>
+
+    <p>
+        Elementos destinados especificamente a Formatear el texto:
+    </p>
+
+    <ul>
+        <li><code>b</code> - texto en negrita</li>
+        <li><code>strong</code> - texto importante</li>
+        <li><code>i</code> - texto cursiva</li>
+        <li><code>em</code> - texto énfasis</li>
+        <li><code>mark</code> - texto marcado</li>
+        <li><code>small</code> - texto de menor tamaño</li>
+        <li><code>del</code> - texto tachado</li>
+        <li><code>ins</code> - texto insertado</li>
+        <li><code>sub</code> - texto subescrito</li>
+        <li><code>sup</code> - texto superescrito</li>
+    </ul>
+
+<p>
+    Esto es un párrafo. El texto que querramos destacar visualmente
+    <b>lo haremos con negrita</b>,
+    el texto importante irá con la etiqueta <strong>strong</strong>.
+
+    <br>
+    mientras que la <code>b</code> es meramente visual, <code>strong</code>
+    influye en el posicionamiento web de la pagina.
+</p>
+
+<p>
+    <mark>texto marcado</mark><br>
+    <small>texto pequeño</small><br>
+    <del>texto tachado</del><br>
+    <ins>texto subrayado</ins><br>
+    <sub>texto subescrito</sub>
+    <sup>texto superescrito</sup>
+
+</p>
+
+<h2>Elementos de citación</h2>
+
+<ul>
+    <li><code>blockquote</code> - Define una seccion de otra fuente.</li>
+    <li><code>q</code> - Define una cita corta.</li>
+    <li><code>abbr</code> - Define una abreviatura o acronimo.</li>
+    <li><code>address</code> - Define la información de contacto del autor 
+    del articulo.</li>
+    <li><code>cite</code> - Define el titulo de un trabajo creativo. 
+    Como un poema, libro o canción.</li>
+    <li><code>bdo</code> - Se usa para definir la dirección del texto.</li>
+</ul>
+
+<h3>blockquote</h3>
+
+<p>La Tirpitz segun wikipedia:</p>
+
+<blockquote cite="https://es.wikipedia.org/wiki/Tirpitz_(1941)a">
+    El Tirpitz fue el segundo de los dos acorazados de la clase Bismarck construidos para la Kriegsmarine alemana durante la Segunda Guerra Mundial. Nombrado en honor del almirante Alfred von Tirpitz, el artífice de la Marina Imperial alemana, el buque fue puesto en grada en los astilleros Kriegsmarinewerft de Wilhelmshaven, en noviembre de 1936 y botado dos años y medio después, en abril de 1939.
+</blockquote>
+
+<h3>q</h3>
+ <p>
+    Tras completar sus pruebas de mar a inicios de 1941, el Tirpitz sirvió brevemente como pieza central de la Flota del Báltico, que tenía la misión de impedir un posible intento de fuga de la Flota Báltica soviética. A comienzos de 1942, el buque navegó a Noruega para actuar como disuasor ante la invasión aliada. Estando en Noruega, <q>el Tirpitz intentó interceptar dos convoyes aliados con destino a la Unión Soviética en 1942</q>, pero ambas misiones resultaron un fracaso. A pesar de ello, el Tirpitz actuó como una flota en potencia y su sola presencia obligó a la Real Armada Británica a mantener un número elevado de fuerzas en el área con la finalidad de evitar sus maniobras.
+ </p>
+
+ <h3>abbr</h3>
+
+ <p>
+    La temporada 2022-23 de la <abbr title="National Basketball Association">NBA</abbr> será la septuagésimo séptima temporada de la historia de la competición norteamericana de baloncesto. El Draft de la NBA se celebró el 23 de junio de 2022, en el Barclays Center en Brooklyn, donde Orlando Magic eligió en la primera posición a Paolo Banchero. La temporada comenzará el 18 de octubre de 2022, y terminará en junio de 2023 con las finales. El All-Star Game se celebrará en el Vivint Arena de Salt Lake City el 19 de febrero de 2023
+ </p>
+
+<h3>address</h3>
+<p>
+Es un bloque de texto, que los navegadores normalmente escriben en cursiva. Aqui se define la info de contacto con el autor o dueño de la pagina/articulo/documento. Puede ser desde una direccion fisica hasta una direccion de correo, un telefono, etc.
+</p>
+
+<address>Esccrito por Juan Castilla. <br>
+contacto: <br>
+jucas@gmail.com <br>
+Bilbao, País Vasco.
+</address>
+
+<h3>cite</h3>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Spanish_Civil_War_-_Mass_grave_-_Est%C3%A9par%2C_Burgos.jpg/500px-Spanish_Civil_War_-_Mass_grave_-_Est%C3%A9par%2C_Burgos.jpg" alt="" width="450">
+<p>
+    <cite>Fosa común con cadáveres del bando republicano</cite>, descubiertas en Estépar (Burgos) 1936
+</p>
+
+<h3>bdo</h3>
+<p>Se usa cuando se quiere cambiar la direccion de lectura de un texto <br>
+Ejemplo:
+</p>
+<p>
+    <bdo dir="rtl">Este texto está escrito de derecha a izquierda</bdo>
+</p>
+
+<h2>Estilos</h2>
+<p>
+    Los estilos definen el aspecto visual de los elementos HTML que acompañan.
+    La sintaxis que es la siguiente: <br>
+    <code>&lt;elemento style="propiedad:valor;"&gt;</code>
+</p>
+
+<p>Ejemplos</p>
+<p style="background-color: darkblue;color: cornflowerblue">
+    Este párrafo tiene propiedades de fondo y color asignadas.
+</p>
+
+<p>
+    El lenguaje en el que se determina los estilos es CSS.
+</p>
+
+<p>
+    Una manera mas correcta de terminar los estilos es mediante la etiqueta <code>style</code> ubicada dentro de la etiqueta <code>head</code>
+</p>
+
+
+
+
+
+</body>
+</html>

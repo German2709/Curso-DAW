@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria básica de CSS</title>
+<link rel="stylesheet" href="CSS-basico.CSS">
+    <style>
+        /* Al escribir el nombre de la etiqueta, los esilos se aplicarán a TODAS las
+        etiquetas del documento */
+        code{
+            background-color: rgb(55,55,55);
+            color: rgb(110,155,240);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Definir estilos del HTML con CSS</h1>
+
+    <p>
+        CSS (cascade Style Sheets) se una para controlar el formato visual de
+        una página.
+    </p>
+    <p>
+        con CSS se puede controlar el color, fuente, tamaño del texto, espaciado,
+        alineamiento, imagenes de fondo, como se ve una pagina dependiendo del 
+        tamaño de pantalla del dispositivo que estemos usando, etc.
+    </p>
+    <h2>Formas de usar CSS</h2>
+
+    <ul>
+        <li><b>Inline</b> - Usando el atributo <code>&lt;style&gt;</code> dentro del 
+            elemento HTML</li>
+        <li><b>Internal</b> - Usando la etiqueta <code>&lt;style&gt;</code> dentro de 
+        la seccion del <code>&lt;head&gt;</code></li>
+        <li><b>External</b> - Usando un archivo CSS externo</li>
+    </ul>
+
+    <h3>Inline o CSS interno</h3>
+    <p>
+        se usa para aplicar un estilo a un elemnto HTML en concreto mediante el atributo
+        <code>&lt;style&gt;</code> dentro de la etiqueta del elemento.
+        Ejemplo de un titulo con la letra azul:
+    </p>
+
+    <h1 style="background-color: rgb(29, 26, 26);color: rgb(8, 103, 245)">
+        Un titulo azul</h1>
+
+    <h3>Internal CSS</h3>
+    <p>
+        Se usa para aplicar estilos a un documento en concreto y se define dentro de la
+        etiqueta <code>&lt;style&gt;</code> dentro de la sección <code>&lt;head&gt;</code>
+        del documento.
+        Referencia en al linea 9 del codigo del documento.
+    </p>
+    <h3>External CSS</h3>
+    <p>
+        Es un archivo con la extension ".CSS" que contiene exclusivamente codigo CSS. Se 
+        puede aplicar al documento mediante el elemento <code>&lt;link&gt;</code>.
+        Referencia en la linea 8.
+    </p>
+    <p>
+        Las dos principales ventajas de externalizar el CSS son:
+        <ul>
+            <li>Los estilos se pueden aplicar a tantos documentos como querramos.</li>
+            <li>La longitud del código disminuye sensiblemente.</li>
+        </ul>
+    </p>
+
+    <h2>Algunas de las propiedades de CSS más comunes</h2>
+    <h3>Colores, fuente y tamaño</h3>
+
+    <p>
+        Ref al CSS externo.
+    </p>
+
+    <h3>Bordes</h3>
+    <p>linea 12 del archivo CSS</p>
+
+    <h3>Padding o relleno</h3>
+    <p>Linea 19 de CSS</p>
+
+    <h3>Margen</h3>
+    <p>Linea 20 del CSS</p>
+
+
+
+</body>
+</html>
