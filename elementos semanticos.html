@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos cemanticos</title>
+    <style>
+        .container {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        /* nav {
+            padding: 15px;
+        } */
+        .flex-container{
+            display: flex;
+            justify-content: center;
+        }
+        .letf-container {
+           width: 60%;
+        }
+        .letf-container>*{
+            height: 50%;
+            box-sizing: border-box;
+        }
+        .right-container{
+            width: 40%;
+            height: 100%;
+        }
+        .right-container aside{
+            height: 100%;
+            padding: 40px 0;
+        }
+        /* footer {
+            padding: 15px;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <h1>Elementos Cemanticos de HTML</h1>
+
+    <div class="container">
+        <header class="container">
+            <h1>Título</h1>
+        </header>
+        <nav class="container">Menú de navegación</nav>
+        <div class="flex-container">
+            <div class="left-container">
+                <section class="container">Sección</section>
+                <article class="container">Artículo</article>
+            </div>
+            <div class="rigth-container">
+                <aside class="container">Lateral</aside>
+            </div>
+        </div>
+        <footer class="container">Pie de Página</footer>
+    </div>
+
+</body>
+
+</html>

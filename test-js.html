@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de JavaScript</title>
+    <link rel="stylesheet" href="general.css">
+    <style>
+        #myHeader{
+            /* En CSS las palabras de los estilos se separan con un guión */
+            text-align: left;
+            border: 5px double;
+            background-color: blue;
+            border-radius: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prueba de JavaScript</h1>
+
+    <p>
+        El HTML proporciona la estructura del documento, el CSS el estilo visual, entonces es JS(JavaScript) el que proporciona la interacción de la web con el usuario.
+    </p>
+    <p>
+        Con JS podemos hacer que la pagina reaccione ante las dsitintas acciones del usuario. Hacer clic, pasar el raton sobre un objeto en concreto, hacer scroll, usar el teclado, etc.
+    </p>
+    <p>
+        Al iguial que el HTML nos provee de la etiqueta <code>style</code> para insertar el CSS. Tenemos la etiqueta <code>scrip</code> para escribir JavaScript. El código tambien puede incorporarse como atributo de los elementos (como sucede con el atributo style) por lo que su uso dependerá del criterio del desarrollador.
+    </p>
+
+    <h2>Mi primer JavaScript</h2>
+    <p id="txt"></p>
+    <button onclick="changeTxt()">Click me!</button>
+
+    <p>
+        JavaScript tambien puede cambiar los estilos de los elementos.
+    </p>
+
+    <h1 id="myHeader">Titulo perzonalizable</h1>
+    <button onclick="fixHeader()">Arreglar Título</button>
+
+    <p>
+        JavaScript puede cambiar los atributos de los elementos.
+    </p>
+    <img id="myImg" src="https://i.pinimg.com/originals/c9/e4/4a/c9e44ab9786c0f9d1757df48dc1ab31a.png" alt="" width="600px">
+    <button onclick="changeImg()">Cambiar imagen</button>
+
+</body>
+<script>
+    // Esta linea de codigo se ejecuta inmediatamente cuando el navegador la lee la linea 34, ya que no tiene ningun tipo de contexto.
+    document.getElementById('txt').innerHTML = "Hola Mundo!!";
+
+    // Una función es un bloque de cogido reutilizable que se ejecuta mediante una acción dada.
+    function changeTxt() {
+        // Con "document" accedemos a una serie de funciones del documento.
+        //"getElementById()" encuentra el elemento que dicho id.
+        //inmerHTML se refiere a la propiedad del elemento para acceder al contenido que esta entre las etiquetas.
+        document.getElementById('txt').innerHTML = "He cambiado el texto usando JavaScript";
+    }
+
+    function fixHeader(){
+    // Lo primero es buscar el header y actuar sobre él.
+    document.getElementById('myHeader');
+
+    // Corregir el color del fondo usando la propiedad "style":
+    document.getElementById('myHeader').style.backgroundColor = 'lightblue';
+    document.getElementById('myHeader').style.color = 'white';
+    // Quitar el borde:
+    document.getElementById('myHeader').style.border = 'none';
+    document.getElementById('myHeader').style.borderRadius = '0%';
+    // Agrandar la letra:
+    document.getElementById('myHeader').style.fontSize = '60px';
+    // centrar el texto:
+    document.getElementById('myHeader').style.textAlign = 'center';
+    
+    }
+    
+    function changeImg() {
+        document.getElementById('myImg').src = 'https://otakurepublic.com/media/binary/010/516/085/10516085.jpg';
+    }
+
+
+</script>
+
+</html>
