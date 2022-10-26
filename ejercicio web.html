@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño de Página</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style>
+        body{
+            margin: 0;
+        }
+        div *{
+            /* border: 1px solid; */
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 100px;
+            background-color: rgb(61, 61, 61);
+        }
+        .superior{
+            display: flex;
+            /* padding: 0% 15%; */
+        }
+        .perfil{
+            width: 50%;
+            display: flex;
+            align-items: flex-end;
+        }
+        .text{
+            width: 50%;
+            text-align: center;
+            padding: 50px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+            /* display: flex;
+            flex-flow: column; */
+        }
+        /* .txt1{
+            text-align: center;
+            padding: 50px;
+            font-size: 130%;
+        } */
+        img{
+            width: 80%;
+            padding: 40px;
+            
+        }
+
+        i {
+            font-size: 300%;
+            color: white;
+        }
+        .link1{
+            color: black;
+        }
+        /* .bi-chevron-right{
+            color: blue;
+        } */
+        .nom{
+            font-size: 40px;
+            position: absolute;
+            left: 30%;
+        }
+        .central{
+            padding: 5% 10%;
+            display: flex;
+        }
+        .medio{
+            justify-content: center;
+        }
+        .ctr1{
+            font-size: 55px;
+        }
+        .ctr2{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="web">
+        <nav>
+            <a href="#"><i class="bi bi-book-half"></i></a>
+            <a href="#"><i class="bi bi-list"></i></a>
+        </nav>
+        <section class="superior">
+            <div class="perfil">
+                <img src="https://images.pexels.com/photos/1477199/pexels-photo-1477199.jpeg" alt="">
+                <div class="nom">
+                    <h1>Bosque Otoñal</h1>
+                </div>
+            </div>
+            <div class="text">
+                <p class="txt1">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat architecto quidem error dolor assumenda placeat unde dolore fugit, quis mollitia neque laborum magni vero optio quae, minima porro repellendus voluptatibus!
+                </p>
+                <h4>Image from <a class="link1" href="https://www.google.es/">Freepik</a></h4>
+                <a href="#">
+                    <!-- <i class="bi bi-chevron-right"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" stroke="rgb(61, 61, 61)" stroke-width="1.75">
+                        <path  fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                </a>
+            </div>
+        </section>
+        <section class="central">
+            <div class="medio">
+            <h1 class="ctr1">design</h1>
+            <h2 class="ctr2">outside, tasty on the inside</h2>
+            <p class="text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum rerum aliquid, laudantium a distinctio quos fugiat veritatis quasi consectetur quo quisquam dolores tempora cupiditate, error nulla reprehenderit ducimus ea officiis.
+            </p>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
