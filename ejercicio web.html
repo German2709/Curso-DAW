@@ -1,84 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño de Página</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 
     <style>
-        body{
+        body {
             margin: 0;
-        }
-        div *{
-            /* border: 1px solid; */
-        }
-        nav{
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 100px;
-            background-color: rgb(61, 61, 61);
-        }
-        .superior{
-            display: flex;
-            /* padding: 0% 15%; */
-        }
-        .perfil{
-            width: 50%;
-            display: flex;
-            align-items: flex-end;
-        }
-        .text{
-            width: 50%;
-            text-align: center;
-            padding: 50px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-size: 20px;
-            /* display: flex;
-            flex-flow: column; */
-        }
-        /* .txt1{
-            text-align: center;
-            padding: 50px;
-            font-size: 130%;
-        } */
-        img{
-            width: 80%;
-            padding: 40px;
-            
+            background-color: #1f203a;
         }
 
-        i {
-            font-size: 300%;
+        /* div * {
+            border: 1px solid;
+        } */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 500px;
+        }
+
+        .superior {
+            display: flex;
+            background-color: #fceb21;
+            width: 100%;
+        }
+
+        .imgperfil {
+            width: 29%;
+            display: flex;
+            align-items: flex-end;
+            position: absolute;
+            left: 25%;
+        }
+
+        .text {
+            width: 69%;
+            text-align: center;
+            line-height: 1.5;
+            padding: 2% 10%;
+            font-family: 'Open Sans';
+            font-size: 35px;
+            margin: 60px 700px;
+            transform: translate(35%);
+        }
+
+        img {
+            width: 80%;
+            padding: 80px;
+        }
+
+        .bi-book-half {
+            font-size: 470%;
             color: white;
         }
-        .link1{
+
+        .bi-list {
+            font-size: 250%;
+            color: white;
+        }
+
+        .txt1 {
+            margin: 20px;
+        }
+
+        .link1 {
             color: black;
         }
-        /* .bi-chevron-right{
-            color: blue;
-        } */
-        .nom{
-            font-size: 40px;
+
+        .nom {
+            font-size: 70px;
             position: absolute;
-            left: 30%;
+            left: 20%;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 900px;
+            bottom: 40px;
         }
-        .central{
-            padding: 5% 10%;
+
+        .central {
+            padding: 12% 10%;
+            padding-bottom: 7%;
+        }
+
+        .medio {
+            margin: 0% 26%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+        .ctr1 {
+            font-size: 120px;
+            margin-bottom: 0;
+        }
+
+        .ctr2 {
+            font-size: 1.875rem;
+            margin-bottom: 0;
+            margin-top: 0;
+            letter-spacing: 5px;
+        }
+
+        .txtm {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 60px;
+        }
+
+        .link2 {
+            color: white;
+        }
+
+        .btn {
+            color: #111111;
+            background-color: #fceb21;
+            padding: 20px 55px 21px 54px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .galery{
+            width: 50%;
             display: flex;
+
+            margin: 0 auto;
         }
-        .medio{
-            justify-content: center;
+        .galery img{
+            width: 100%;
+            padding: 5%;
+            box-sizing: border-box;
         }
-        .ctr1{
-            font-size: 55px;
+        .column{
+            display: flex;
+            flex-direction: column;
         }
-        .ctr2{
-            font-size: 30px;
+        .txt2{
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+            font-family: "Open Sans";
         }
     </style>
 </head>
+
 <body>
     <div class="web">
         <nav>
@@ -86,7 +157,7 @@
             <a href="#"><i class="bi bi-list"></i></a>
         </nav>
         <section class="superior">
-            <div class="perfil">
+            <div class="imgperfil">
                 <img src="https://images.pexels.com/photos/1477199/pexels-photo-1477199.jpeg" alt="">
                 <div class="nom">
                     <h1>Bosque Otoñal</h1>
@@ -94,24 +165,66 @@
             </div>
             <div class="text">
                 <p class="txt1">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat architecto quidem error dolor assumenda placeat unde dolore fugit, quis mollitia neque laborum magni vero optio quae, minima porro repellendus voluptatibus!
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat architecto quidem error dolor
+                    assumenda placeat unde dolore fugit, quis mollitia neque laborum magni vero optio quae, minima porro
+                    repellendus voluptatibus!
                 </p>
-                <h4>Image from <a class="link1" href="https://www.google.es/">Freepik</a></h4>
+                <h6 class="txt1">Image from <a class="link1" href="#">Freepik</a></h6>
                 <a href="#">
-                    <!-- <i class="bi bi-chevron-right"></i> -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16" stroke="rgb(61, 61, 61)" stroke-width="1.75">
-                        <path  fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16" stroke="rgb(61, 61, 61)" stroke-width="1.3">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
                 </a>
             </div>
         </section>
         <section class="central">
             <div class="medio">
-            <h1 class="ctr1">design</h1>
-            <h2 class="ctr2">outside, tasty on the inside</h2>
-            <p class="text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum rerum aliquid, laudantium a distinctio quos fugiat veritatis quasi consectetur quo quisquam dolores tempora cupiditate, error nulla reprehenderit ducimus ea officiis.
-            </p>
+                <div class="dd">
+                    <h1 class="ctr1">design</h1>
+                    <h2 class="ctr2">outside, tasty on the inside</h2>
+                </div>
+                <div class="tt">
+                    <p class="txtm">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum rerum aliquid, laudantium a
+                        distinctio quos fugiat veritatis quasi consectetur quo quisquam dolores tempora cupiditate,
+                        error nulla <a class="link2" href="#">reprehenderit ducimus</a> ea officiis.
+                    </p>
+                    <a class="btn" href="#">LEARN MORE</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="galery">
+                <div class="column">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                </div>
+                <div class="column">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                </div>
+                <div class="column">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                    <img src="https://onlandscape-pullzone-heyqa02xvhohdyshyl51qdqk.netdna-ssl.com/wp-content/uploads/2012/01/IMG_6347-square-vertorama.jpg?iv=338"
+                        alt="">
+                </div>
+            </div>
+            <div>
+                <h6 class="txt2">Image from <a class="link2" href="#">Freepik</a></h6>
+                <a class="btn2" href="#">LEARN MORE</a>
             </div>
         </section>
     </div>
