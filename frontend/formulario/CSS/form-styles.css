@@ -1,0 +1,52 @@
+/* para fondos con degradados( se puede buscar muestras en la web: gradienta.io) */
+form.simple-form{
+    background:linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    border-radius: 5px;
+    padding: 10px;
+}
+/* selecciona unicamente a los hijos directos del from(los div mas a la izq.) */
+form.simple-form>div{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-bottom: 5px;
+}
+.simple-form h1,h2{
+    margin-top: 0%;
+}
+form.simple-form div:last-child{
+    justify-content: flex-start;
+}
+form.simple-form input,form.simple-form div button{
+    border: none;
+    border-radius: 4%;
+    background-color: lightgray;
+    margin-right: 5px;
+    font-weight: bold;
+    /* text-transform: uppercase; (esto es para que el texto se ponga en mayusculas*/
+}
+form.contact {
+    background-color: #fceb21;
+}
+form.contact div{
+    width: 50%;
+    
+}
+form.contact input[type="text"], form.contact textarea{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    width: 100%;
+}
+form.contact input[type="submit"]{
+    background:transparent;
+    padding: 10px 40px;
+    margin:20px 0px;
+    font-weight: bolder;
+}
+form.contact input[type="submit"]:hover{
+    background: black;
+    color: white;
+    /* el curso cambia a una mano, cuando se el usuario acerca el cursor en el boton*/
+    cursor: pointer;
+}
