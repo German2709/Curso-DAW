@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="general.css">
+    <style>
+        /* para fondos con degradados( se puede buscar muestras en la web: gradienta.io) */
+        form.simple-form{
+            background:linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+            border-radius: 5px;
+            padding: 10px;
+        }
+        /* selecciona unicamente a los hijos directos del from(los div mas a la izq.) */
+        form.simple-form>div{
+            display: flex;
+            justify-content: space-between;
+            width: 370px;
+            margin-bottom: 5px;
+        }
+        .simple-form h1,h2{
+            margin-top: 0%;
+        }
+        form.simple-form div:last-child{
+            justify-content: flex-start;
+        }
+        form.simple-form input,form.simple-form div button{
+            border: none;
+            border-radius: 4%;
+            background-color: lightgray;
+            margin-right: 5px;
+            font-weight: bold;
+            /* text-transform: uppercase; (esto es para que el texto se ponga en mayusculas*/
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formularios en HTML</h1>
+    <h2>Formularios sencillos</h2>
+    <form class="simple-form" action="#">
+        <h2>HTML Form</h2>
+        <div>
+        <!-- label es el titulo del formulario -->
+        <label for="firstName">First Name: </label>
+        <!-- input es el recuadro para rellenar datos/
+        si el dato el obligatorio se pone el atributo "required"(ya sea al principio o al final) -->
+        <input type="text" name="firstName" id="" required>
+        </div>
+        <div>
+            <label for="lastName">Last Name: </label>
+            <input type="text" name="lastName" id="">
+        </div>
+        <div>
+            <label for="dateOfBirth">Date of Birth: </label>
+            <!-- el tipo date es para fechas -->
+            <input type="date" name="dateOfBirth" id="">
+        </div>
+        <div>
+            <label for="gender">Gender:</label>
+            <!-- el tipo radio es para opciones de una eleccion -->
+            <div>
+            <input type="radio" name="gender" id="">Male
+            <input type="radio" name="gender" id="">Female
+            <input type="radio" name="gender" id="">Other
+            </div>
+        </div>
+        <div>
+            <!-- el tipo checkbox son de opcion multiple u opcional -->
+            <div>
+            <label for="vehicles">Owned vehicles:</label>
+            <input type="checkbox" name="vehicles" id="">Car
+            <input type="checkbox" name="vehicles" id="">Motobiks
+            <input type="checkbox" name="vehicles" id="">Bycicle
+            </div>
+        </div>
+        <div>
+            <label for="emailId">Email id: </label>
+            <input type="email" name="emailId" id="">
+        </div>
+        <div>
+            <label for="mobilNumber">Mobil Number: </label>
+            <input type="number" name="mobilNumber" id="">
+        </div>
+        <div>
+            <input type="SUBMIT" value="SUBMIT">
+            <button type="reset">RESET</button>
+        </div>
+    </form>
+<h2>Formulario de Contacto</h2>
+</body>
+
+</html>
