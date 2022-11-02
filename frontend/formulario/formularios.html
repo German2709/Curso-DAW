@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
-    <link rel="stylesheet" href="general.css">
+    <!-- cada punto representa un retroceso de carpeta para encontrar el archivo de referencia. -->
+    <link rel="stylesheet" href="../general.css">
     <link rel="stylesheet" href="./CSS/form-styles.css">
 
 </head>
@@ -36,18 +37,18 @@
             <label for="gender">Gender:</label>
             <!-- el tipo radio es para opciones de una eleccion -->
             <div>
-                <input type="radio" name="gender" id="">Male
-                <input type="radio" name="gender" id="">Female
-                <input type="radio" name="gender" id="">Other
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <input type="radio" name="gender" value="other">Other
             </div>
         </div>
         <div>
             <!-- el tipo checkbox son de opcion multiple u opcional -->
             <div>
                 <label for="vehicles">Owned vehicles:</label>
-                <input type="checkbox" name="vehicles" id="">Car
-                <input type="checkbox" name="vehicles" id="">Motobiks
-                <input type="checkbox" name="vehicles" id="">Bycicle
+                <input type="checkbox" name="vehicles" value="car">Car
+                <input type="checkbox" name="vehicles" value="motobiks">Motobiks
+                <input type="checkbox" name="vehicles" value="bycicle">Bycicle
             </div>
         </div>
         <div>
@@ -76,7 +77,49 @@
         <input type="submit" name="" id="" value="SUBMIT"></a>
         <div class="info">
             <h1>CONTACT US</h1>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+
         </div>
+    </form>
+
+    <h2>Formulario de alquiler de vehiculos</h2>
+
+    <form class="renting" action="">
+        <label for="tipos">Por favor, seleccione un tipo de vehiculo</label>
+        <!-- el selector nos da a elegir entre un conjunto de opciones preestablecidas -->
+        <select name="tipos" id="">
+            <option value="Coche">Coche</option>
+            <option value="Moto">Moto</option>
+            <option value="Furgoneta">Furgoneta</option>
+        </select>
+        <br>
+        <label for="equipamiento">Seleccione el tipo de equipamiento</label>
+        <select name="equipamiento" id="">
+            <option value="Standard">Standard</option>
+            <option value="Con GPS">Con GPS</option>
+            <option value="Cámara trasera">Cámara trasera</option>
+        </select>
+        <br>
+        <label for="marcas">Seleccione marca del vehiculo</label>
+        <!-- Datalist + input nos genera un cuadro de insercion de datos con una lista de sugerencias -->
+        <input name="marcas" list="marcas">
+        <datalist id="marcas">
+            <option value="Fiat"></option>
+            <option value="Citöen"></option>
+            <option value="Renault"></option>
+            <option value="Audi"></option>
+        </datalist>
+        <br>
+        <input type="submit">
+    </form>
+
+    <h2>Formulario de inicio de sesión o login</h2>
+    <form action="" class="login">
+        <input name="user" type="text" placeholder="Ingrese usuario">
+        <br>
+        <input class="password" type="password" placeholder="Ingrese contraseña">
+        <br>
+        <input type="submit">
     </form>
 </body>
 

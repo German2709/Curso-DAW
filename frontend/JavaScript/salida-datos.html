@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salida de datos de JavaScript</title>
+    <link rel="stylesheet" href="../general.css">
+</head>
+<body>
+    <h2>Salida de datos usando JS</h2>
+    <p>
+        Muestra de datos de JavaScript:
+    </p>
+    <ul>
+        <li>Escribir dentro de un elemento HTML usando <code>innerHTML</code></li>
+        <li>Escribir directamente en el HTML usando <code>document.write()</code></li>
+        <li>Escribir en una caja de alerta usando <code>window.alert()</code></li>
+        <li>Escribir en la consola del navegador usando <code>console.log()</code></li>
+    </ul>
+    <p id="pText"></p>
+</body>
+<script>
+    // ejemplos de salida de datos
+    document.getElementById('pText').innerHTML='Texto escrito usando innerHTML desde JS';
+    
+    document.write('Texto escrito usando document.write()');
+    
+    window.alert('Este es mi mensaje en la caja de alerta');
+
+    console.log('Lo que escriba aquí sólo se podrá ver accediendo a la consola del navegador');
+
+    // como se puede comprobar el codigo se ejecuta nada más cargar la pagina, ya que estará escrito en la base y no dentro de una función
+
+</script>
+</html>

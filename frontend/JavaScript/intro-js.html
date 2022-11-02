@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción al JavaScript</title>
+    <link rel="stylesheet" href="../general.css">
+</head>
+<body>
+    <h1>Introducción al JavaScript</h1>
+    <p>
+        JavaScript es el lenguaje de programación de la web. nos permite crear interacciones usuario-web.
+    </p>
+    <p>Ejemplos:</p>
+    <!-- En programación es habitual utilizar el estilo "camel case" para escribir los nombres de variables que concatenan varias palabras. La norma de estilo indica que la primera letra de cada una de las palabras concatenadas debe ser mayúscula, mientras que el resto deben escribirse en minúscula. Ejem: "palabrasConcatenadasDebeSerMayúscula" -->
+    <p id="pColor">
+        Pulsa el botón de abajo para resaltar este párrafo.
+    </p>
+    <!-- "onclick" indica que cuando se ejecuta el boton se ejecutará ek código que se indica. En este caso la función -->
+    <button onclick="colorChange()">Color</button>
+    <hr>
+    <p id="pDate">
+        Pulsa el botón inferior para mostrar la fecha y hora actuales.
+    </p>
+    <button onclick="showDate()">Mostrar fecha</button>
+    <hr>
+    <p id="pHide">
+        Pulsa el botón inferior para ocultar/mostrar este parrafo.
+    </p>
+    <button onclick="hideShow()">Mostar/Ocultar</button>
+    <hr>
+    <p>
+        Pulsa el botón para encender la bombilla 
+    </p>
+    <img id="bulb" src="../recursos/bombilla-apagada.gif" alt="">
+    <button onclick="bulbChange()">Interruptor de luz</button>
+    
+</body>
+<script src="intro-js.js"></script>
+
+</html>

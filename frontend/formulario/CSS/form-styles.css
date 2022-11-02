@@ -8,7 +8,7 @@ form.simple-form{
 form.simple-form>div{
     display: flex;
     justify-content: space-between;
-    width: 350px;
+    width: 370px;
     margin-bottom: 5px;
 }
 .simple-form h1,h2{
@@ -27,6 +27,9 @@ form.simple-form input,form.simple-form div button{
 }
 form.contact {
     background-color: #fceb21;
+}
+.form-left{
+    padding: 10px 20px;
 }
 form.contact div{
     width: 50%;
