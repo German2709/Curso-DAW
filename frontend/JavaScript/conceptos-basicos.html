@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos basicos de JavaScript</title>
+    <link rel="stylesheet" href="../general.css">
+</head>
+<body>
+    <h1>Conceptos de JS</h1>
+    
+    <p>
+        Un <b>Programa informatico</b> es una lista de instrucciones que se ejecutan por un ordenador.
+    </p>
+    <p>
+        En programación estas instrucciones se llamen <b>declaraciones o "Statements".</b>
+    </p>
+    <p>
+        Un programa de JavaScript es una lista de declaraciones de programación.
+    </p>
+
+    <h2>Statements o declaraciones</h2>
+    <p>
+        Las declaraciones se componen de:
+    </p>
+    <p>
+        Valores(varios), operadores(operation), palabras claves(keywords), y comentarios(coments)
+    </p>
+    <p>
+        Ejemplos: Tenemos una declaración (Statements) que indica al navegador que debe escribir "Hola Mundo" dentro de un elemento HTML con la id="test"
+    </p>
+    <code>
+        document.getElementById('test').innerHTML='Hola Mundo'
+    </code>
+    <p>
+        Los Statements, o líneas de código, se ejecutan una a una en orden de lectura.
+    </p>
+    <h2>Punto y coma (semicolor) ;</h2>
+    <p>
+        Se usan para separar los Statements en JS. No son obligatorios pero si muy recomendados. Se usan por buenas practicas de código. Ref. al JS Línea 1.
+    </p>
+
+    <h2>Espacios en blanco</h2>
+    <p>
+        JavaScript ignora los espacios en blanco, y se usan para hacer el codigo mas legible. Ref al js linea 11
+    </p>
+    <code>
+        let personas = "Carlos"; <br>
+        let persona="Carlos";
+    </code>
+
+    <h2>Bloques de codigo</h2>
+    <p>
+        Las declaraciones o Statements se pueden agrupar en bloques, dentro de llaves(curly brackets) {...}
+    </p>
+    <p>
+        El proposito de esto, es definir una serie de declaraciones para que se ejecuten juntas.
+    </p>
+    <p>
+        Un ejemplo de declaraciones unidas en bloques son las funciones. Ref al JS linea 16
+    </p>
+
+    <h2>Palabras clave o keywords</h2>
+    <p>
+        A menudo, muchas lienas de codigo empiezan por una palabra que indica la accion a realizarse.
+    </p>
+    <p>
+        Estas palabras estan <b>reservadas</b> y no pueden usarse en ningun otro contexto. Algunos ejemplos:
+    </p>
+    <ul>
+        <li>var - declara una variable</li>
+        <li>let - delcara una variable de bloque</li>
+        <li>const - declara una constante de bloque</li>
+        <li>if - indica un bloque de codigo a ejecutarse cuando se cumple una condición</li>
+        <li>switch - indica un bloque de codigo a ejecutarse dependiendo de dsitintos factores</li>
+        <li>for - indica un bloque de codigo a ejecutarse en bucle</li>
+        <li>funtion - declara una funcion</li>
+        <li>return - sala de una funcion</li>
+        <li>try - implementa manejo de errores a un bloque de codigo</li>
+    </ul>
+    
+    
+</body>
+<script src="conceptos-basicos.js"></script>
+<script>
+    // document.getElementById('test').innerHTML='Hola Mundo';
+    console.log('Hola Consola')
+</script>
+</html>

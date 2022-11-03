@@ -1,0 +1,9 @@
+#pResultado{
+    display: block;
+}
+/* este codigo sirve para quitar se oculten visualmente, la funcionalidad de aumentar o disminuir el número */
+/* input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+} */
