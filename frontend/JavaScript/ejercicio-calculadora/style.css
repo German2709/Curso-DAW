@@ -7,3 +7,64 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 } */
+body{
+  /* border: 2px solid; */
+  background: #8E0E00;
+  background: linear-gradient(90deg,#8e0e00,#1f1c18);
+  font-family:monospace;
+  display: flex;
+  justify-content: center;
+}
+.container{
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
+  width: 380px;
+  background-color: white;
+  
+  border-radius: 20px;
+}
+h1{
+  background-color: rgb(51, 1, 1);
+  color: white;
+  width:100%;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  padding: 15px 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.calc{
+  padding-left: 20px;
+}
+#gasto{
+  padding: 5px;
+  border-top-left-radius: 2px;
+}
+#servicio{
+  padding: 10px;
+  font-size: 25px;
+  transform: translate(15%);
+}
+#personas{
+  padding: 5px;
+  border-top-left-radius: 2px;
+}
+
+.calcular{
+  font-size: 15px;
+  padding: 12px 40px;
+  margin:25px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #ad133a;
+  color: white;
+  transform: translate(25%);
+}
+.calcular:hover{
+  background-color: #f3174e;
+  cursor: pointer;
+}

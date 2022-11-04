@@ -6,9 +6,16 @@ function calcular() {
     var propinaT = (cuenta * calidad);
     // seguidamente dividir la propina entre el número de comensales para obtener lo que debe pagar cada uno
     var personas = document.getElementById('personas').value;
-    var total = (propinaT / personas + '€');
+    var total = (propinaT / personas);
 
-    document.getElementById('pResultado').innerHTML=(total + ' por persona');
+    var parrafo=document.getElementById('pResultado');
+
+    if(total > 0){
+        // Lo muestro porque está oculto por defecto
+        parrafo.style.visibility='visible';
+        // Y lo relleno con el texto que quiero mostrar
+        parrafo.innerHTML=total.toFixed(2) + " € por persona"
+    }
     // Imprimimos los datos en la consola
     // console.log(total);
 }

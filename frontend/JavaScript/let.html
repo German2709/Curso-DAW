@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable let</title>
+    <link rel="stylesheet" href="../general.css">
+</head>
+<body>
+    <h1>Todo sobre let</h1>
+    <p>
+        La palabra clave o keyword <code>let</code> tiene 3 usos principales.
+    </p>
+    <ul>
+        <li>Las variables declaradas con <code>let</code> no pueden ser redeclaradas.</li>
+        <li>Las variables definidas con <code>let</code> deben declararse antes de ser usadas.</li>
+        <li>Las variables declaradas con <code>let</code> tienen un alcance (scope) de bloque.</li>
+    </ul>
+    <h2>No se pueden redeclarar</h2>
+    <p>
+        Antiguamente en JavaScript, al usar <code>var</code> se puede, accidentalmente, redeclarar y cambiar el valor de una variable.
+    </p>
+    <p>
+        <code>
+            var x = "Juan"; <br>
+            var x = 0;
+        </code>
+    </p>
+    <p>
+        No solo perdemos el valor anterior, si no que esto puede generar errores.
+    </p>
+    <p>
+        <code>let</code> impide redeclarar variables y por tanto es mas seguro.
+    </p>
+    <h2>Alcance de bloque (block scope) </h2>
+    <p>
+        Las variables declaradas con <code>let</code> tienen alcance de bloque, es decir aquellas variables declaradas dentro de un bloque {} no pueden se usadas fuera del bloque. ref js linea 1.
+    </p>
+    <h2>Variables declaradas con let deben ser declaradas antes de usarse</h2>
+    <p>
+        Usando <code>var</code> podemos usar variables mientras estas esten declaradas en cualquier parte del codigo.
+    </p>
+    <p>
+        con <code>let</code> la declaración debe ser anterior al uso u obtendremos un error de referencia. ref al js linea 17.
+    </p>
+
+</body>
+<script src="let.js"></script>
+</html>
