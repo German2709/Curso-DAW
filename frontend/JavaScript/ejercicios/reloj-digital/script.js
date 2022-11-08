@@ -1,6 +1,6 @@
 // Queremos tomar la hora actual y para ello nos vamos a servir de el objeto fecha Date()
 // Date() es un objeto predefinido en JavaScript que contiene todos los datos de fecha y hora actualizados. 
-// De este objeto podemos obtener, por ejemplo, la hora actual de cualquier zona horaria y el dia de la semana en la que estamos, ect.
+// De este objeto podemos obtener, por ejemplo, la hora actual de cualquier zona horaria y el dia de la semana en la que estamos, etc.
 
 function clock() {
     // Creamos una copia del objeto fecha
