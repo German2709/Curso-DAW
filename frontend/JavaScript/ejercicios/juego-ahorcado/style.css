@@ -1,0 +1,26 @@
+body{
+    user-select: none;
+    text-align: center;
+    cursor: url(../../../recursos/cursor_arrow.png),auto;
+}
+h1{
+    font-size: 60px;
+}
+button{
+    font-size: 40px;
+    text-align: center;
+    margin-right: 15px;
+    cursor: url(../../../recursos/cursor_mira.png),auto;
+}
+#palabra{
+    letter-spacing: 20px;
+    font-size: 90px;
+    text-align: center;
+    /* margin-top: 2px; */
+}
+#lienzo{
+    border: 2px solid;
+    height: 400px;
+    margin: 0% 30%;
+    padding-bottom: 250px;
+}
