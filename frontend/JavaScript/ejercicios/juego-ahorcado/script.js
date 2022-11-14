@@ -41,7 +41,7 @@ displayPalabra.innerHTML = texto;
 // Al guardar elementos por clase, me los devuelve en un ARRAY
 // const botones = document.getElementsByClassName('btn');
 
-// Seleccionamos los hijos del div "tablero". los hijos son los botonos que tiene el div
+// Seleccionamos los hijos del div "tablero". los hijos son los botonos dentro del div
 const botones = document.getElementById('tablero').childNodes;
 
 // Vamos a añadir un Event Listener a cada boton
