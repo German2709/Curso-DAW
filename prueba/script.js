@@ -35,7 +35,8 @@ displayPalabra.innerHTML=texto;
 // se seleccionará los botones que estan dentro del contenedor div "botones"
 const boton=document.getElementById('botones').childNodes;
 
-
+// Despues que se hace un bucle para q recorra todos los botones se le va a añadir un "addEventListener"
+// Event Listener es asignarle un elemento(en este caso seria como el "onclick")
 for (let i = 0; i < boton.length; i++) {
     boton[i].addEventListener('click',juego)
 }

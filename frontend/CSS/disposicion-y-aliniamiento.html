@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout</title>
     <link rel="stylesheet" href="../general.css">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 <style>
     .container {
@@ -20,44 +23,167 @@
         padding: 10px;
         border: 1px solid white;
     }
-    .container div:first-child{
+
+    .container div:first-child {
         cursor: pointer;
     }
-    #hideShow{
+
+    #hideShow {
         display: none;
     }
-    .borde{
+
+    .borde {
         border: 2px solid #00a6ff;
     }
-    .bloque{
+
+    .bloque {
         display: block;
     }
-    .linea{
+
+    .linea {
         display: inline;
     }
 
     /* display y visibility */
-    .flex-container{
+    .flex-container {
         display: flex;
         justify-content: center;
     }
-    .flex-container>div{
+
+    .flex-container>div {
         border: 2px solid #00a6ff;
         width: 100%;
     }
-    .img{
+
+    .img {
         height: 150px;
         background-image: url(https://images.pexels.com/photos/52531/way-clouds-seat-belts-direction-52531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
         background-position: center;
         background-size: cover;
     }
-    .flex-container button{
+
+    .flex-container button {
         background: #00a6ff;
         border: none;
         border-radius: 5px;
         padding: 10px;
         color: white;
         font-size: 1.1rem;
+    }
+
+    /* ------------- ANCHURA ------------------- */
+    .divW {
+        width: 500px;
+        margin: auto;
+
+        border: 4px solid gray;
+    }
+
+    .divMW {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    /* ------- POSICIONES-------------- */
+    .divRel {
+        position: relative;
+        left: 30px;
+
+        border: 3px solid #00a6ff;
+    }
+
+    #btnTop {
+        border: none;
+        color: white;
+        background-color: #00a6ff;
+        border-radius: 5px;
+        padding: 5px 7.5px;
+        font-size: 1.25rem;
+        cursor: pointer;
+
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        /* z-index es para posicionar el elemento por encima de los otros elementos segun el numero de capas */
+        z-index: 5;
+    }
+
+    .relative {
+        position: relative;
+        height: 200px;
+        width: 400px;
+    }
+
+    .divAbs {
+        position: absolute;
+        height: 100px;
+        width: 200px;
+
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* ----------Menú stick---------- */
+    nav{
+        border: 2px solid #00a6ff;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(13, 129, 238);
+        align-items: center;
+        height: 30px;
+
+        position: sticky;
+        top:0;
+        z-index: 4;
+    }
+    nav div{
+        text-align: center;
+    }
+    nav a{
+        text-decoration: none;
+        color: white;
+        padding: 6px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    nav a:hover{
+        background-color: #00a6ff;
+    }
+
+    /* Posicionar texto en img */
+    .contenedor-img{
+        height: 400px;
+        width: 100%;
+
+        background-image: url(https://images.pexels.com/photos/5366526/pexels-photo-5366526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+        background-size: cover;
+        background-position: center;
+
+        position: relative;
+    }
+    .contenedor-img p{
+        color: white;
+        text-align: center;
+        width: 80px;
+
+        position: absolute;
+    }
+    .top{
+        top: 0;
+    }
+    .right{
+        right: 0;
+    }
+    .bottom{
+        bottom: 0;
+    }
+    .left{
+        left: 0;
+    }
+    .center{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 </style>
 
@@ -123,7 +249,8 @@
 
     <h2>Alterar el valor de <code>display</code> por defecto</h2>
     <p>
-        Es posible alterar el valor de display de los elementos, para cambiar la forma en la que estos se muestran en pantalla.
+        Es posible alterar el valor de display de los elementos, para cambiar la forma en la que estos se muestran en
+        pantalla.
     </p>
     <p>Ejemplo de una lista horizontal para recrear un menu horizontal</p>
     <ul>
@@ -138,10 +265,12 @@
 
     <h2>Diferencias entre <code>display: none</code> <code>visibility: hidden</code></h2>
     <p>
-        Al ocultar un elemento con <code>display: none</code> la pagina se mostrará como si el elemento no estuviera ahi.
+        Al ocultar un elemento con <code>display: none</code> la pagina se mostrará como si el elemento no estuviera
+        ahi.
     </p>
     <p>
-        Al ocultar un elemento con <code>visibility: hidden</code> el elemento no se mostrará pero el espacio que ocupa quedará en blanco.
+        Al ocultar un elemento con <code>visibility: hidden</code> el elemento no se mostrará pero el espacio que ocupa
+        quedará en blanco.
     </p>
     <div class="flex-container">
         <div>
@@ -161,26 +290,173 @@
         </div>
     </div>
 
+    <hr style="border: 2px solid;">
+
+    <h2>Anchura</h2>
+    <h3>width y max-width</h3>
+
+    <div class="container">
+        <p>
+            Como hemos mencionado anteriormente, un elemento de bloque siempre ocupa todo el ancho disponible
+        </p>
+        <p>
+            Asignar una anchura con <code>width</code> eviará que un elemento de bloque se estire a los bordes de su
+            contenedor. Entonces podremos asignar su margen <code>margin: auto;</code> para centrar horizontalmente el
+            elemento respecto a su contenedor. El elemento pasará a ocupar el ancho especificado y el resto del espacio
+            sobrante será repartido equitativamente entre margenes.
+        </p>
+
+        <div class="divW">
+            Este elemento <code>div</code> tiene un ancho de 500px y un margin en auto
+        </div>
+        <p>
+            El problema de esto, es que al asignar un espacio fijo nos dará problema en pantallas pequeñas, El elemento
+            se saldrá del contenedor y el navegador añadirá una barra de scroll horizontal
+        </p>
+        <p>
+            Si por el contrario, usamos <code>max-width</code>, mejorará el manejo del navegador de estos elementos.
+            Esto es muy importante a la hora de construir sitios web para sitios pequeños.
+        </p>
+
+        <div class="divMW">
+            Este elemento <code>div</code> tiene un <code>max-width</code> de 500px y un margin en auto
+        </div>
+    </div>
+
+    <hr style="border: 2px solid;">
+
+    <h2>La propiedad <code>position</code></h2>
+    <p>
+        Esta propiedad define el metodo de posicionamiento de un elemento.
+    </p>
+    <p>
+        Hay 5 tipos de posición.
+    </p>
+    <ul>
+        <code>
+            <li>static</li>
+            <li>relative</li>
+            <li>fixed</li>
+            <li>absolute</li>
+            <li>sticky</li>
+        </code>
+    </ul>
+    <p>
+        Los elementos se posicionan con las propiedades de top, left, right, bottom. Sim embargo estas propiedades no
+        funcionarán sin especificar primero la <code>position</code>. Ademas dependiendo del tipo de
+        <code>position</code> las propiedades funcionarán de manera distinta.
+    </p>
+    <h3><code>position: static</code></h3>
+    <p>
+        Todos los elementos tienen este valor por defecto.
+    </p>
+    <p>
+        Las propiedades top, bottom, left y right no afectan a los elementos con posición estatica.
+    </p>
+
+    <h3><code>position: relative</code></h3>
+    <p>
+        Un elemento con este valor se posicionará de manera relativa a su posición normal. Es decir, el centro del eje
+        será sobre si mismo.
+    </p>
+    <div class="divRel">
+        Este <code>div</code> tiene <code>position: relative</code>
+    </div>
+
+    <h3><code>position: fixed</code></h3>
+    <p>
+        Un elemento con este valor se posicionará relativamente respecto a la pantalla. Lo que quiere decir que tendra
+        la misma posición incluso scrolleamos la web
+    </p>
+    <button id="btnTop" onclick="toTop()">
+        <i class="bi bi-arrow-bar-up"></i>
+    </button>
+
+    <h3>position: absolute</h3>
+    <p>
+        Un elemento con este valor se posicionará respecto a su contenedor posicionado( no estatico).
+    </p>
+    <p>
+        Si un elemento absoluto no tiene ancestros posicionados, usará el body y actuará como un
+        <code>position: fixed</code>.
+    </p>
+    <div class="container relative">
+        Este elemento <code>div</code> tiene una <code>position: relative</code>
+        <div class="divAbs">
+            Este elemento <code>div</code> tiene una <code>position: absolute</code>
+        </div>
+    </div>
+
+    <!-- <div class="divAbs">
+        Este es un div absoluto sin ancestro posicionado!!!
+    </div> -->
+
+    <h3><code>position: sticky</code></h3>
+    <p>
+        Un elemento <code>sticky</code> alernará su comportamiento entre <code>relative</code> y <code>fixed</code> dependiendo de la posición de scroll de la pagina 
+    </p>
+
+    <nav>
+        <div>
+            <a href="#">HOME</a>
+            <a href="#">Services</a>
+            <a href="#">Shop</a>
+        </div>
+        <div>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <hr>
+    <h3>posicionar texto respecto a una imagen</h3>
+    <!-- Esta forma fue a mi manera -->
+    <!-- <div class="contenedor-img">
+        <p style="top: 10px; left: 10px">Top left</p>
+        <p style="top: 10px; right: 10px;">Top right</p>
+        <p style="top: 45%;left: 45%">Center</p>
+        <p style="bottom: 10px; left: 10px;">Bottom left</p>
+        <p style="bottom: 10px; right: 10px;">Bottom right</p>
+    </div> -->
+    <div class="contenedor-img">
+        <p class="top left">Top left</p>
+        <p class="top right">Top right</p>
+        <p class="center">Center</p>
+        <p class="bottom left">Bottom left</p>
+        <p class="bottom right">Bottom right</p>
+    </div>
+
 </body>
 <script>
-    function showPanel(){
-        const panel=document.getElementById('hideShow');
-        panel.style.display='block';
+    function showPanel() {
+        const panel = document.getElementById('hideShow');
+        panel.style.display = 'block';
     }
 
     // Quitar y esconder elementos
-    const quitarFoto=document.getElementById('quitar');
-    const esconderFoto=document.getElementById('esconder');
+    const quitarFoto = document.getElementById('quitar');
+    const esconderFoto = document.getElementById('esconder');
 
-    function quitar(){
-        quitarFoto.style.display='none';
+    function quitar() {
+        quitarFoto.style.display = 'none';
     }
-    function esconder(){
-        esconderFoto.style.visibility='hidden';
+    function esconder() {
+        esconderFoto.style.visibility = 'hidden';
     }
-    function restablecer(){
-        quitarFoto.style.display='block';
-        esconderFoto.style.visibility='visible';
+    function restablecer() {
+        quitarFoto.style.display = 'block';
+        esconderFoto.style.visibility = 'visible';
+    }
+
+    // Boton to top
+    function toTop() {
+        // este linea sirve para Opera, Chrome, firefox, Edge
+        document.documentElement.scrollTop = 0;
+        //al poner ""=0" le estamos diciendo que el boton nos lleve a la posicion 0px de la pantalla es decir arriba del todo
+
+        // Para safari seria:
+        document.body.scrollTop = 0;
     }
 </script>
+
 </html>
