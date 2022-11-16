@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link href="https://allfont.net/allfont.css?fonts=digital-7" rel="stylesheet" type="text/css" />
+</head>
+<style>
+    table {
+        width: 300px;
+        text-align: center;
+        padding: 10px 30px;
+        background: rgb(55, 55, 75);
+    }
+    table td {
+        background: rgb(131, 131, 235);
+    }
+    table input {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: end;
+        background-color: rgb(113, 185, 161);
+        font-family: 'Digital-7', arial;
+        font-size: 30px;
+    }
+</style>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="4">
+                <input id="input" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td id="suma">+</td>
+            <td id="resta">-</td>
+            <td id="multi">×</td>
+            <td id="dividir">÷</td>
+        </tr>
+        <tr>
+            <td class="numero" onclick="test(7)">7</td>
+            <td class="numero" onclick="test(8)">8</td>
+            <td class="numero" onclick="test(9)">9</td>
+            <td rowspan="4">=</td>
+        </tr>
+        <tr>
+            <td class="numero" onclick="test(4)">4</td>
+            <td class="numero" onclick="test(5)">5</td>
+            <td class="numero" onclick="test(6)">6</td>
+        </tr>
+        <tr>
+            <td class="numero" onclick="test(1)">1</td>
+            <td class="numero" onclick="test(2)">2</td>
+            <td class="numero" onclick="test(3)">3</td>
+        </tr>
+        <tr>
+            <td class="numero" onclick="test(0)">0</td>
+            <td class="numero" onclick="test('.')">.</td>
+            <td id="limpiar">C</td>
+        </tr>
+    </table>
+    
+</body>
+<script>
+    // botones operadores
+    const suma= document.getElementById('suma');
+
+    // pantalla
+    const pantalla=document.getElementById('input');
+
+
+    // variables para guardar datos
+    let valor1, valor2, resultado, operador='';
+    pantalla.value=0; //valor por defecto en pantalla
+
+    //--------------------------------------
+
+    //EVENTOS   
+
+</script>
+</html>

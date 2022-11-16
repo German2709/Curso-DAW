@@ -1,28 +1,61 @@
-body{
+body {
     display: flex;
     justify-content: center;
 }
-.calculadora{
+
+.calculadora {
     text-align: center;
     border: 4px solid cornflowerblue;
     width: 400px;
     margin-top: 10%;
 }
-input{
-    font-size: 32px;
+
+input {
+    font-size: 30px;
     text-align: end;
+    font-family: 'PF Arma Five', sans-serif;
+    width: 90%;
+    margin: 10px auto;
+    box-sizing: border-box;
+    background-color: rgb(113, 185, 161);
 }
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    }
-.numeros{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.botones {
+    margin-top: 20px;
+    margin-bottom:-150px;
 }
-button{
-    font-size: 20px;
-    padding: 10px 20px;
+
+.numeros {
+    position: relative;
+    right: 27px;
+    z-index: 4;
+}
+.igual{
+    position: relative;
+    bottom: 200px;
+    left: 258px; 
+    z-index: 4;
+    width: 5px;
+}
+
+.numeros div{
+    margin: 10px;
+}
+#rpt{
+    height: 190px;
+    background-color: cornflowerblue;
+    border: 1px solid;
+}
+button {
+    width: 50px;
+    height: 40px;
+    z-index: 5;
+}
+button:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+#clear{
+    background-color: crimson;
+    color: white;
+    border: 1px solid black;
 }
