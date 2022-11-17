@@ -185,6 +185,53 @@
         left: 50%;
         transform: translate(-50%,-50%);
     }
+
+    /* z-index */
+    .z-container{
+        color: white;
+        position: relative;
+
+        margin-bottom: 400px;
+        border: 1px solid purple;
+    }
+    .z-container img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .z-container p{
+        background: rgba(0, 0, 0, 0.7); 
+        /*esto es para poner un resaltador negro con opacidad del 70%*/
+    }
+    .black-box{
+        border: 2px solid black;
+        height: 100px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+
+        position: absolute;
+        z-index: 1;
+        margin: 30px;
+    }
+    .green-box{
+        background: lightgreen;
+        height: 150px;
+        
+        position: absolute;
+        z-index: 2;
+        top: -15px;
+        right: 25px;
+    }
+    .gray-box{
+        background:lightgrey;
+        height: 100px;
+        
+        position: absolute;
+        z-index: 3;
+        top: 120px;
+        right: 200px;
+    }
 </style>
 
 <body>
@@ -408,7 +455,7 @@
         </div>
     </nav>
 
-    <hr>
+    <hr style="border: 2px solid;">
     <h3>posicionar texto respecto a una imagen</h3>
     <!-- Esta forma fue a mi manera -->
     <!-- <div class="contenedor-img">
@@ -425,6 +472,150 @@
         <p class="bottom left">Bottom left</p>
         <p class="bottom right">Bottom right</p>
     </div>
+
+    <hr style="border: 2px solid;">
+
+    <h2>El posicionamiento vertical con <code>z-index</code></h2>
+    <p>
+        El <code>z-index</code> determina el orden en el que se amontonan los elementos
+    </p>
+    <p>
+        Cuando los elementos se posicionan, puede que se monten sobre otros.
+    </p>
+    <p>
+        Esta propiedad determina en que orden se amontonan los elementos. Es decir que elementos van por encima o debajo de los otros.
+    </p>
+    <div class="z-container">
+        <h1>Esto es un titulo</h1>
+        <p>
+            He aqui un img con un z.index de -1
+        </p>
+        <img src="https://images.pexels.com/photos/69372/pexels-photo-69372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" width="100%">
+
+        <p>
+            <b>Nota:</b> El <code>z-index</code> solo funcionarán en elementos posicionados o en elementos flexibles(son aquellos descendientes de contenedores con <code>display: flex</code> ).
+        </p>
+    </div>
+    <h3>Otro Ejemplo de <code>z-index</code></h3>
+    <div class="z-container">
+        <div class="black-box">
+            <p>
+                Caja negra con un <code>z-index</code> de 1.
+            </p>
+        </div>
+        <div class="green-box">
+            <p>
+                Caja verde con un <code>z-index</code> de 2.
+            </p>
+        </div>
+        <div class="gray-box">
+            <p>
+                Caja gris con un <code>z-index</code> de 3.
+            </p>
+        </div>
+    </div>
+    
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </pre>
 
 </body>
 <script>
