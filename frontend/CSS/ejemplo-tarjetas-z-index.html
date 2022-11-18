@@ -119,11 +119,12 @@
 <script>
     const cards = document.getElementsByClassName('card');
     const frontal = document.getElementsByClassName('front');
-    // let contador = 2;
-
+   
     // un bucle que asigne eventos a las tarjetas
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener('mouseenter', showCard);
+        // ↓↓ Codigo para moviles porque se tendria que hacer touch (click) ya que el pasar el raton no se podria
+        cards[i].addEventListener('click', showCard);
         //mouseenter es el evento de hover, se activa al pasar el cursor sobre el elemento
     }
 
@@ -134,7 +135,6 @@
 
         }
         this.style.zIndex = 2;
-        // contador++;
 
         // La tarjera desaparece transcurridos el nº de milisegundos (este caso 1500=1.5s) 
         // setTimeout(() => {
