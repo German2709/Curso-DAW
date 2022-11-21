@@ -1,0 +1,152 @@
+.animado{
+    height: 100px;
+    width: 100px;
+    background-color: cornflowerblue;
+
+    /* Para que funcione la animacion, hay que asignarsela al elemento */
+    animation-name: cambioColor;
+    /* Como minimo ademas del nombre hay que especificar la duración */
+    animation-duration: 5s;
+}
+@keyframes cambioColor {
+    /* Como minimo debe especificarse el estado inicial y el final */
+
+    /* Estado inicial */
+    from{
+        background-color: cornflowerblue;
+    }
+
+    /* Estado final */
+    to{
+        background-color: tomato;
+    }
+}
+
+/* Con distintos estados */
+.estados{
+    height: 100px;
+    width: 100px;
+    background-color: darkcyan;
+    position: relative;
+    /* animation: cambioEstado 5s; */
+}
+@keyframes cambioEstado {
+    /* Se pueden asignar porcentajes para definir distintos estados */
+    0%{
+        background-color: darkcyan;
+        width: 100px;
+        left: 0%;
+        top: 0;
+    }
+    25%{
+        background-color: aquamarine;
+        width: 200px;
+    }
+    50%{
+        background-color: blueviolet;
+        width: 100px;
+        left: 50%;
+        top: 0;
+    }
+    75%{
+        background-color: blanchedalmond;
+        border-radius: 50%;
+        left: 50%;
+        top: 300px;
+    }
+    100%{
+        background-color: darkolivegreen;
+        left: 0%;
+        top: 0;
+    }
+    
+}
+.circulo{
+    height: 100px;
+    width: 100px;
+    background-color: darkcyan;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: triangulo 10s;
+    animation-delay: 4s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+}
+@keyframes triangulo {
+    0%{
+        left: 50%;
+        top: 0;
+    }
+    33%{
+       left: 90%;
+       top: 200px; 
+    }
+    66%{
+        top: 200px;
+        left: 10%;
+    }
+    100%{
+        top: 0;
+        left: 50%;
+    }
+    
+}
+
+/* Botón */
+.boton{
+    position: relative;
+    background-color: #17ab26;
+    padding: 5px 10px;
+    width: 80px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 5px 0 0 rgb(180, 180, 180);
+    user-select: none;
+}
+.boton:active{
+    top: 5px;
+    /* La sombra no se mueve del sitio anterior, dando el efecto de pulsación */
+    box-shadow: 0 0 0 0 rgb(180, 180, 180);
+}
+
+/* Velocidades */
+.velocidades{
+    position: relative;
+    width: 200px;
+    height: 70px;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    text-align: center;
+
+    animation:curvaVelocidad 5s;
+    animation-fill-mode: forwards;
+}
+
+#div1{
+    animation-timing-function: linear;
+}
+#div2{
+    animation-timing-function: ease;
+}
+#div3{
+    animation-timing-function: ease-in;
+}
+#div4{
+    animation-timing-function: ease-out;
+}
+#div5{
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes curvaVelocidad{
+from{
+    width: 200px;
+}
+to{
+    width: 100%;
+}
+}

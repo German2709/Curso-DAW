@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+    <link rel="stylesheet" href="../../general.css">
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+    <h1>Animaciones con CSS</h1>
+    <p>
+        CSS permite animar elementos HTML sin necesidad de recurrir a Javascript.
+    </p>
+    <h2>Que son las animaciones</h2>
+    <p>
+        Una animación es el cambio <b>gradual</b> de un estilo a otro.
+    </p>
+    <p>
+        Se puede cambiar tantas propiedades de CSS como se quiera, tantas veces como sea necesario.
+    </p>
+    <p>
+        Para usar animación debe especificarse la regla <code>@keyframes</code>
+    </p>
+
+    <h2>La regla <code>@keyframes</code></h2>
+    <p>
+        Esta regla contiene los estilos que el elemento tendrá en determinado momento.
+    </p>
+    <p>
+        Cuando se especifica una regla los cambios se ejecutarán de manera gradual en ciertos momentos.
+    </p>
+    <p>
+        Para que la animación funcione, debes asignar un <Code>@keyframe</Code> al CSS de un elemento.
+    </p>
+    <p>Ejemplo (ref al CSS linea 1):</p>
+    
+    <div class="animado"></div>
+    <p>
+        Cuando una animación finaliza, el estado del elemento revierte a su forma original.
+    </p>
+    <p>Ejemplo con distintos estados durante la animación: ref en linea 25</p>
+
+    <div class="estados"></div>
+
+    <p>
+        Animacion sencilla al pulsar botón:
+    </p>
+
+    <div class="boton">
+        Púlsame!
+    </div>
+    <h2>Propiedades de las animaciones</h2>
+    <ul>
+        <li><code>animation-delay</code></li>
+        <li><code>animation-iteration-count</code></li>
+        <li><code>animation-direction</code></li>
+        <li><code>animation-timing-function</code></li>
+        <li><code>animation-fill-mode</code></li>
+    </ul>
+
+    <h3><code>animation-delay</code></h3>
+    <p>
+        especifica el retraso del inicio de una animación
+    </p>
+    <p>
+        Los valores positivos indican el tiempo que ha de transcurrir para la animación de comienzo. Los valores negativos indican que la animación empezará como si ya hubiese transcurrido el tiempo especificado.
+    </p>
+    <h3><code>animation-iteration-count</code></h3>
+    <p>
+        Establece el número de veces que se repetirá una animación.
+    </p>
+    <p>
+        Se puede establecer un número natural de veces o se puede indicar un número ilimitado con el valor <code>infinite</code>.
+    </p>
+    <h3><code>animation-direction</code></h3>
+    <p>
+        especifica si la animación se producirá en orden normal, inverso o irá alternando ciclos. Los valores posibles son:
+    </p>
+    <ul>
+        <li><code>normal</code> La animación se reproduce hacia adelante</li>
+        <li><code>reverse</code> La animación se reproduce hacia atrás (de 100% a 0%).</li>
+        <li><code>alternate</code> La animación se reproduce hacia adelante, y luego hacia atrás.</li>
+        <li><code>alternate-reverse</code> La animación se reproduce hacia atrás, y luego hacia adelante.</li>
+    </ul>
+    <h3><code>animation-timing-function</code></h3>
+    <p>
+        especifica la curva de velocidad al reproducir una animación.
+    </p>
+    <p>
+        Puede tener los siguientes valores:
+    </p>
+    <ul>
+        <li><code>ease</code> La animación tendra un inicio lento, luego irá rápido y tendra un final lento. Valor por defecto.</li>
+        <li><code>linear</code> La animación tendra una velocidad estatica durante toda la duración.</li>
+        <li><code>ease-in</code> La animación tendra un inicio lento.</li>
+        <li><code>ease-out</code> La animación tendra un final lento.</li>
+        <li><code>ease-in-out</code> La animación tendra un inicio y final lento.</li>
+        <li><code>cubic-bezier(n, n, n, n)</code> Permite al usuario especificar la curva de velocidad mediante una función.</li>
+    </ul>
+
+    <p>
+        vamos a verlas en conjunto:
+    </p>
+
+    <div class="velocidades" id="div1">linear</div>
+    <div class="velocidades" id="div2">ease</div>
+    <div class="velocidades" id="div3">ease-in</div>
+    <div class="velocidades" id="div4">ease-out</div>
+    <div class="velocidades" id="div5">ease-in-out</div>
+
+    <pre>
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        -----
+        <div class="circulo"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </pre>
+
+    
+</body>
+</html>
