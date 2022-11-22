@@ -123,7 +123,7 @@
     text-align: center;
 
     animation:curvaVelocidad 5s;
-    animation-fill-mode: forwards;
+    /* animation-fill-mode: forwards; */
 }
 
 #div1{
@@ -149,4 +149,20 @@ from{
 to{
     width: 100%;
 }
+}
+.div-fill{
+    width: 50px;
+    animation-delay: 2s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+#fillForwards{
+    animation-fill-mode: forwards;
+}
+#fillBackwards{
+    animation-fill-mode: backwards;
+}
+#fillBoth{
+    animation-fill-mode: both;
 }

@@ -110,6 +110,29 @@
     <div class="velocidades" id="div4">ease-out</div>
     <div class="velocidades" id="div5">ease-in-out</div>
 
+    <h3><code>animation-fill-mode</code></h3>
+    <p>
+        Por defecto las animaciones no afectan a los elementos antes de iniciarse o despues de finalizar. Esta propiedad cambia este comportamiento.
+    </p>
+
+    <p>
+        La propiedad <code>animation-fill-mode</code> establece el estilo del elemento objetivo cuando la animación <b>no</b> se está reproduciendo (antes de empezar, despues de finalizar o ambas).
+    </p>
+    <p>
+        Los valores posibles son:
+    </p>
+    <ul>
+        <li><code>none</code> Valor por defecto. La animación no aplicará cambios de estilo.</li>
+        <li><code>forwards</code> El elemento retendrá el estilo establecido en el ultimo keyframe de la animación (dependerá de si está reproduciendo normal o de forma invertida <code>animation-direction</code> y del número de interaciones <code>animation-iteration-count</code>).</li>
+        <li><code>backwards</code> El elemento retendrá el estilo establecido en el primer keyframe de la animación. dependerá de la dirección y tomará el estilo durante el retardo proporcinado por <code>animation-delay</code>.</li>
+        <li><code>both</code> La animación seguirá las reglas combinadas de forwards y backwards.</li>
+    </ul>
+
+    <div class="velocidades div-fill" id="fillNone">none</div>
+    <div class="velocidades div-fill" id="fillForwards">forwards</div>
+    <div class="velocidades div-fill" id="fillBackwards">backwards</div>
+    <div class="velocidades div-fill" id="fillBoth">both</div>
+
     <pre>
 
 

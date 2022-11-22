@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de elementos animados</title>
+    <link rel="stylesheet" href="../../../general.css">
+    <link rel="stylesheet" href="icono-cargando.css">
+
+    <style>
+        button.menu {
+            display: flex;
+            flex-direction: column;
+            width: 45px;
+            height: 24px;
+            border: 0;
+            background: transparent;
+            gap: 8px;
+        }
+
+        .menu div {
+            background: black;
+            height: 2px;
+            width: 100%;
+            transform-origin: left;
+            transition: all .5s;
+        }
+
+        .menu:hover div:first-child {
+            transform: rotate(38deg);
+        }
+
+        .menu:hover div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu:hover div:nth-child(3) {
+            transform: rotate(-38deg);
+        }
+
+        .boton {
+            position: relative;
+            border: none;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background: red;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 10px 0 0 rgb(180, 180, 180);
+            animation: pulsor 2s linear infinite;
+            user-select: none;
+        }
+
+        .boton:active {
+            top: 10px;
+            box-shadow: 0 0 0 0 rgb(180, 180, 180);
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1>Elementos animados con CSS</h1>
+    <h3>Simbolo de carga/espera</h3>
+
+    <div class="wait">
+        <div></div>
+        <p>cargando...</p>
+    </div>
+    <hr>
+
+    <h3>Botón de hamburguesa(menú)</h3>
+    <button class="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+    <hr>
+    <button class="boton">Pulse en caso de emergencia!!</button>
+
+
+</body>
+
+</html>
