@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Poppins:wght@300;400&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000022;
+}
+
+.wrapper{
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    background: none;
+    height: 300px;
+    width: 300px;
+    /* border: 1px solid white; */
+}
+.wrapper::before{
+    content: "border-radius";
+    color: white;
+    font-family: 'Poppins',sans-serif;
+
+    position: absolute;
+    top: 350px;
+    margin-left: -20px;
+}
+
+.output{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#7200ff,#f000ff);
+    border-radius: 31% 69% 40% 60% / 40% 80% 20% 60%;
+}
+
+input[type='range'] {
+    appearance: none;
+    width: 300px;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px dashed #6b628f;
+}
+input[type='range']::-webkit-slider-thumb{
+    appearance: none;
+    height: 10px;
+    width: 10px;
+    background: white;
+    transform: rotate(45deg);
+    
+    position: relative;
+    top: 5px;
+}
+
+.range1{
+    position: absolute;
+    top: -10px;
+}
+.range2{
+    position: absolute;
+    left: 155px;
+    top: 145px;
+    transform: rotate(90deg);
+}
+.range3{
+    position: absolute;
+    bottom: 0;
+}
+.range4{
+    position: absolute;
+    left: -145px;
+    top: 145px;
+    transform: rotate(90deg);
+}
+.output-code-div{
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    height: 40px;
+    width: 350px;
+    background: #cccccc;
+    color: #000022;
+    font-family: 'Poppins',serif;
+    white-space: nowrap;
+    /* overflow: scroll; */
+    border-radius: 5px;
+}
+.output-code{
+    white-space: nowrap;
+    position: relative;
+    left: 30px;
+    top: 8px;
+}
+
+.copy-btn{
+    all: unset;
+    
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    color: white;
+    background: #f000ff;
+    font-family: 'Poppins',sans-serif;
+    padding: 5px;
+    width: 340px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+input[type='number']{
+    all: unset;
+    width: 80px;
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    background: white;
+    margin-left: 5px;
+}
+label {
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    margin-left: 40px;
+}
+.customize-dimensions{
+    position: absolute;
+    top: 580px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 400px;
+}

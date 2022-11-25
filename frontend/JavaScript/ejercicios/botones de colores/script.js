@@ -8,15 +8,16 @@ function colorReset(color) {
 
 
 // funcion avanzada 
-// const colores=document.getElementsByClassName('panel');
-const colores=document.querySelector("button");
+const colores=document.getElementsByClassName('panel');
+// const colores=document.getElementsByClassName("button");
+
 
 for (let i = 0; i < colores.length; i++) {
-    colores=addEventListener('click',function(){
-        document.body.style.background=color;
-    });
+    const setColor=window.getComputedStyle(colores[i],"background");
 }
 
 // function changeColor() {
-//     colores.style.background=document.body.style.background;
+//     document.body.style.background=color;
 // }
+console.log(setColor.getPropertyValue("color"));
+
