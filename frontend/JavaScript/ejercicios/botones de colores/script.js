@@ -13,11 +13,11 @@ const colores=document.getElementsByClassName('panel');
 
 
 for (let i = 0; i < colores.length; i++) {
-    const setColor=window.getComputedStyle(colores[i],"background");
+    colores[i].addEventListener("click", color);
 }
 
-// function changeColor() {
-//     document.body.style.background=color;
-// }
-console.log(setColor.getPropertyValue("color"));
+function color(){
+    
+}
+
 
