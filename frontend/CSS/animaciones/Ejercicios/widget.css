@@ -3,7 +3,7 @@
 * {
     box-sizing: border-box;
 }
-
+/* creadando variables dentro de css */
 :root {
     --color-primary: #8f44fd;
     --tab-width: 300px;
@@ -11,8 +11,7 @@
 }
 
 html,
-body,
-.wrapper {
+body {
     height: 100%;
 }
 
@@ -28,10 +27,10 @@ body {
 
 .widget {
     background: #17181a;
-    width: var(--tab-width);
+    width: var(--tab-width); /* se utiliza la variable del creado en :root */
     border-radius: 8px;
 }
-
+/* ↓↓ sirve para ocultar los circulos de selección */
 input {
     display: none;
 }
@@ -44,7 +43,7 @@ h2 {
 
 .content {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /*sirve para que el contenido se acople al tamaño del contenedor*/
     height: 140px;
 }
 
@@ -54,7 +53,7 @@ h2 {
     left: 0;
     display: flex;
     align-items: center;
-    width: calc(var(--tab-width)*3);
+    width: calc(var(--tab-width)*3); /* usando la variable pero multiplicandolo por 3 */
     transition: 0.3s;
 }
 
@@ -67,6 +66,8 @@ label {
     padding: 20px;
     font-size: 15px;
     width: var(--button-width);
+    opacity: 0.35;
+    cursor: pointer;
 }
 
 p {
@@ -90,7 +91,8 @@ p {
     background: var(--color-primary);
     transition: 0.2s;
 }
-
+/* el :checked se ejecutará al contenedor "underline" que es la linea violeta
+cuando se seleccione el hijo el input (en este caso el primero) */
 .tabs input:nth-child(1):checked ~ .buttons .underline {
     translate: 0 0;
 }

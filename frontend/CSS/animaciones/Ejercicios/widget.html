@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>widgets</title>
+    <!-- link para importar los iconos de home,lock y setting -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
@@ -13,21 +14,26 @@
 </head>
 
 <body>
+    <!-- contenedor de todo el widget donde se aplicaran las dimenciones -->
     <div class="widget">
+        <!-- contenedor que servira para asigar las propiedades a los hijos(input y label) -->
         <div class="tabs">
+            <!-- selectores de solo una opción -->
             <input id="tab-1" type="radio" name="group" />
             <input id="tab-2" type="radio" name="group" />
             <input id="tab-3" type="radio" name="group" />
-            
+            <!-- iconos donde el for tiene el mismo nombre que los id del input para que esten relacionados-->
             <div class="buttons">
                 <label for="tab-1" class="material-symbols-outlined">Home</label>
                 <label for="tab-2" class="material-symbols-outlined">Lock</label>
                 <label for="tab-3" class="material-symbols-outlined">Settings</label>
+                <!-- linea que se posicionará en el icono seleccionado -->
                 <div class="underline"></div>
             </div>
 
             <div class="content">
                 <div class="content-inner">
+                    <!-- contenedores de cada icono -->
                     <div>
                         <h2>Home</h2>
                         <p>
