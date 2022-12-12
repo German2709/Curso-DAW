@@ -30,6 +30,7 @@ body{
     color: #ffffff;
     border-radius: 5px;
     margin-top: 0.5em;
+    cursor: pointer;
 }
 .button-value{
     border: 2px solid #6759ff;

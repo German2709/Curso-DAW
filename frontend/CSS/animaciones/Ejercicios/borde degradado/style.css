@@ -1,0 +1,29 @@
+html,
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+:root{
+    --borde-color: linear-gradient(to right, tomato 0%, gold 100%);
+    --color: #222;
+  }
+  
+  .card{
+    background: var(--borde-color);
+    aspect-ratio: 10/16;
+    width: 400px;
+    padding: 15px;
+    border-radius: 16px;
+    position: relative;
+  }
+  
+  .card-body{
+    background: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    height: 100%;
+    border-radius: 12px;
+  }

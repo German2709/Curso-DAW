@@ -1,49 +1,51 @@
+// variable donde se almacena los productos
 let products = {
+  // la data almacena los datos de cada producto
     data: [
       {
-        productName: "Regular White T-Shirt",
-        category: "Topwear",
-        price: "30",
-        image: "white-tshirt.jpg",
+        productName: "Camiseta Normal Blanca",//nombre del producto
+        category: "Topwear",//se obtiene del filterProduct('categoria') ref. linea 25 del html
+        price: "30",//precio
+        image: "white-tshirt.jpg",//se coge la imagen descargada previamente en la carpeta
       },
       {
-        productName: "Beige Short Skirt",
+        productName: "FALDA CORTA BEIGE",
         category: "Bottomwear",
         price: "49",
         image: "short-skirt.jpg",
       },
       {
-        productName: "Sporty SmartWatch",
+        productName: "RELOJ INTELIGENTE DEPORTIVO",
         category: "Watch",
         price: "99",
         image: "sporty-smartwatch.jpg",
       },
       {
-        productName: "Basic Knitted Top",
+        productName: "TOP TEJIDO BASICO",
         category: "Topwear",
         price: "29",
         image: "knitted-top.jpg",
       },
       {
-        productName: "Black Leather Jacket",
+        productName: "CHAQUETA NEGRA DE CUERO",
         category: "Jacket",
         price: "129",
         image: "black-leather-jacket.jpg",
       },
       {
-        productName: "Stylish Pink Trousers",
+        productName: "PANTALONES CON ESTILO ROSA",
         category: "Bottomwear",
         price: "89",
         image: "pink-trousers.jpg",
       },
       {
-        productName: "Brown Men's Jacket",
+        productName: "CHAQUETA MARRON HOMBRE",
         category: "Jacket",
         price: "189",
         image: "brown-jacket.jpg",
       },
       {
-        productName: "Comfy Gray Pants",
+        productName: "PANTALONES CONFY GRIS",
         category: "Bottomwear",
         price: "49",
         image: "comfy-gray-pants.jpg",
@@ -52,41 +54,44 @@ let products = {
   };
   
   for (let i of products.data) {
-    //Create Card
+    //Crear contenedor que almacena los productos (imagenes/precio)
     let card = document.createElement("div");
-    //Card should have category and should stay hidden initially
+    //card debe tener una categoría y debe permanecer oculta inicialmente
     card.classList.add("card", i.category, "hide");
-    //image div
+    //div(contenedor) de la imagen
     let imgContainer = document.createElement("div");
+    //se le añade la clase al contedor
     imgContainer.classList.add("image-container");
-    //img tag
+    //dentro del contendor con la clase "image-container" se crea el elemento img
     let image = document.createElement("img");
+    //se le da el atributo donde se sustraerá la imagen
     image.setAttribute("src", i.image);
+    //se acomoda los elementos como hijos de "card"
     imgContainer.appendChild(image);
     card.appendChild(imgContainer);
-    //container
+    //contenedor para el nombre del producto y precio
     let container = document.createElement("div");
     container.classList.add("container");
-    //product name
+    //contedor donde se alamacena el nombre del producto
     let name = document.createElement("h5");
     name.classList.add("product-name");
     name.innerText = i.productName.toUpperCase();
     container.appendChild(name);
-    //price
+    //contenedor para el precio
     let price = document.createElement("h6");
-    price.innerText = "$" + i.price;
+    price.innerText = i.price + "€";
     container.appendChild(price);
   
     card.appendChild(container);
     document.getElementById("products").appendChild(card);
   }
   
-  //parameter passed from button (Parameter same as category)
+  //parámetro pasado desde el botón (parámetro igual que categoría)
   function filterProduct(value) {
-    //Button class code
+    //Código de clase de botón
     let buttons = document.querySelectorAll(".button-value");
     buttons.forEach((button) => {
-      //check if value equals innerText
+      //comprobamos si el valor es igual a innerText
       if (value.toUpperCase() == button.innerText.toUpperCase()) {
         button.classList.add("active");
       } else {
@@ -94,47 +99,47 @@ let products = {
       }
     });
   
-    //select all cards
+    //seleccionamos todos los elementos
     let elements = document.querySelectorAll(".card");
-    //loop through all cards
+    //recorrer todos los elementos
     elements.forEach((element) => {
-      //display all cards on 'all' button click
+      //Mostrar todos los elementos al hacer click en el boton "TODOS"
       if (value == "all") {
         element.classList.remove("hide");
       } else {
-        //Check if element contains category class
+        //Comprobar si el elemento contiene una clase de categoría
         if (element.classList.contains(value)) {
-          //display element based on category
+          //mostramos el elemento basado en su categoria
           element.classList.remove("hide");
         } else {
-          //hide other elements
+          //oculta otros elementos
           element.classList.add("hide");
         }
       }
     });
   }
   
-  //Search button click
+  //Al hacer click en el boton buscar
   document.getElementById("search").addEventListener("click", () => {
-    //initializations
+    //inicializaciones
     let searchInput = document.getElementById("search-input").value;
     let elements = document.querySelectorAll(".product-name");
     let cards = document.querySelectorAll(".card");
   
-    //loop through all elements
+    //recorrer todos los elementos
     elements.forEach((element, index) => {
-      //check if text includes the search value
+      //Comprobamos si el texto incluye el valor de la busqueda
       if (element.innerText.includes(searchInput.toUpperCase())) {
-        //display matching card
+        //mostramos los productos
         cards[index].classList.remove("hide");
       } else {
-        //hide others
+        //ocultamos los demás
         cards[index].classList.add("hide");
       }
     });
   });
   
-  //Initially display all products
+  //mostramos inicialmente todos los productos
   window.onload = () => {
     filterProduct("all");
   };

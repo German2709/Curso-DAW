@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,94 +8,30 @@
     <title>Filtro de producto y buscador</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- contenedor que envuelve todo el contenido -->
     <div class="wrapper">
-watchREGULAR WHITE T-SHIR        <div id="search-container">
+        <!-- contenedor donde se crea la barra buscadora -->
+        <div id="search-container">
+            <!-- cuadro  donde se introduce un contedido a buscar(de clase search)-->
             <input type="search" id="search-input" placeholder="Busca el nombre del producto aqui...">
+            <!-- boton para ejecutar la busqueda -->
             <button id="search">Buscar</button>
         </div>
+        <!-- contenedor que almacena los botonos del filtro de productos -->
         <div id="buttons">
+            <!-- onclick="filterProduct('categoria')" es donde se filtra segun la categoria del contenido y se usará más adelante en el JS -->
             <button class="button-value" onclick="filterProduct('all')">Todo</button>
             <button class="button-value" onclick="filterProduct('Topwear')">ropa superior</button>
-            <button class="button-value" onclick="filterProduct('Bottomwear')">Ropa interior</button>
+            <button class="button-value" onclick="filterProduct('Bottomwear')">Ropa inferior</button>
             <button class="button-value" onclick="filterProduct('Jacket')">Chaquetas</button>
             <button class="button-value" onclick="filterProduct('Watch')">Relojes</button>
         </div>
-        <div id="products">
-            <div class="card Topwear">
-                <div class="imagen-container">
-                    <img src="white-tshirt.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">CAMISETA NORMAL BLANCA</h5>
-                    <h6>30€</h6>
-                </div>
-            </div>
-            <div class="card Bottomwear">
-                <div class="imagen-container">
-                    <img src="short-skirt.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">FALDA CORTA BEIGE</h5>
-                    <h6>49€</h6>
-                </div>
-            </div>
-            <div class="card Watch">
-                <div class="imagen-container">
-                    <img src="sporty-smartwatch.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">RELOJ INTELIGENTE DEPORTIVO</h5>
-                    <h6>99€</h6>
-                </div>
-            </div>
-            <div class="card Topwear">
-                <div class="imagen-container">
-                    <img src="knitted-top.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">TOP TEJIDO BASICO</h5>
-                    <h6>29€</h6>
-                </div>
-            </div>
-            <div class="card Jacket">
-                <div class="imagen-container">
-                    <img src="black-leather-jacket.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">CHAQUETA NEGRA DE CUERO</h5>
-                    <h6>129€</h6>
-                </div>
-            </div>
-            <div class="card Bottomwear">
-                <div class="imagen-container">
-                    <img src="pink-trousers.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">PANTALONES CON ESTILO ROSA</h5>
-                    <h6>89€</h6>
-                </div>
-            </div>
-            <div class="card jacket">
-                <div class="imagen-container">
-                    <img src="brown-jacket.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">CHAQUETA MARRON HOMBRE</h5>
-                    <h6>189€</h6>
-                </div>
-            </div>
-            <div class="card Bottomwear">
-                <div class="imagen-container">
-                    <img src="comfy-gray-pants.jpg">
-                </div>
-                <div class="container">
-                    <h5 class="product-name">PANTALONES CONFY GRIS</h5>
-                    <h6>49€</h6>
-                </div>
-            </div>
-        </div>
+        <!-- contenedor donde se almacenará los productos y se declararán en el JS -->
+        <div id="products"></div>
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>
