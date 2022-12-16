@@ -1,3 +1,4 @@
+// se crean las variables
 const wrapper = document.querySelector(".wrapper"),
     searchInput = wrapper.querySelector("input"),
     volume = wrapper.querySelector(".word i"),
@@ -30,7 +31,7 @@ function data(result, word) {
             for (let i = 0; i < 5; i++) {
                 let tag = `<span onclick="search('${definitions.synonyms[i]}')">${definitions.synonyms[i]},</span>`;
                 tag = i == 4 ? tag = `<span onclick="search('${definitions.synonyms[i]}')">${definitions.synonyms[4]}</span>` :
-tag;
+                    tag;
                 synonyms.insertAdjacentElement("beforeend", tag);
             }
         }

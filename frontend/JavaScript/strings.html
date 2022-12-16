@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings en JS</title>
+    <link rel="stylesheet" href="../general.css">
+    <style>
+        form {
+            border: 1px solid lightgray;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Strings en JS</h1>
+
+    <p>Un strings es cero o más caracteres escritos dentro de comillas.</p>
+    <p>Esto lo convierte básicamente en una <b>cadena de caracteres.</b></p>
+    <p>Se puede usar tanto comillas simples como dobles. Un string pueden contener comillas siempre y cuando sean distintas de las que rodean el string:</p>
+
+    <code>
+        let str = 'Tere "terere" Herrera'
+    </code>
+
+    <p>
+        Si imprimimos este string: Tere "terere" Herrera
+    </p>
+
+    <h2>Metodos de strings</h2>
+    <h3>lengths:</h3>
+    <p>
+        Para obtener la longitud de un string se usa el metodo length()
+    </p>
+    <code>
+        let txt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'<br>
+        let longitud = txt.length;
+    </code>
+    <p id="pLong"></p>
+
+    <h3>slice():</h3>
+    <p>
+        Corta o extrae un parte de un string y la retorna como un nuevo string.
+    </p>
+    <p>slice() necesita dos parametros. La posición inicial y la final (la final no incluida en el corte).</p>
+    <p>Ref a linea 7 del JS</p>
+    <p id="pCorte"></p>
+
+    <h3>substr()</h3>
+    <p>
+        Funciona similar a slice(), pero el segundo parametro indice la longitud del string a recortar. <b>Deprecado</b>
+    </p>
+
+    <h3>replace()</h3>
+    <p>
+        Reemplaza un parte de un string y lo retorna como un string nuevo.
+    </p>
+    <p>
+        El primer parametro es el valor a buscar en el string y el segundo es el valor por el que lo reemplazamos.
+    </p>
+    <p>
+        Estos valores son <b>case sensitive</b>. Es decir, que los valores de mayusculas y minisculas deben coincidir.
+    </p>
+    <p>
+        Solo se reemplaza la primera coincidencia en caso de haber varias en el string.
+    </p>
+    <p>
+        Para sortear la diferencia de las mayusculas, se puede usar una <b>expresión regular</b>.
+    </p>
+    <p id="pReplace"></p>
+
+    <h3>Transformar a minisculas y viceversa</h3>
+    <p>
+        Podemos usar toLowerCase() o toUpperCase() para transformar un string o una parte en minisculas o mayusculas, respectivamente.
+    </p>
+
+    <p id="pMinus"></p>
+    <p id="pMayus"></p>
+
+    <h3>Contatenar</h3>
+    <p id="pConcat"></p>
+
+    <h3>Limpiar strings</h3>
+    <p>
+        Podemos usar trim() para limpiar los espacios en blanco redundantes de un string.
+    </p>
+    <p>
+        Si tenemos un string nombre="   Román" el trim lo dejara como "Román"
+    </p>
+
+    <h3>charAt()</h3>
+    <p>
+        Retorna el caracter ubicado en el indice especificado como parametro.
+    </p>
+    <p id="pCharAt"></p>
+    
+    <h3>Convertir strings en arrays con split()</h3>
+    <p>
+        Si tenemos un string cuyos valores estan separados por comas o por cualquier caracter distinguible, podemos servirnos de esto para transformar en un array.
+    </p>
+    <p id="split"></p>
+
+    <p id="apodo"></p>
+
+    <form action="">
+        <input type="text">
+        <div>
+            <p><b>Definición</b> Texto</p>
+        </div>
+    </form>
+</body>
+<script src="./strings.js"></script>
+
+</html>
