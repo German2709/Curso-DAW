@@ -1,28 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google</title>
-    <link rel="shortcut icon" href="/prueba/google.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/prueba/google-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+
 <body>
     <div class="wrapper">
         <div class="container">
+            <!-- barra de navegacion y apps -->
             <nav class="options">
-                <a href="https://about.google/?fg=1&utm_source=google-ES&utm_medium=referral&utm_campaign=hp-header">Sobre Google</a>
-                <a href="https://store.google.com/ES/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=es-ES">Tienda</a>
+                <a href="https://about.google/?fg=1&utm_source=google-ES&utm_medium=referral&utm_campaign=hp-header">Sobre
+                    Google</a>
+                <a
+                    href="https://store.google.com/ES/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=es-ES">Tienda</a>
                 <div class="app-google">
                     <div class="apps">
                         <a href="">Gmail</a>
                         <a href="">Imágenes</a>
+
+                        <!-- botón de aplicaciones -->
+                        <dialog id="app" >
+                            <div>
+                                <img src="cuenta.png" width="42px">
+                            </div>
+                            <div>
+                                <img src="cuenta.png" width="42px">
+                            </div>
+                            <div>
+                                <img src="cuenta.png" width="42px">
+                            </div>
+                            <div>
+                                <img src="cuenta.png" width="42px">
+                            </div>
+                            <div>
+                                <img src="cuenta.png" width="42px">
+                            </div>
+                            <div>
+                                <img src="cuenta.png" width="42px">
+                                <p>Cuenta</p>
+                            </div>
+                        </dialog>
+                        <label for="app" class="material-symbols-outlined">apps</label>
+                        <!-- login -->
+                        <a class="login" onclick="openModal()"
+                            href="https://accounts.google.com/ServiceLogin?hl=es&amp;passive=true&amp;continue=https://www.google.com/webhp%3Fhl%3Des%26sa%3DX%26ved%3D0ahUKEwib-LyxtIr8AhVPQaQEHSuDBiAQPAgI&amp;ec=GAZAmgQ"
+                            target="_top">Iniciar sesión</a>
                     </div>
                 </div>
             </nav>
+            <!-- logo de Google -->
+            <div class="img-google">
+                <img src="./googlename.png" height="92px" width="auto">
+            </div>
+            <!-- barra de busqueda -->
+
+            <!-- Botones -->
+
+            <!-- Sugerencia de otros idiomas -->
+
+            <!-- footer -->
         </div>
     </div>
 </body>
 <script src="./script.js"></script>
+
 </html>
