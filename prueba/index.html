@@ -17,17 +17,23 @@
         <div class="container">
             <!-- barra de navegacion y apps -->
             <nav class="options">
+
+                <!-- vinculo de informacion de Google -->
                 <a href="https://about.google/?fg=1&utm_source=google-ES&utm_medium=referral&utm_campaign=hp-header">Sobre
                     Google</a>
+                
+                <!-- Vinculo a tienda de Google -->
                 <a
                     href="https://store.google.com/ES/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=es-ES">Tienda</a>
+                
+                <!-- vinculo y apps de Google -->
                 <div class="app-google">
                     <div class="apps">
                         <a href="">Gmail</a>
                         <a href="">Imágenes</a>
 
                         <!-- botón de aplicaciones -->
-                        <dialog id="app" >
+                        <!-- <dialog id="app" >
                             <div>
                                 <img src="cuenta.png" width="42px">
                             </div>
@@ -47,7 +53,7 @@
                                 <img src="cuenta.png" width="42px">
                                 <p>Cuenta</p>
                             </div>
-                        </dialog>
+                        </dialog> -->
                         <label for="app" class="material-symbols-outlined">apps</label>
                         <!-- login -->
                         <a class="login" onclick="openModal()"
@@ -58,10 +64,16 @@
             </nav>
             <!-- logo de Google -->
             <div class="img-google">
-                <img src="./googlename.png" height="92px" width="auto">
+                <img src="./googlename.png" max-height="100%" height="92px" width="auto">
             </div>
             <!-- barra de busqueda -->
-
+            <div class="search">
+                <span class="material-symbols-outlined">search</span>
+                <input type="text" placeholder="Busca una palabra" required spellcheck="false">
+                <!-- el span hará de boton para reiniciar la busqueda -->
+                <span class="material-symbols-outlined">Mic</span>
+                <span class="material-symbols-outlined">Add_A_Photo</span>
+            </div>
             <!-- Botones -->
 
             <!-- Sugerencia de otros idiomas -->
