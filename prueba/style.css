@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
-body{
+
+body {
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -19,8 +20,9 @@ a {
     color: #202124;
     font: 14px arial, sans-serif;
 }
-a:hover{
-    text-decoration:underline;
+
+a:hover {
+    text-decoration: underline;
 }
 
 .app-google {
@@ -43,7 +45,8 @@ a:hover{
     text-align: center;
     text-decoration: none !important;
 }
-.login:hover{
+
+.login:hover {
     background: #034cac;
 }
 
@@ -69,32 +72,62 @@ p {
     font-family: 'Roboto';
 }
 
+.container-search{
+    margin: 0 auto;
+    width: 640px;
+    padding: 20px;
+    width: auto;
+    max-width: 584px;
+    position: relative;
+    box-sizing: border-box;
+}
+
 .search {
     position: relative;
-    margin: 35px 0 18px;
+    margin: 0 auto;
     text-align: center;
+    margin: 0 auto;
+    max-width: 584px;
 }
 
 .search input {
     height: 44px;
-    width: 582px;
-    outline: none;
+    width: 638px;
+    max-width: 584px;
     font-size: 16px;
     border-radius: 24px;
-    padding: 0 42px;
-    border: 1px solid rgba(173, 172, 172, 0.616);
+    border: 1px solid #dfe1e5;
+    margin: 0 auto;
 }
 
 .search input:hover {
-    box-shadow:0.1em 0.1em 0.3em rgba(37, 37, 37, 0.3);;
+    box-shadow: 0.1em 0.1em 0.3em rgba(37, 37, 37, 0.3);
+    ;
 }
-span{
-display: flex;
-flex-direction: column;
+
+#search {
+    position: absolute;
+    transform: translate(50%);
+    top: 10px;
+    color:#979797;;
+}
+
+#mic {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    
+}
+#addPhoto{
+    cursor: pointer;
+    position: absolute;
+    right: -25px;
+    top: 10px;
 }
 
 footer {
-    width: 100%;
+    width: 100vh;
     height: 50px;
     position: absolute;
     bottom: 0;
@@ -104,24 +137,24 @@ footer {
     font-size: 13px;
     background-color: #f2f2f2;
     border-top: 1px solid #e4e4e4;
-  }
-  
-  footer ul {
+}
+
+footer ul {
     margin: 10px;
     list-style: none;
     display: flex;
     padding-left: 0;
-  }
-  
-  footer .footer-left {
+}
+
+footer .footer-left {
     justify-self: left;
-  }
-  
-  footer .footer-right {
+}
+
+footer .footer-right {
     justify-self: right;
-  }
-  
-  footer ul li a {
+}
+
+footer ul li a {
     margin: 10px;
     color: #5f6368;
-  }
+}
