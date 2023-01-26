@@ -98,7 +98,10 @@ WHERE e.nomEmp like 'M%' AND (e.salEmp>800000 OR e.comisionE>0)
 AND lower(d.nombreDpto)!='ventas';
 
 -- Obtener los nombres, salarios y comisiones de los empleados que reciben un salario situado entre la mitad de la comisión la propia comisión.
-SELECT nomEmp, salEmp, comisionE FROM empleados_departamentos.empleados WHERE salEmp BETWEEN (comisionE/2) AND comisionE;
+SELECT nomEmp, salEmp, comisionE 
+FROM empleados_departamentos.empleados 
+WHERE salEmp 
+BETWEEN (comisionE/2) AND comisionE;
 
 -- Mostrar el salario más alto de la empresa.
 SELECT nomEmp, salEmp AS 'Salario Mayor' FROM empleados_departamentos.empleados ORDER BY salEmp desc LIMIT 1;
@@ -109,7 +112,9 @@ SELECT COUNT(empleados.codDepto) 'Cantidad de Empleados', departamentos.nombreDp
  GROUP BY departamentos.nombreDpto;
  
  -- Mostrar cada una de las comisiones y el número de empleados que las reciben. Solo si tiene comisión.
- SELECT comisionE, COUNT(nomEmp) 'Reciben comision' FROM empleados_departamentos.empleados WHERE comisionE>0 GROUP BY comisionE;
+ SELECT comisionE, COUNT(nomEmp) 'Reciben comision' 
+ FROM empleados_departamentos.empleados WHERE comisionE>0 
+ GROUP BY comisionE;
  
  -- Mostrar el nombre del último empleado de la lista por orden alfabético.
  SELECT nomEmp 'Ultimo empleado de la lista Alfabetica' 
