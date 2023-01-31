@@ -7,7 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
     $password = $_POST['password'];
 
     //Hacemos la query para buscar si existe un usuario con estos datos
-    $sql = "SELECT * FROM usuarios WHERE (user = '$user' OR email = '$user') AND password='$password'";
+    $sql = "SELECT * FROM usuarios 
+    WHERE (user = '$user' OR email = '$user') 
+    AND password='$password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -16,6 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
         echo "<p>Bienvenido, $user</p>";
 
         $_SESSION['logged']=true;
+        while($row = $result->fetch_assoc()){
+            //Creamos una array $row con los resultados de la query del usuario
+            $_SESSION['username'] = $row['user']; //primary key
+            $_SESSION['type_user']=$row['type_user'];
+        }
         //redirigir
         echo '<a href="page_inicio.php">
                 <button>Pagina Principal</button>

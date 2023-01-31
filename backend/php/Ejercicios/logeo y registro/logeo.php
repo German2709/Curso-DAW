@@ -62,7 +62,7 @@ session_start();
             <?php
        if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
        {
-          echo "<p style='color:red'>Usuario o contraseña invalido </p>";
+          echo "<p style='color:red; font-weight: bold;'>Usuario o contraseña invalido </p>";
           unset($_GET["fallo"]);
        }
      ?>
