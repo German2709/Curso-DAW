@@ -2,10 +2,9 @@
 session_start();
 include 'union.php';
 //cargamos los datos del usuario
-if (isset($_SESSION['logged']) && $_SESSION['type_user'] == 'admin') {
-    $sql = "SELECT * FROM usuarios";
-} elseif (isset($_SESSION['logged']) && $_SESSION['type_user'] == 'user') {
-    $user = $_SESSION['username'];
+if (isset($_SESSION['logged'])) {
+    // $user = $_SESSION['username'];
+    $user = $_POST['modiuser'];
     $sql = "SELECT * FROM usuarios WHERE user='$user'";
 }
 $result = $conn->query($sql);
@@ -50,21 +49,13 @@ $result = $conn->query($sql);
                         <option value='$user1' selected>$user1</option>
                         <option value='$user2'>$user2</option>
                     </select>
-                    <input type='hidden' name='olduser' value='$user'>
+                    <input type='hidden' name='modiuser' value='$user'>
                     <input type='submit' value='Actualizar'>
-                    <input type='submit' value='Eliminar'>
                 </form><br>";
-        }
-        if (isset($_SESSION['update'])) {
-            echo "<p style='color:green; font-weight: bold;'>Datos Actualizados con exito</p>";
-            unset($_SESSION['update']);
         }
 
 
         ?>
-        <a href="page_inicio.php">
-            <button>Regresar al inicio</button>
-        </a>
     </div>
 </body>
 

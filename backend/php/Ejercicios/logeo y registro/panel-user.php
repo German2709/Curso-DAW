@@ -50,6 +50,7 @@ $result = $conn->query($sql);
             <th>Email</th>
             <th>Contraseña</th>
             <th>Tipo de usuario</th>
+            <th colspan="2">Opciones</th>
         </tr>
         <?php
         if ($result->num_rows > 0) {
@@ -59,12 +60,30 @@ $result = $conn->query($sql);
                         "<td>" . $row['email']. "</td>".
                         "<td>" . $row['password']. "</td>".
                         "<td>" . $row['type_user']. "</td>".
-                        "<td>" . "<a href='update-user.php'><buton>Modificar</button></a>". "</td>".
-                        "<td>" . "<a href='deletebd.php'><buton>Eliminar</button></a>". "</td> </tr>";
+
+                        "<td>" . "<form action='update-user.php' method='post'>
+                        <input type='hidden' name='modiuser' value='".$row['user']."'>
+                        <input type='submit' value='Modificar'></form>". "</td>".
+
+                        "<td>" . "<form action='delete-user.php' method='post'>
+                        <input type='hidden' name='deletuser' value='".$row['user']."'>
+                        <a ><input type='submit' value='Eliminar'></form>". "</td> </tr>";
+            }
+            if (isset($_SESSION['update'])) {
+                echo "<p style='color:green; font-weight: bold;'>Datos Actualizados con exito</p>";
+                unset($_SESSION['update']);
+            }
+            elseif (isset($_SESSION['delete'])) {
+                echo "<p style='color:red; font-weight: bold;'>Datos Eliminados con exito</p>";
+
+                unset($_SESSION['delete']);
             }
             
         }
         ?>
-    </table>
+    </table><br>
+    <a href="page_inicio.php">
+            <button>Regresar al inicio</button>
+        </a>
 </body>
 </html>
