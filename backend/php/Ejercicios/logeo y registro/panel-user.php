@@ -65,7 +65,7 @@ $result = $conn->query($sql);
                         <input type='hidden' name='modiuser' value='".$row['user']."'>
                         <input type='submit' value='Modificar'></form>". "</td>".
 
-                        "<td>" . "<form action='delete-user.php' method='post'>
+                        "<td>" . "<form action='delete-user.php' method='post' onsubmit='return confirmation()'>
                         <input type='hidden' name='deletuser' value='".$row['user']."'>
                         <a ><input type='submit' value='Eliminar'></form>". "</td> </tr>";
             }
@@ -75,7 +75,6 @@ $result = $conn->query($sql);
             }
             elseif (isset($_SESSION['delete'])) {
                 echo "<p style='color:red; font-weight: bold;'>Datos Eliminados con exito</p>";
-
                 unset($_SESSION['delete']);
             }
             
@@ -86,4 +85,13 @@ $result = $conn->query($sql);
             <button>Regresar al inicio</button>
         </a>
 </body>
+<script type="text/javascript">
+function confirmation() {
+    if(confirm("Realmente desea eliminar?"))
+    {
+        return true;
+    }
+    return false;
+}
+</script>
 </html>
