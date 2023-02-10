@@ -5,6 +5,16 @@ $user = $_POST['user'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+//COMPROBAMOS SI EL USURARIO YA EXISTE
+$sqlerror = "SELECT * FROM usuarios 
+WHERE user ='$user' OR email ='$email'";
+$result = $conn->query($sqlerror);
+//COMPROBAMOS LA QUERY SI HA HABIDO COICIDENCIAS
+if($result->num_rows > 0){
+   //si hay algun resultado de ejecuta el mensaje de error
+    header("Location: registro.php?error=true");
+}
+
 //CREAMOS LA QUERY PARA GUARDAR LOS DATOS
 $sql = "INSERT INTO usuarios (user,email,password)
     VALUES('$user','$email','$password')";

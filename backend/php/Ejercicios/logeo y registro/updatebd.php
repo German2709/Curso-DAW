@@ -12,16 +12,17 @@ $sqlupdate = "UPDATE usuarios
 SET  user='$user', email='$email', password='$password',type_user='$typeuser'
 WHERE user='$olduser'";
 
-if ($conn->query($sqlupdate) === TRUE) {
+//VERIFICAMOS SI ALGUN DATO EXISTE PARA ADVERTIR
+$sqlcopy = "SELECT * FROM usuarios WHERE user = '$user' OR email = '$user'";
+$result = $conn->query($sqlcopy);
+
+if ($result->num_rows > 0){
+    header("Location: update-user.php?duplicado=true");
+}
+elseif ($conn->query($sqlupdate) === TRUE) {
     $_SESSION['update']=TRUE;
     header("Location: panel-user.php");
 }
 
-//CREAMOS LA QUERY PARA ELEMINAR LOS DATOS
-// $sqldelete="DELETE FROM usuarios WHERE user='$user'";
-// if ($conn->query($sqldelete) === TRUE) {
-//     $_SESSION['delete']=TRUE;
-//     header("Location: update-user.php");
-// }
 
 ?>
