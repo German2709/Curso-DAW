@@ -1,3 +1,8 @@
+<head>
+  <meta http-equiv="Expires" CONTENT="0">
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">
+  <meta http-equiv="Pragma" CONTENT="no-cache">
+</head>
 <title>Bienvenida</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
@@ -37,7 +42,7 @@
         color: #41403e;
         cursor: pointer;
         display: inline-block;
-        font-family:'Mochiy Pop One', sans-serif;
+        font-family: 'Mochiy Pop One', sans-serif;
         font-size: 2rem;
         line-height: 53px;
         outline: none;
@@ -76,7 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
     include 'union.php';
     $user = $_POST['user'];
     $password = $_POST['password'];
-    $user1 = $_SESSION['username'];
 
     //Hacemos la query para buscar si existe un usuario con estos datos
     $sql = "SELECT * FROM usuarios 
@@ -85,10 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
     $result = $conn->query($sql);
     echo '<div>';
     if ($result->num_rows > 0) {
-        // Si hay un resultado, es que hay una cuenta con esos datos
-        echo '<p>Has iniciado sesión</p>';
-        echo "<p>Bienvenido <br> $user1</p>";
-
         $_SESSION['logged'] = true;
         while ($row = $result->fetch_assoc()) {
             //Creamos una array $row con los resultados de la query del usuario
@@ -96,6 +96,11 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
             $_SESSION['type_user'] = $row['type_user'];
             $_SESSION['id'] = $row['id']; //primary key
         }
+        $user1 =  $_SESSION['username'];
+        // Si hay un resultado, es que hay una cuenta con esos datos
+        echo '<p>Has iniciado sesión</p>';
+        echo "<p>Bienvenido <br> $user1 </p>";
+
         //redirigir
         echo '<a href="page_inicio.php">
                 <button>Pagina Principal</button>
@@ -106,3 +111,4 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
     echo '</div>';
 }
 ?>
+

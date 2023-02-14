@@ -22,6 +22,7 @@ session_start();
             align-items: center;
 
             height: 100vh;
+            margin: 0 auto;
         }
 
         .container {
@@ -150,6 +151,5 @@ session_start();
             return;
 		}
 	}
-   
 </script>
 </html>

@@ -157,8 +157,13 @@
             transform: translate(0);
         }
     }
+    a{
+        color: wheat;
+    }
 </style>
 
-<?php include "registro-simple.php" ?>
-
+<div>
+<?php include "registro-simple.php" ?><br>
+<a href="logeo.php">Iniciar Sesión</a>
+</div>
 </html>

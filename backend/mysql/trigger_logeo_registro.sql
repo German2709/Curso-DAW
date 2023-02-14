@@ -36,3 +36,7 @@ DROP TRIGGER IF EXISTS after_user_update;
 DROP TRIGGER IF EXISTS before_user_delete;
 
 DROP TABLE IF EXISTS audito;
+
+ALTER TABLE audito
+MODIFY COLUMN old_user VARCHAR(45),
+MODIFY COLUMN new_user VARCHAR(45);

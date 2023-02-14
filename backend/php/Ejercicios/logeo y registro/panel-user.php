@@ -162,14 +162,26 @@ $result = $conn->query($sql);
                 if (isset($_SESSION['update'])) {
                     echo "<p style='color:green; font-weight: bold;'>Datos Actualizados con exito</p>";
                     unset($_SESSION['update']);
+
                 } elseif (isset($_SESSION['delete'])) {
                     echo "<p style='color:red; font-weight: bold;'>Datos Eliminados con exito</p>";
                     unset($_SESSION['delete']);
+
+                }elseif (isset($_SESSION['createduser'])) {
+                    echo '<p style="color:green">
+                        Se ha creado cuenta con exito</p>';
+                    // unset hace que se elimine la variable si existe(porque solo se requiere cuando se crea una cuenta)
+                    unset($_SESSION['createduser']);
                 }
             }
             ?>
         </table><br>
-        <?php include "registro-simple.php"; ?><br>
+        <?php
+        if (isset($_SESSION['logged']) && $_SESSION['type_user'] == 'admin') {
+            include "registro-simple.php";
+        }
+        ?>
+        <br>
         <a href="page_inicio.php">
             <button class="btn">Regresar al inicio</button>
         </a>
@@ -182,11 +194,6 @@ $result = $conn->query($sql);
         }
         return false;
     }
-
-    if (window.history.replaceState) { // verificamos disponibilidad
-    window.history.replaceState("login.php");
-}
-    
 </script>
 
 </html>

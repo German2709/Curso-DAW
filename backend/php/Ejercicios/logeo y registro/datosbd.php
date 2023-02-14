@@ -22,7 +22,10 @@ $sql = "INSERT INTO usuarios (user,email,password)
 //EJECUTAMOS LA QUERY Y COMPROVAMOS SI HA SIDO EXTITOSO
 if($conn->query($sql) === TRUE) {
    $_SESSION['createduser']=true;
-    header("Location: logeo.php");
+
+   if (isset($_SESSION['logged']) && $_SESSION['type_user'] == 'admin') {
+    header("Location: panel-user.php");
+   }else{header("Location: logeo.php");}
 } else{
     echo "Error: " .$sql . "<br>" . $conn->error;
 }

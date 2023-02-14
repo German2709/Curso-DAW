@@ -1,5 +1,4 @@
 <body>
-    <div>
         <h1>Crear Usuario</h1>
         <form action="datosbd.php" method="post">
             <input type="text" placeholder="Usuario" name="user" required><br>
@@ -16,5 +15,4 @@
 
             <button type="submit" class="button-49" role="button">Enviar</button>
         </form>
-    </div>
 </body>
