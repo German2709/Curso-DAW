@@ -13,16 +13,16 @@ $array[] = '';
 if ($result -> num_rows > 0) {
     // while ($row = $result -> fetch_assoc()){
     //     $array[] = $row['user'];
-        // echo "<p style='color:red'>Usuario ya existe</p>";
+        echo "<p style='color:red'>Usuario ya existe</p>";
     // }
     echo "<style>
-            #user{
+    input[type=text]{
                 border-color:red;
         </style>";
 }else{
-    // echo "<p style='color:green'>Usuario disponible</p>";
+    echo "<p style='color:green'>Usuario disponible</p>";
     echo "<style>
-            #user{
+    input[type=text]{
                 border-color:green;
         </style>";
 }

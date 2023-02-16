@@ -11,7 +11,7 @@
 <body>
     <!-- Creamos la caja de busqueda -->
     <div class="search-box">
-        <input type="text" autocomplete="off" placeholder="Buscar Usuario...">
+        <input id="user" type="text" autocomplete="off" placeholder="Buscar Usuario...">
         <div class="display"></div>
     </div>
 </body>

@@ -1,0 +1,89 @@
+body {
+    background-image: linear-gradient(to bottom right, #aabbcc, #1269c0);
+
+    /* se ajusta al tamaño de la ventana o dispositivo */
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.container {
+    background: #072d535e;
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 0 35px;
+}
+
+h1{
+    text-align: center;
+}
+
+form div{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+form div label{
+    position: absolute;
+    top: 0;
+    transition: all .5s;
+    pointer-events: none;
+}
+
+form div input{
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid white;
+    width: 100%;
+    color: white;
+    transition: all .5s;
+}
+
+input:focus{
+    background: rgba(0, 0, 0, .05);
+}
+
+input:focus ~ label, input:valid ~ label{
+    top: .2px;
+    left: 0;
+    font-size: 5px;
+}
+
+form div:last-child{
+    width: 100%;
+    padding: 0 25%;
+    margin-top: 25px;
+}
+input[type='submit']:disabled {
+    width: 50%;
+    border: none;
+    color: transparent;
+}
+input[type='submit']:not(:disabled) {
+    width: 50%;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #ffff;
+    color: #1269c0;
+    box-shadow: 0px 0px 8px 1px #ffff ;
+    transition: all .4s;
+}
+input[type='submit']:not(:disabled):hover {
+    box-shadow: 0px 0px 10px 2px #ffff ;
+}
