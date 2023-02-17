@@ -75,7 +75,7 @@ session_start();
         input[type=text],
         [type=password] {
             margin: 5px 0px;
-            /* border: none; */
+            /* border: transparent; */
             border-radius: 12px;
             padding: 7px 20px;
 
@@ -102,8 +102,6 @@ session_start();
         }
     </style>
 </head>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="validate.js"></script>
 <body>
     <div class="container">
         <h1>INGRESAR CUENTA</h1>
@@ -118,8 +116,6 @@ session_start();
         ?>
         <form class="login" action="page_welcome.php" method="post">
             <input type="text" placeholder="Ingrese Usuario o Correo" name="user" required>
-            <?php require("search.php") ?>
-            <!-- <div class="display"></div> -->
             <div class="pass">
                 <input ID="txtPassword" type="password" placeholder="Ingrese contraseña" name="password" required>
                 <button type="button" class="eye" onclick="mostrarPassword()">

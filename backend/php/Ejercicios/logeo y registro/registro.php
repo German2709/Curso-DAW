@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>registro de cuenta</title>
-    <link rel="stylesheet" href="style-registro.css">
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
@@ -19,7 +18,7 @@
         align-items: center;
     }
 
-    div {
+    .container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -162,7 +161,7 @@
     }
 </style>
 
-<div>
+<div class="container">
 <?php include "registro-simple.php" ?><br>
 <a href="logeo.php">Iniciar Sesión</a>
 </div>
