@@ -1,9 +1,9 @@
 <?php
 session_start();
 include 'union.php';
-$user = $_POST['user'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+$user = trim($_POST['user']);
+$email = trim($_POST['email']);
+$password = trim($_POST['password']);
 
 //COMPROBAMOS SI EL USURARIO YA EXISTE
 $sqlerror = "SELECT * FROM usuarios 

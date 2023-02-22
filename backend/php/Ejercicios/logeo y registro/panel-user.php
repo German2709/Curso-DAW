@@ -29,11 +29,9 @@ $result = $conn->query($sql);
             background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
             height: 100vh;
             margin: 0;
-            /* box-sizing: border-; */
         }
 
         .container {
-            height: 100%;
             overflow-x: auto;
             overflow-y: hidden;
 
@@ -43,6 +41,9 @@ $result = $conn->query($sql);
 
             text-align: center;
             font-family: 'Mochiy Pop One', sans-serif;
+        }
+
+        h1{
             margin-top: 55px;
         }
 
@@ -61,6 +62,11 @@ $result = $conn->query($sql);
             border: 1px solid black;
             padding: 2px 5px;
             font-family: Verdana;
+            user-select: none;
+        }
+
+        tr:hover{
+            background-color: lightblue;
         }
 
         .option {
@@ -122,12 +128,14 @@ $result = $conn->query($sql);
         @media (width <=580px) {
             h1 {
                 font-size: 1em;
+                transition: all 1s;
             }
 
             th,
             td {
                 font-size: 12px;
                 height: auto;
+                transition: all 1s;
             }
         }
     </style>
@@ -136,29 +144,31 @@ $result = $conn->query($sql);
 <body>
     <div class="container">
         <h1>Tabla de los usuarios de la BD</h1>
+        <?php include 'filtro.php' ?>
         <table>
-            <tr>
+        <!--     <tr>
                 <th>Usuario</th>
                 <th>Email</th>
                 <th>Contraseña</th>
                 <th>Tipo de usuario</th>
                 <th colspan="2">Opciones</th>
-            </tr>
+            </tr> -->
             <?php
-            if ($result->num_rows > 0) {
+            // if ($result->num_rows > 0) {
                 // imprimir los datos de cada fila
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr> <td>" . $row['user'] . "</td>" .
-                        "<td>" . $row['email'] . "</td>" .
-                        "<td>" . $row['password'] . "</td>" .
-                        "<td>" . $row['type_user'] . "</td>" .
-                        "<td>" . "<form action='update-user.php' method='post'>
-                            <input type='hidden' name='modiuser' value='" . $row['user'] . "'>
-                            <button class='option' type='submit'><i class='fa fa-edit'></i></button></form>" . "</td>" .
-                        "<td>" . "<form action='delete-user.php' method='post' onsubmit='return confirmation()'>
-                            <input type='hidden' name='deletuser' value='" . $row['user'] . "'>
-                            <button class='option' type='submit'><i class='fa fa-trash'></i></button></form>" . "</td> </tr>";
-                }
+                // while ($row = $result->fetch_assoc()) {
+                //     echo "<tr> <td>" . $row['user'] . "</td>" .
+                //         "<td>" . $row['email'] . "</td>" .
+                //         "<td>" . $row['password'] . "</td>" .
+                //         "<td>" . $row['type_user'] . "</td>" .
+                //         "<td>" . "<form action='update-user.php' method='post'>
+                //             <input type='hidden' name='modiuser' value='" . $row['user'] . "'>
+                //             <button class='option' type='submit'><i class='fa fa-edit'></i></button></form>" . "</td>" .
+                //         "<td>" . "<form action='delete-user.php' method='post' onsubmit='return confirmation()'>
+                //             <input type='hidden' name='deletuser' value='" . $row['user'] . "'>
+                //             <button class='option' type='submit'><i class='fa fa-trash'></i></button></form>" . "</td> </tr>";
+                // }mysqli_close($conn);
+
                 if (isset($_SESSION['update'])) {
                     echo "<p style='color:green; font-weight: bold;'>Datos Actualizados con exito</p>";
                     unset($_SESSION['update']);
@@ -173,7 +183,7 @@ $result = $conn->query($sql);
                     // unset hace que se elimine la variable si existe(porque solo se requiere cuando se crea una cuenta)
                     unset($_SESSION['createduser']);
                 }
-            }
+            // }
             ?>
         </table><br>
         <?php

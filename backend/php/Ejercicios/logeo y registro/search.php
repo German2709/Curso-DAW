@@ -12,19 +12,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // while ($row = $result -> fetch_assoc()){
     //     $array[] = $row['user'];
-    echo "<p style='color:red'>Usuario ya existe</p>";
-    // }
-    echo "<style>
-    .new{
-                border-color:red;
-        </style>";
-} else {
-    echo "<p style='color:green'>Usuario disponible</p>";
-    echo "<style>
-    .new{
-                border-color:green;
-        </style>";
-}
+    echo 'true';
+}else echo 'false';
 
 
 // foreach ($array as $user) {

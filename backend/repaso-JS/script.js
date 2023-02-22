@@ -21,4 +21,32 @@ $(document).ready(function () {
             }
         }
     })
+
+    $('#btnShow').click(function () { 
+        $('.container').toggle();
+    });
+    $('#btnFade').click(function () { 
+        $('.container').fadeToggle();
+    });
+    $('#btnSlide').click(function () { 
+        $('.container').slideToggle();
+    });
+
+    let contador=0;
+    $('.cambiar').click(function () { 
+        if (contador < 1) {
+            $('.login').slideToggle(300,function () {
+                $('.signup').slideToggle(300);
+            }); 
+            contador++;
+
+        }else{
+            $('.signup').slideToggle(300,function () {
+                $('.login').slideToggle(300);
+            }); 
+            contador--;
+        }
+        
+    });
+
 });
