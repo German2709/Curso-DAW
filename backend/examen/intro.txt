@@ -1,0 +1,32 @@
+En una empresa, el departamento de informática se ve en la obligación de identificar a todos
+los empleados de tres maneras distintas para aumentar la seguridad: 
+    - Mediante el escaneo de su documentación.
+    - Mediante una prueba biométrica.
+    - Mediante el mac de su ordenador personal.
+
+Todos los empleados deberán facilitar estos datos de manera obligatoria. El objetivo es hacer
+un seguimiento del estado de cada empleado según los datos que haya subido.
+
+Cada empleado debe tener acceso a un usuario donde poder subir sus datos.
+Los empleados asignados a verificar los datos serán llamados "colaboradores" y serán los 
+encargados de comprobar que los datos coinciden y dar el visto bueno.
+
+Los estados de verificación serán los siguientes:
+    - Los empleados que tengan todo subido y revisado correctamente saldrán resaltados en verde.
+    - Los empleados que tengan verificado algún dato pero falten de otros aparecerán en amarillo.
+    - Los empleados que no tengan nada saldrán en rojo.
+    - Los empleados que no hayan pasado por ningún proceso de revisión aparecerán con el fondo blanco.
+
+
+Realizar un proyecto de backend con los siguientes puntos:
+
+1.- Tres tipos de usuario: 
+    - usuario. Puede visualizar y cambiar sus propios datos.
+    - colaborador. Puede visualizar los datos de todo el mundo.
+    - admin. Puede crear y eliminar colaboradores.
+
+2.- Una tabla cuyo contenido cambie en función del rol del usuario:
+    - Los usuarios podrán acceder a un contenido donde se les especifique lo que les falta, lo
+    que han subido y lo que tienen verificado.
+    - los colaboradores tendrán la opción de visualizar y verificar cada uno de los tres apartados
+    de cada empleado.
