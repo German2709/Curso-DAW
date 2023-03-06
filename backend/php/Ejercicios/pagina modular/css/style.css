@@ -1,0 +1,118 @@
+body{
+    /* border: 1px solid black; */
+    margin: 0;
+}
+
+.logo{
+    background: url('../css/img/logo.png')no-repeat center center;
+    background-size: 200px;
+    width: 140px;
+    height: 100px;
+    position: absolute;
+    z-index: 20;
+    margin-top: 30px;
+    left: 45%;
+}
+nav{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+}
+.nav-container{
+    width: 100%;
+}
+.menu{
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+    padding: 10px;
+
+    /* background: rgba(245, 245, 245, 0.459); */
+
+}
+span{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans';
+}
+
+.slide {
+    position: relative;
+    height: 100%;
+    min-height: 600px;
+    overflow: hidden;
+    background: rgb(81, 81, 99);
+
+}
+
+.slide-inner{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    
+}
+
+.slide-item {
+    width: 0%;
+    transition: all 1s;
+    opacity: 0.5;
+}
+
+.slide-item.active{
+    width: 100%;
+    opacity: 1;
+    
+}
+
+.slide-item img{
+    width: 100%;
+    height: 950px;
+
+    object-fit: cover;
+    opacity: 0.7;
+    /* animation: slide 15s infinite alternate ease-in-out; */
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 40;
+}
+
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.slide-circulo:hover {
+    color: #aaaaaa;
+}
+
+#slide-1:checked~.slide-indicador li:nth-child(1) .slide-circulo,
+#slide-2:checked~.slide-indicador li:nth-child(2) .slide-circulo,
+#slide-3:checked~.slide-indicador li:nth-child(3) .slide-circulo,
+#slide-4:checked~.slide-indicador li:nth-child(4) .slide-circulo, 
+#slide-5:checked~.slide-indicador li:nth-child(5) .slide-circulo {
+    color: #428bca;
+}

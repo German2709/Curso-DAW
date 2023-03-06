@@ -43,8 +43,8 @@ $result = $conn->query($sql);
             font-family: 'Mochiy Pop One', sans-serif;
         }
 
-        h1{
-            margin-top: 55px;
+        h1:first-child{
+            margin-top: 70px;
         }
 
         table {
@@ -146,29 +146,7 @@ $result = $conn->query($sql);
         <h1>Tabla de los usuarios de la BD</h1>
         <?php include 'filtro.php' ?>
         <table>
-        <!--     <tr>
-                <th>Usuario</th>
-                <th>Email</th>
-                <th>Contraseña</th>
-                <th>Tipo de usuario</th>
-                <th colspan="2">Opciones</th>
-            </tr> -->
             <?php
-            // if ($result->num_rows > 0) {
-                // imprimir los datos de cada fila
-                // while ($row = $result->fetch_assoc()) {
-                //     echo "<tr> <td>" . $row['user'] . "</td>" .
-                //         "<td>" . $row['email'] . "</td>" .
-                //         "<td>" . $row['password'] . "</td>" .
-                //         "<td>" . $row['type_user'] . "</td>" .
-                //         "<td>" . "<form action='update-user.php' method='post'>
-                //             <input type='hidden' name='modiuser' value='" . $row['user'] . "'>
-                //             <button class='option' type='submit'><i class='fa fa-edit'></i></button></form>" . "</td>" .
-                //         "<td>" . "<form action='delete-user.php' method='post' onsubmit='return confirmation()'>
-                //             <input type='hidden' name='deletuser' value='" . $row['user'] . "'>
-                //             <button class='option' type='submit'><i class='fa fa-trash'></i></button></form>" . "</td> </tr>";
-                // }mysqli_close($conn);
-
                 if (isset($_SESSION['update'])) {
                     echo "<p style='color:green; font-weight: bold;'>Datos Actualizados con exito</p>";
                     unset($_SESSION['update']);
@@ -183,7 +161,6 @@ $result = $conn->query($sql);
                     // unset hace que se elimine la variable si existe(porque solo se requiere cuando se crea una cuenta)
                     unset($_SESSION['createduser']);
                 }
-            // }
             ?>
         </table><br>
         <?php

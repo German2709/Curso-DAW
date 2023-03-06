@@ -28,7 +28,7 @@
     text-transform: uppercase;
     color: #2c409f;
 
-    margin-top: 80px;
+    margin-top: 40px;
     text-align: center;
     width: 50%;
 }
@@ -45,6 +45,13 @@
     padding: 10px 7px;
     outline: none;
     box-sizing: border-box;
+}
+
+.pass:valid{
+    background: green;
+}
+.pass:invalid{
+    background-color: #FF013C;
 }
 
 .button-49{

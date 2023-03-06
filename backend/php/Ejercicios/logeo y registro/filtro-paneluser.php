@@ -1,14 +1,15 @@
 <?php
 // recogemos la variable enviada por el GET
-$q = $_GET['q'];
+$value = $_GET['value'];
+$filtro = $_GET['filtro'];
 
 // realizamos la conexion a la BD
 $conn = mysqli_connect('localhost', 'root', 'zaicer');
 
 mysqli_select_db($conn, 'logeo_registro');
-$sql = "SELECT * FROM usuarios WHERE user LIKE '%$q%' OR email LIKE '%$q%' ORDER BY id ASC";
+$sqlsearch = "SELECT * FROM usuarios WHERE $filtro LIKE '%$value%'";
 
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sqlsearch);
 ?>
 <br><table>
     <tr>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina modular</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <a class="logo" href="#"></a>
+
+        <!-- navbar / menú de navegación -->
+        <nav>
+            <div class="nav-container">
+                <ul class="menu">
+                    <li><a href="#">
+                            <span>Productos</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">
+                                    <span>PC/Monitores</span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span>Perifericos</span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span>Hadware/Software</span>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">
+                            <span>Servicios</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">
+                                    <span>Mantenimiento</span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span>Creacion y soporte web</span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span>Seguridad informatica</span>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">
+                            <span>Agencia</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">
+                                    <span>Perfil</span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span>Historia</span>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Diario</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Contactos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- El contenido principal -->
+    <div class="slide">
+        <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="css/img/img1.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="css/img/img2.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="" checked>
+            <div class="slide-item active">
+                <img src="css/img/img3.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-4" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="css/img/img4.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-5" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="css/img/img5.jpg">
+            </div>
+            <ol class="slide-indicador">
+                <li>
+                    <label for="slide-1" class="slide-circulo" onclick="slider(1),true">•</label>
+                </li>
+                <li>
+                    <label for="slide-2" class="slide-circulo" onclick="slider(2),true">•</label>
+                </li>
+                <li>
+                    <label for="slide-3" class="slide-circulo" onclick="slider(3),true">•</label>
+                </li>
+                <li>
+                    <label for="slide-4" class="slide-circulo" onclick="slider(4),true">•</label>
+                </li>
+                <li>
+                    <label for="slide-5" class="slide-circulo" onclick="slider(5),true">•</label>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Una contenido central -->
+    <div>
+
+    </div>
+    <!-- formulario -->
+
+    <!-- Footer -->
+</body>
+<script>
+    const slides = document.querySelectorAll('.slide-item');
+    const dots = document.querySelectorAll('.slide-open');
+    let currentSlide = 3;
+    function slider(x) {
+
+        // let dots;
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+            // dots[i].setAttribute('checked', false);
+        }
+
+        slides[x - 1].classList.add("active");
+        dots[x - 1].setAttribute('checked', true);
+        currentSlide = x + 1;
+        if (currentSlide > slides.length) currentSlide = 0;
+
+        console.log('funciona');
+        console.log(currentSlide);
+
+        // setTimeout(slider(currentSlide), 5000);
+    }
+    // function nextSlide(){
+    //     slides[currentSlide].classList.remove("active");
+    //     currentSlide = (currentSlide + 1) % slides.length;
+    //     slides[currentSlide].classList.add("active");
+    // }
+
+    setInterval(slider(currentSlide), 5000);
+</script>
+
+</html>

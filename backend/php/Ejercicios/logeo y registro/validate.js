@@ -1,4 +1,6 @@
 $(document).ready(function () {
+//----------------VALIDAR SI USUARIO YA EXISTE O ESTA DISPONIBLE----------------
+
     $('.newuser .user').on("keyup", function () {
         //cada vez que el value del input cambie, lo recogeremos
         let username = $(this).val();
@@ -23,6 +25,9 @@ $(document).ready(function () {
             $('.newuser .user').css('backgroundColor', 'white');
         }
     })
+
+//----------------VALIDAR SI EMAIL YA EXISTE O ESTA DISPONIBLE----------------
+
     $('.newuser .email').on("keyup", function () {
         //cada vez que el value del input cambie, lo recogeremos
         let username = $(this).val();
@@ -31,7 +36,7 @@ $(document).ready(function () {
 
         resultList.empty();
 
-        if (username.length > 2) {
+        if (username.length > 10) {
             // Si el valor del input no esta vacio, llamos al php
             $.get("search.php", { term: username }).done(function (data) {
                 // resultList.html(data);
@@ -48,4 +53,28 @@ $(document).ready(function () {
         }
     })
 
+//----------------CONFIRMACION DE CONTRASEÑAS----------------
+
+    $('input.pass').on('keyup',function () {
+        // quiero comparar los valores de los dos inputs
+
+        // recogemos el valor de los inputs
+        valor1 = $('input[name="pass"]').val();
+        valor2 = $('input[name="confirm"]').val();
+
+
+        $('input[type="submit"]').attr('disabled',true);
+
+        // solo se ejecutará cuando los inputs tengan la misma longitud}
+        if (valor1.lenght == valor2.lenght) {
+            if(valor1 == valor2){
+            // Si los valores coinciden:
+
+            // Activamos el botón de registro
+            $('input[type="submit"]').removeAttr('disabled');
+            }else {
+             $('input[name="confirm"]').append('<p>Las contraseñas no coiciden</p>');
+            }
+        }
+    })
 });
