@@ -38,3 +38,4 @@ $result = mysqli_query($conn, $sqlsearch);
     }
     mysqli_close($conn);
     ?>
+    </table>

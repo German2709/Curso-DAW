@@ -14,7 +14,7 @@ session_start();
 <body>
     <div>
         <h1>INGRESA USUARIO</h1>
-        <form action="user_data" method="post">
+        <form action="user_data.php" method="post">
             <input type="text" name="user" placeholder="Nombre de Usuario" required>
             <div class="pass">
                 <input type="password" name="password" placeholder="Ingresa Contraseña" required>
