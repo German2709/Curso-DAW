@@ -42,19 +42,7 @@ $result = $conn->query($sql);
             }elseif($user_type == 'colaborador'){
                 $user1 = 'colaborador';
             }
-            echo "<form action='updatebd.php' method='post'>
-                    <input class='data' type='text' readonly onmousedown='return false;' name='user' value='$user'>
-                    <input class='data' type='text' name='password' value='$password'>
-                    <input class='data' type='text' name='mac' maxlength='12' value='$mac'>
-                    <input class='data' type='text' name='bio' value='$bio'>
-                    <input class='data' type='text' name='foto' value='$foto'>
-                    <select name='tipo_usuario'>
-                        <option value='$user1' selected>$user1</option>
-                        <option " . $disabled . " value='$user2'>$user2</option>
-                    </select>
-                    <input type='hidden' name='modiuser' value='$user'>
-                    <button class='update' type='submit'><span>Actualizar</span></button>
-                </form><br>";
+            include 'form_update.php';
         }
         
         ?>
