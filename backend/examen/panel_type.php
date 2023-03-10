@@ -1,6 +1,6 @@
 <?php
 include 'union.php';
-
+// condicionales segun tipo de usuario para mostrar datos de la tabla
 if (isset($_SESSION['logged']) && $_SESSION['tipo_usuario'] == 'admin') {
     $sql = "SELECT * FROM usuarios";
 }elseif (isset($_SESSION['logged']) && $_SESSION['tipo_usuario'] == 'usuario') {

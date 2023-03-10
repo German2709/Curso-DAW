@@ -1,5 +1,6 @@
 <?php
 include 'union.php';
+// formularios por tipo de usuario
 if (isset($_SESSION['logged']) && $_SESSION['tipo_usuario'] == 'usuario') {
 
     echo "<form action='updatebd.php' method='post'>

@@ -14,6 +14,7 @@ session_start();
 <body>
     <div>
         <h1>INGRESA USUARIO</h1>
+        <!-- formulario de logeo -->
         <form action="user_data.php" method="post">
             <input type="text" name="user" placeholder="Nombre de Usuario" required>
             <div class="pass">

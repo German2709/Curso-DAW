@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
             header("Location: logeo.php?fallo=true");
         }
     }
+    // se incluye php donde evalua el tipo de usuario logeado
     include 'panel_type.php';
 }
 if (isset($_SESSION['update'])) {
@@ -36,7 +37,9 @@ if (isset($_SESSION['update'])) {
     unset($_SESSION['update']);
 }
 ?>
+<!-- se vincula el css de la tabla -->
 <link rel="stylesheet" href="css/user_data.css">
+<!-- Creacion de la tabla segun tipo de usuario logeado -->
 <table>
     <tr>
         <th>DNI</th>

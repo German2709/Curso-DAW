@@ -3,7 +3,6 @@ session_start();
 include 'union.php';
 //cargamos los datos del usuario
 if (isset($_SESSION['logged'])) {
-    // $user = $_SESSION['username'];
     $user = $_POST['modiuser'];
     $sql = "SELECT * FROM usuarios WHERE nombres='$user'";
 }
@@ -21,6 +20,7 @@ $result = $conn->query($sql);
 <body>
 <h1>Actualizacion de Datos</h1>
     <div>
+        <!-- declaramos las variables para la actualizacion de datos -->
         <?php
         while ($row = $result->fetch_assoc()) {
             $dni = $row['dni'];
@@ -34,6 +34,7 @@ $result = $conn->query($sql);
             $user2 = 'colaborador';
             $user3 = 'admin';
             $disabled = 'hidden';
+            // condicional segun tipo de usuario
             if ($user_type == 'admin') {
                 $user1 = 'colaborador';
                 $user2 = 'colaborador';
@@ -43,6 +44,7 @@ $result = $conn->query($sql);
                 $user2 = 'usuario';
                 $disabled = 'hidden';
             }
+            // se vincula el php donde muestra un formulario distinto segun el tipo de usuario
              include 'form_update.php';
         }
         

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'union.php';
+// variables del formulario de actualización
 $password = $_POST['password'];
 $mac = $_POST['mac'];
 $bio = $_POST['bio'];
