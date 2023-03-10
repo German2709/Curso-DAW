@@ -46,6 +46,7 @@ if (isset($_SESSION['update'])) {
         <th>Biometrica</th>
         <th>Foto del DNI</th>
         <th>Tipo de usuario</th>
+        <th>Actualización</th>
     </tr>
 
     <?php
@@ -66,6 +67,7 @@ if (isset($_SESSION['update'])) {
                         </span></button></form>" . "</td> </tr>";
         }
     }
+    
     ?>
 </table>
 <a href="logeo.php">

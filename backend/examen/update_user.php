@@ -23,6 +23,7 @@ $result = $conn->query($sql);
     <div>
         <?php
         while ($row = $result->fetch_assoc()) {
+            $dni = $row['dni'];
             $user = $row['nombres'];
             $password = $row['contraseña'];
             $mac= $row['mac'];
@@ -31,21 +32,22 @@ $result = $conn->query($sql);
             $user_type = $row['tipo_usuario'];
             $user1 = 'usuario';
             $user2 = 'colaborador';
-            // $user3 = 'admin';
+            $user3 = 'admin';
             $disabled = 'hidden';
             if ($user_type == 'admin') {
                 $user1 = 'colaborador';
-                $user2 = 'usuario';
-                $disabled = '';
-            }elseif($user_type == 'usuario'){
-                $user1 = 'usuario';
+                $user2 = 'colaborador';
+                $disabled = 'hidden';
             }elseif($user_type == 'colaborador'){
                 $user1 = 'colaborador';
+                $user2 = 'usuario';
+                $disabled = 'hidden';
             }
-            include 'form_update.php';
+             include 'form_update.php';
         }
         
         ?>
     </div>
 </body>
+
 </html>

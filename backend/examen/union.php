@@ -1,11 +1,11 @@
 <?php
 $servername = 'localhost';
 $username = 'root';
-$password = 'zaicer';
+$clavebd = 'zaicer';
 $dbname = 'check_user';
 
 //Crear la conexión a la BD
-$conn = new mysqli($servername,$username,$password,$dbname);
+$conn = new mysqli($servername,$username,$clavebd,$dbname);
 
 //Comprobamos la conexión
  if ($conn->connect_error) {
