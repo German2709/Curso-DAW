@@ -61,7 +61,8 @@ for ($i = 1; $i <= $producto; $i++) {
 }
 echo "resultado: $factorial";
 
-echo '<h3> crear un programa que muestre todas las potenciales combinaciones de dos digitos decimales, impresos separados por coma </h3>';
+echo '<h3> crear un programa que muestre todas las potenciales combinaciones de dos digitos decimales,
+ impresos separados por coma </h3>';
 
 for ($i = 0; $i < 10; $i++) {
     for ($j = 0; $j < 10; $j++) {
@@ -82,9 +83,9 @@ for ($i = 0; $i < strlen($str); $i++) {
 }
 echo "El string '$str' contiene $contar r";
 
-echo '<h3></h3>';
 
-echo '<h3>Escribir un programa que cree automáticamente una tabla con las tablas de multiplicar con el alcance que nosotros le indiquemos Ejemplo:
+echo '<h3>Escribir un programa que cree automáticamente una tabla con las tablas de multiplicar 
+con el alcance que nosotros le indiquemos Ejemplo:
     <br> Alcance 6. Primera fila de la tabla 
     <br> | 1 * 1 = 1 | 1 * 2 = 2 | 1 * 3 = 3... | 1 * 6 = 6 |
     <br>...
@@ -94,20 +95,69 @@ include 'user_data.php';
 
 $alcance = 6;
 $multi = 1;
-echo "<table><tr>";
+echo "<table>";
 for ($i = 1; $i <= $alcance; $i++) {
-    // echo "<td>";
-    // echo "$multi * $i = " . $multi * $i;
     echo "<tr>";
     for ($j=$multi; $j <7 ; $j++) { 
         echo "<td>";
-       echo  "$j * $i = " . $j * $i;
+       echo  "$i * $j = " . $j * $i;
        echo "</td>";
     }
     echo "</tr>";
-    // echo "</td>";
 }
-echo "</tr>";
 echo "</table>";
-// $total = $i * $j;
 
+
+echo '<h3>Crear un programa de PHP que imprima un tablero de ajedrez
+Pista: Usar una tabla con 270px de ancho y 30px como medida para las celdas</h3>';
+
+$blanca="<td></td>";
+$negro="<td class='cols'></td>";
+echo "<table class='tablero'>";
+for ($a=1; $a <=8 ; $a++) {
+    echo "<tr>";
+    for ($i=1; $i <=8/2 ; $i++) { 
+        if ($a%2==0) {
+            echo $blanca;
+            echo $negro;
+        }else{
+            echo $negro;
+            echo $blanca;
+        }
+    }
+
+}
+
+echo "</table>";
+
+
+echo '<h3> Crear un script que imprima la siguiente tabla</h3>';
+$alcance = 10;
+$celda = 1;
+echo "<table>";
+for ($i = 1; $i <= $alcance; $i++) {
+    echo "<tr>";
+    for ($j=1; $j <=$alcance ; $j++) { 
+        echo "<td>";
+        echo $j*$i;
+       echo "</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+
+echo '<h3> Escribir un programa de PHP que itere los números del 1 al 50. Al imprimirlos, 
+los múltiplos de 3 se susituirán por "fizz", los múltiplos de 5 por "Buzz" y los que sean 
+múltiplos de 3 y 5 por "FizzBuzz"</h3>';
+for ($i=1; $i < 51; $i++) { 
+    if (($i%3)==0) {
+        echo $i="fizz";
+        }
+        
+    // if ($i == 50) {
+    //     echo $i;
+    // } else {
+    //     echo $i . ",";
+    // }
+    // echo '<br>';
+}
