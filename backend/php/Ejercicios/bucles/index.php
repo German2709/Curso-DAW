@@ -86,7 +86,7 @@ echo "El string '$str' contiene $contar r";
 
 echo '<h3>Escribir un programa que cree automáticamente una tabla con las tablas de multiplicar 
 con el alcance que nosotros le indiquemos Ejemplo:
-    <br> Alcance 6. Primera fila de la tabla 
+    <br> Alcance 6. Primera num de la tabla 
     <br> | 1 * 1 = 1 | 1 * 2 = 2 | 1 * 3 = 3... | 1 * 6 = 6 |
     <br>...
     <br> | 6 * 1 = 6 | 6 * 2 = 12 | 6 * 3 = 18... | 6 * 6 = 36 |</h3>';
@@ -98,10 +98,10 @@ $multi = 1;
 echo "<table>";
 for ($i = 1; $i <= $alcance; $i++) {
     echo "<tr>";
-    for ($j=$multi; $j <7 ; $j++) { 
+    for ($j = $multi; $j < 7; $j++) {
         echo "<td>";
-       echo  "$i * $j = " . $j * $i;
-       echo "</td>";
+        echo  "$i * $j = " . $j * $i;
+        echo "</td>";
     }
     echo "</tr>";
 }
@@ -111,21 +111,20 @@ echo "</table>";
 echo '<h3>Crear un programa de PHP que imprima un tablero de ajedrez
 Pista: Usar una tabla con 270px de ancho y 30px como medida para las celdas</h3>';
 
-$blanca="<td></td>";
-$negro="<td class='cols'></td>";
+$blanca = "<td></td>";
+$negro = "<td class='cols'></td>";
 echo "<table class='tablero'>";
-for ($a=1; $a <=8 ; $a++) {
+for ($a = 1; $a <= 8; $a++) {
     echo "<tr>";
-    for ($i=1; $i <=8/2 ; $i++) { 
-        if ($a%2==0) {
+    for ($i = 1; $i <= 8 / 2; $i++) {
+        if ($a % 2 == 0) {
             echo $blanca;
             echo $negro;
-        }else{
+        } else {
             echo $negro;
             echo $blanca;
         }
     }
-
 }
 
 echo "</table>";
@@ -137,10 +136,10 @@ $celda = 1;
 echo "<table>";
 for ($i = 1; $i <= $alcance; $i++) {
     echo "<tr>";
-    for ($j=1; $j <=$alcance ; $j++) { 
+    for ($j = 1; $j <= $alcance; $j++) {
         echo "<td>";
-        echo $j*$i;
-       echo "</td>";
+        echo $j * $i;
+        echo "</td>";
     }
     echo "</tr>";
 }
@@ -149,15 +148,57 @@ echo "</table>";
 echo '<h3> Escribir un programa de PHP que itere los números del 1 al 50. Al imprimirlos, 
 los múltiplos de 3 se susituirán por "fizz", los múltiplos de 5 por "Buzz" y los que sean 
 múltiplos de 3 y 5 por "FizzBuzz"</h3>';
-for ($i=1; $i < 51; $i++) { 
-    if (($i%3)==0) {
-        echo $i="fizz";
-        }
-        
-    // if ($i == 50) {
-    //     echo $i;
-    // } else {
-    //     echo $i . ",";
-    // }
-    // echo '<br>';
+for ($i = 1; $i < 51; $i++) {
+    if ($i==50) echo "Buzz";
+    if (($i % 3)==0) echo "Fizz";
+    if (($i % 5) == 0) echo "Buzz-";
+    if  ($i % 3 !== 0 && $i % 5 !== 0)echo  $i . "-";
 }
+    echo'<hr>';
+
+for ($i = 1; $i < 51; $i++) {
+    switch ($i) {
+        case 50:
+            echo "Buzz";
+            break;
+        case ($i % 3) == 0 && ($i % 5==0):
+            echo "FizzBuzz,";
+            break;
+        case $i % 5 == 0 :
+            echo "Buzz,";
+            break;
+        case $i % 3 == 0 :
+            echo "Fizz,";
+            break;
+        default:
+        echo $i.",";
+            break;
+    }
+}
+
+echo '<h3> Crear un triangulo de Floyd</h3>';
+$num=12;
+$cont=1;
+
+for ($fila = 1; $fila <=$num; $fila++) {
+    for ($colum = 1; $colum <=$fila; $colum++) {
+        if($cont<10)echo 0;
+        echo $cont . " ";
+        $cont++;
+    }
+    echo "<br>";
+}
+
+echo '<hr>';
+for ($i = 1; $i <= 8; $i++) {
+    echo $i;
+    for ($j = 1; $j <= 5; $j++){
+        echo $j." ";
+        if($j<=1)echo "  * * *  ";
+        if($j==4)echo "* * * * *";
+        if($j<1 && $j>5)echo "*       *";
+
+    }
+    echo '<br>';
+}
+        
