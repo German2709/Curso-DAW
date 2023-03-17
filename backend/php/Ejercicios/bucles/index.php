@@ -189,16 +189,46 @@ for ($fila = 1; $fila <=$num; $fila++) {
     echo "<br>";
 }
 
-echo '<hr>';
+echo '<h3>Escribir un bucle de PHP que imprima una A</h3>';
 for ($i = 1; $i <= 8; $i++) {
-    echo $i;
-    for ($j = 1; $j <= 5; $j++){
-        echo $j." ";
-        if($j<=1)echo "  * * *  ";
-        if($j==4)echo "* * * * *";
-        if($j<1 && $j>5)echo "*       *";
 
+    if($i<=1)echo "&nbsp;&nbsp;&nbsp;* * *&nbsp;";
+    if($i==4)echo "* * * * *";
+    if($i!=1 && $i!=4)echo "*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*";
+
+    echo '<br>';
+}
+ 
+echo '<h3>Escribir un bucle de PHP que sea capaz de imprimir este patrón:</h3>';
+
+// 1 5 9
+// 2 6 10
+// 3 7 11
+// 4 8 12 
+
+for ($i=1; $i <= 4 ; $i++) { 
+    echo $i." ";
+    for ($j=1; $j < 3; $j++) { 
+        echo ($i+4*$j) ." ";
     }
     echo '<br>';
 }
-        
+
+echo '<h3>Escribir un bucle de PHP que sea capaz de imprimir este patrón:</h3>';
+// 1
+// 121
+// 12321
+// 1234321
+// 123454321
+// ...
+
+$n = 5;
+for ($i=1; $i <=$n ; $i++) { 
+    for ($j=1; $j <=$i ; $j++) { 
+        echo $j." ";
+    }
+    for($j=$i-1;$j>=1;$j--){
+        echo $j." ";
+    }
+    echo '<br>';
+}

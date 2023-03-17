@@ -16,6 +16,7 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualización de Datos</title>
+    <link rel="stylesheet" href="css/form_update.css">
 </head>
 <body>
 <h1>Actualizacion de Datos</h1>
@@ -30,6 +31,7 @@ $result = $conn->query($sql);
             $bio= $row['biometrica'];
             $foto= $row['foto_dni'];
             $user_type = $row['tipo_usuario'];
+            $estado = $row['Estado'];
             $user1 = 'usuario';
             $user2 = 'colaborador';
             $user3 = 'admin';
