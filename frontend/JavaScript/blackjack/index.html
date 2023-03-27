@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,33 @@
     <link rel="stylesheet" href="style.css">
     <title>BlackJack</title>
 </head>
-<body>
-    <div class="container">
-        <p id="cartasCasa"></p>
-        <p id="puntosCasa"></p>
-        <p id="cartasJugador"></p>
-        <p id="puntosJugador"></p>
-        <p id="resultado"></p>
-        <p id="ganador"></p>
 
-        <div class="botones">
-            <button id="juego"><span>Pedir Carta</span></button>
-            <button id="start"><span>Volver a Empezar</span></button>
-            <button id="end"><span>Plantarse</span></button>
+<body>
+    <div class="tablero">
+        <div class="container">
+            <div class="apuesta">
+                <button>5€</button>
+                <button>10€</button>
+                <button>20€</button>
+            </div>
+            <p>Cartas de la casa: <br><span id="cartasCasa"></span></p>
+            <p>Cartas del jugador:<br><span id="cartasJugador"></span></p>
+            <p>puntuación de la casa:<br><span id="puntosCasa"></span></p>
+            <p>puntuación del jugador:<br><span id="puntosJugador"></span></p>
+            <br>
+                <div class="result">
+                    <p id="resultado"></p>
+                    <p id="ganador"></p>
+                    <p id="ganancia"></p>
+                </div><br>
+            <div class="botones">
+                <button id="juego"><span>Pedir Carta</span></button>
+                <button id="start"><span>Volver a Empezar</span></button>
+                <button id="end"><span>Plantarse</span></button>
+            </div>
         </div>
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>
