@@ -13,32 +13,38 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 67%;
+    height: 50rem;
     margin-top: 90px;
 }
 
 .container {
-    padding-top: 30px;
-    height: 40rem;
+    padding-top: 40px;
+    height: 45rem;
     width: 60%;
 
     box-shadow: -1px 0px 19px 5px rgba(0, 0, 0, 0.733) inset;
+    border: 15px solid #3a2b19;
     border-radius: 105px;
     
 
-    background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 45, 1) 48%, rgba(0, 0, 0, 1) 97%)center no-repeat;
+    background: linear-gradient(50deg, rgb(6, 49, 28) 0%, rgba(9, 121, 45, 1) 48%, rgb(11, 66, 34) 97%)center no-repeat;
 
     text-align: center;
 }
 
-.apuesta button{
-    background: url('https://e7.pngegg.com/pngimages/474/607/png-clipart-casino-token-graphy-texas-hold-em-poker-table-casino-chips-casino-token-stock-photography.png') center no-repeat;
-    background-size: 60px 40px;
+.fichas button{
+    background: url(cards/ficha.png) center no-repeat;
+    background-size: 90px 60px;
     cursor: pointer;
 
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 60px;
+    margin-bottom: 22px;
     border: none;
+
+    color: white;
+    font-weight: bolder;
+    /* fon */
 }
 
 .container p {
@@ -51,7 +57,7 @@ body {
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .result {
@@ -92,7 +98,7 @@ button:hover {
     color: red;
 }
 
-button span {
+.botones button span {
     text-transform: uppercase;
     font-weight: bolder;
     color: rgb(255, 255, 255);

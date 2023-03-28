@@ -17,7 +17,21 @@ let end = document.getElementById('end');
 end.addEventListener("click", plantar);
 
 // variables de almacenar dinero
-let ficha=document.getElementsByClassName('');
+let dinero = document.getElementById('saldo');
+let saldoTotal = 100;
+dinero.innerHTML = saldoTotal+ "€";
+let apuesta = document.getElementById('apuesta')
+
+let ficha5 = document.getElementById('ficha1')
+let ficha1 = 5;
+ficha5.innerHTML = ficha1 + "€";
+let ficha10 = document.getElementById('ficha2')
+let ficha2 = 10;
+ficha10.innerHTML = ficha2 + "€";
+let ficha20 = document.getElementById('ficha3')
+let ficha3 = 20;
+ficha20.innerHTML = ficha3 + "€";
+
 
 // variables para almacenar los puntos y las cartas
 let puntosCasa = 0;
@@ -37,10 +51,11 @@ function empezarJuego() {
     jugadaCasa = [];
     puntosCasa = 0;
     puntosJugador = 0;
+    valorApuesta = 0;
     winner.innerHTML = "";
     agregar.style.display = "block";
     result.style.display = "block";
-    end.style.display="block";
+    end.style.display = "block";
     fin = false;
 
     // Recogemos la dos cartas iniciales de la casa:
@@ -58,7 +73,7 @@ function calcularPuntos() {
     puntosCasa = 0;
     puntosJugador = 0;
 
-    // recorremos el array y asignamos valores al As,J,Q y K.
+    // recorremos el array y asignamos valorApuestaes al As,J,Q y K.
     for (let i = 0; i < jugadaCasa.length; i++) {
         let as = false;
         switch (jugadaCasa[i]) {
@@ -133,6 +148,7 @@ function gameover() {
         winner.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
         result.style.display = "none";
         agregar.style.display = "none";
+        apuesta.innerHTML = 0 + "€";
         fin = true;
         return;
 
@@ -140,16 +156,19 @@ function gameover() {
         winner.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
         result.style.display = "none";
         agregar.style.display = "none";
+        dinero.innerHTML = (saldoTotal+ valorApuesta * 2) + "€";
+        apuesta.innerHTML = 0 + "€";
         fin = true;
         return;
-    }else if ( puntosCasa==21){
+    } else if (puntosCasa == 21) {
         winner.innerHTML = "Casa tiene 21. Vuelve a jugar"
         result.style.display = "none";
         agregar.style.display = "none";
         end.style.display = "none";
-    }else if (puntosJugador ==21){
+    } else if (puntosJugador == 21) {
         winner.innerHTML = "Felicidades, sacaste 21 a la primera!!!";
         agregar.style.display = "none";
+        dinero.innerHTML = (saldoTotal+ valorApuesta * 2) + "€";
         end.style.display = "none";
     }
 }
@@ -167,6 +186,7 @@ function ganador() {
 
     } else if (puntosCasa == puntosJugador) {
         result.innerHTML = "Hay empate";
+        apuesta.innerHTML = 0 + "€";
         return;
     }
 }
@@ -177,14 +197,14 @@ function plantar() {
             jugar("casa");
             plantar();
         }, 1000);
-    }else if (puntosCasa>puntosJugador && puntosCasa <=21) {
+    } else if (puntosCasa > puntosJugador && puntosCasa <= 21) {
         result.style.display = "none";
-        winner.innerHTML="Casa ha ganado";
-    }else if (puntosCasa==puntosJugador) {
+        winner.innerHTML = "Casa ha ganado";
+    } else if (puntosCasa == puntosJugador) {
         result.style.display = "none";
-        winner.innerHTML="Casa gana";
+        winner.innerHTML = "Casa gana";
+        apuesta.innerHTML = 0 + "€";
     }
-
 }
 
 // Función que ira dando una carta al azar ya sea al jugador o a la casa.
@@ -194,13 +214,22 @@ function jugar(jugada) {
             jugadaCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);
             break;
         default:
-            console.log('Juegas');
             jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
             break;
     }
 
     //Condicion hace que se calcule los puntos cuando el jugador y casa tengan 2 cartas en adelante. 
     if (jugadaCasa.length >= 2 && jugadaJugador.length >= 2) calcularPuntos();
+}
+let valorApuesta = 0;
+apuesta.innerHTML = 0 + "€";
+function apostar(x) {
+    // se resta la apuesta del saldo y se muestra valorApuesta de la apusta
+    saldoTotal = saldoTotal - x;
+    valorApuesta = valorApuesta + x;
+    dinero.innerHTML = saldoTotal + "€";
+    apuesta.innerHTML = valorApuesta + "€";
+    console.log();
 }
 
 empezarJuego();
