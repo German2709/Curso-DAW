@@ -8,27 +8,31 @@ let winner = document.getElementById('ganador');
 
 let agregar = document.getElementById('juego');
 agregar.addEventListener("click", jugar);
-agregar.style.display = "block";
+agregar.style.display = "none";
 
 let start = document.getElementById('start');
 start.addEventListener("click", empezarJuego);
+// start.style.display = "none";
 
 let end = document.getElementById('end');
 end.addEventListener("click", plantar);
+end.style.display = "none";
 
 // variables de almacenar dinero
 let dinero = document.getElementById('saldo');
 let saldoTotal = 100;
-dinero.innerHTML = saldoTotal+ "€";
-let apuesta = document.getElementById('apuesta')
+dinero.innerHTML = saldoTotal + "€";
+let apuesta = document.getElementById('apuesta');
 
-let ficha5 = document.getElementById('ficha1')
+// Variables de Fichas
+let fichas=document.querySelectorAll('.ficha');
+let ficha5 = document.getElementById('ficha1');
 let ficha1 = 5;
 ficha5.innerHTML = ficha1 + "€";
-let ficha10 = document.getElementById('ficha2')
+let ficha10 = document.getElementById('ficha2');
 let ficha2 = 10;
 ficha10.innerHTML = ficha2 + "€";
-let ficha20 = document.getElementById('ficha3')
+let ficha20 = document.getElementById('ficha3');
 let ficha3 = 20;
 ficha20.innerHTML = ficha3 + "€";
 
@@ -47,130 +51,148 @@ let cartasJugador = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 
 
 function empezarJuego() {
+    // casa.style.visibility='hidden';
+    // jugador.style.visibility='hidden';
     jugadaJugador = [];
     jugadaCasa = [];
     puntosCasa = 0;
     puntosJugador = 0;
     valorApuesta = 0;
     winner.innerHTML = "";
-    agregar.style.display = "block";
-    result.style.display = "block";
-    end.style.display = "block";
+    result.style.display = "none";
+    start.style.display='none';
     fin = false;
+
+    for (let i = 0; i < fichas.length; i++) {
+        fichas[i].removeAttribute("disabled");
+    }
 
     // Recogemos la dos cartas iniciales de la casa:
     jugar("casa");
-    jugar("casa");
-
 
     // Recogemos la dos cartas iniciales del jugador:
     jugar();
     jugar();
+
+    apostar(x);
 }
 
-function calcularPuntos() {
+function calcularPuntos(puntos) {
     // calcular los puntos desde cero cada vez q se agrega una nueva carta
     puntosCasa = 0;
     puntosJugador = 0;
+// recorremos el array y asignamos valorApuestaes al As,J,Q y K.
+    switch (puntos) {
+        case "dealer":
+            for (let i = 0; i < jugadaCasa.length; i++) {
+                let as = false;
+                switch (jugadaCasa[i]) {
+                    case "A":
+                        puntosCasa += 11;
+                        as = true;
+                        break;
+                    case "J":
+                    case "Q":
+                    case "K":
+                        puntosCasa += 10;
+                        break;
 
-    // recorremos el array y asignamos valorApuestaes al As,J,Q y K.
-    for (let i = 0; i < jugadaCasa.length; i++) {
-        let as = false;
-        switch (jugadaCasa[i]) {
-            case "A":
-                puntosCasa += 11;
-                as = true;
-                break;
-            case "J":
-            case "Q":
-            case "K":
-                puntosCasa += 10;
-                break;
+                    default:
+                        puntosCasa += jugadaCasa[i];
+                        break;
+                }
+                if (puntosCasa > 21 && as) {
+                    puntosCasa -= 10;
+                }
+            }
+            
+        case "player":
+            for (let i = 0; i < jugadaJugador.length; i++) {
+                let as = false;
+                switch (jugadaJugador[i]) {
+                    case "A":
+                        puntosJugador += 11;
+                        as = true;
+                        break;
+                    case "J":
+                    case "Q":
+                    case "K":
+                        puntosJugador += 10;
+                        break;
 
-            default:
-                puntosCasa += jugadaCasa[i];
-                break;
-        }
-        if (puntosCasa > 21 && as) {
-            puntosCasa -= 10;
-        }
-    }
-    for (let i = 0; i < jugadaJugador.length; i++) {
-        let as = false;
-        switch (jugadaJugador[i]) {
-            case "A":
-                puntosJugador += 11;
-                as = true;
-                break;
-            case "J":
-            case "Q":
-            case "K":
-                puntosJugador += 10;
-                break;
-
-            default:
-                puntosJugador += jugadaJugador[i];
-                break;
-        }
-        if (puntosJugador > 21 && as) {
-            puntosJugador -= 10;
-        }
+                    default:
+                        puntosJugador += jugadaJugador[i];
+                        break;
+                }
+                if (puntosJugador > 21 && as) {
+                    puntosJugador -= 10;
+                }
+            }
+            break;
     }
     // Imprimimos las cartas y los puntos que van sumando
     mostrarCartas();
-    // casa.innerHTML = jugadaCasa;
     puntosC.innerHTML = puntosCasa;
     puntosJ.innerHTML = puntosJugador;
-    // jugador.innerHTML = jugadaJugador;
     ganador();
     gameover();
 }
-function mostrarCartas() {
-    casa.innerHTML = '';
-    jugador.innerHTML = '';
-    let signo = [1, 2, 3, 4];
+let signo = [1, 2, 3, 4];
     let baraja = [];
     for (let i = 0; i < 10; i++) {
         baraja.push(signo[Math.floor(Math.random() * signo.length)]);
     }
-    for (let i = 0; i < jugadaCasa.length; i++) {
-        casa.innerHTML += "<img src='cards/" + jugadaCasa[i] + "-" + baraja[i] + ".png'>";
-    }
+function mostrarCartas() {
+    casa.innerHTML = '';
+    jugador.innerHTML = '';
+    
     for (let i = 0; i < jugadaJugador.length; i++) {
         jugador.innerHTML += "<img src='cards/" + jugadaJugador[i] + "-" + baraja[i] + ".png'>";
+    }
+    for (let i = 0; i < jugadaCasa.length; i++) {
+        if (jugadaCasa.length<2) {
+            casa.innerHTML += "<img src='cards/" + jugadaCasa[i] + "-" + baraja[i] + ".png'>"+"<img src='cards/0-0.png'>";
+        }else{
+          casa.innerHTML += "<img src='cards/" + jugadaCasa[i] + "-" + baraja[i] + ".png'>";  
+        }
     }
 }
 
 let fin = false;
 function gameover() {
     // se crea variable en false para al ponerse en true se cerrará al cumplirse la condición.
+    fin = true;
+    apuesta.innerHTML = 0 + "€";
     if (puntosJugador > 21) {
         winner.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
         result.style.display = "none";
         agregar.style.display = "none";
-        apuesta.innerHTML = 0 + "€";
-        fin = true;
-        return;
-
+        end.style.display = "none";
+        
     } else if (puntosCasa > 21) {
         winner.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
         result.style.display = "none";
         agregar.style.display = "none";
-        dinero.innerHTML = (saldoTotal+ valorApuesta * 2) + "€";
-        apuesta.innerHTML = 0 + "€";
-        fin = true;
-        return;
+        saldoTotal += valorApuesta * 2;
+        dinero.innerHTML = saldoTotal + "€";
+        // apuesta.innerHTML = 0 + "€";
     } else if (puntosCasa == 21) {
         winner.innerHTML = "Casa tiene 21. Vuelve a jugar"
         result.style.display = "none";
         agregar.style.display = "none";
-        end.style.display = "none";
     } else if (puntosJugador == 21) {
-        winner.innerHTML = "Felicidades, sacaste 21 a la primera!!!";
+        winner.innerHTML = "Felicidades, sacaste 21!!!";
+        result.style.display = "none";
         agregar.style.display = "none";
-        dinero.innerHTML = (saldoTotal+ valorApuesta * 2) + "€";
-        end.style.display = "none";
+        // apuesta.innerHTML = 0 + "€";
+        saldoTotal += valorApuesta * 2;
+        dinero.innerHTML = saldoTotal + "€";
+        end.style.display = "block";
+    } else {
+        fin = false;
+        return false;
     }
+    return true;
 }
 
 function ganador() {
@@ -202,8 +224,15 @@ function plantar() {
         winner.innerHTML = "Casa ha ganado";
     } else if (puntosCasa == puntosJugador) {
         result.style.display = "none";
-        winner.innerHTML = "Casa gana";
-        apuesta.innerHTML = 0 + "€";
+        winner.innerHTML = "Ninguno gana, se devuelve la apuesta";
+        // apuesta.innerHTML = 0 + "€";
+        saldoTotal+=valorApuesta;
+    }
+    end.style.display = "none";
+    agregar.style.display="none";
+    start.style.display='block';
+    for (let i = 0; i < fichas.length; i++) {
+        fichas[i].setAttribute("disabled",true);
     }
 }
 
@@ -218,18 +247,27 @@ function jugar(jugada) {
             break;
     }
 
-    //Condicion hace que se calcule los puntos cuando el jugador y casa tengan 2 cartas en adelante. 
-    if (jugadaCasa.length >= 2 && jugadaJugador.length >= 2) calcularPuntos();
+    //Condicion hace que se calcule los puntos cuando el jugador y casa tengan 2 cartas en adelante.
+    if (jugadaJugador.length >= 2) calcularPuntos("dealer");
+
 }
 let valorApuesta = 0;
 apuesta.innerHTML = 0 + "€";
+
 function apostar(x) {
     // se resta la apuesta del saldo y se muestra valorApuesta de la apusta
     saldoTotal = saldoTotal - x;
     valorApuesta = valorApuesta + x;
-    dinero.innerHTML = saldoTotal + "€";
     apuesta.innerHTML = valorApuesta + "€";
-    console.log();
+    dinero.innerHTML = saldoTotal + "€";
+    agregar.style.display = "block";
+    start.style.display = "block";
+    end.style.display = "block";
+    casa.style.visibility='visible';
+    jugador.style.visibility='visible';
+    start.style.display='none';
+    result.style.display = "block";
+
 }
 
 empezarJuego();
