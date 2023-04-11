@@ -33,8 +33,6 @@ body {
 }
 
 .fichas button{
-    background: url(cards/ficha.png) center no-repeat;
-    background-size: 90px 60px;
     cursor: pointer;
 
     width: 100px;
@@ -45,6 +43,18 @@ body {
     color: white;
     font-weight: bolder;
     /* fon */
+}
+.fichas button:nth-child(1){
+    background: url(cards/ficha.png) center no-repeat;
+    background-size: 90px 60px;
+}
+.fichas button:nth-child(2){
+    background: url(cards/ficha2.png) center no-repeat;
+    background-size: 90px 60px;
+}
+.fichas button:nth-child(3){
+    background: url(cards/ficha3.png) center no-repeat;
+    background-size: 80px 60px;
 }
 
 .container p {
