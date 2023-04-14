@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>BlackJack</title>
 </head>
@@ -12,13 +13,16 @@
 <body>
     <div class="tablero">
         <div class="container">
+            <span id="tooltiptext">Debes apostar para repartir cartas y empezar a jugar.</span>
             <div class="fichas">
                 <button class="ficha" onclick="apostar(5)"><span id="ficha1"></span></button>
                 <button class="ficha" onclick="apostar(10)"><span id="ficha2"></span></button>
                 <button class="ficha" onclick="apostar(20)"><span id="ficha3"></span></button>
                 <br>
+                <button id="reparto" onclick="repartir()">Repartir Cartas</button>
                 <p>valor de apuesta: <span id="apuesta"></span></p>
             </div>
+            
             <p>Cartas de la casa: <br><span id="cartasCasa"></span></p>
             <p>Cartas del jugador:<br><span id="cartasJugador"></span></p>
             <p>puntuación de la casa:<br><span id="puntosCasa"></span></p>
@@ -31,7 +35,7 @@
                 </div><br>
             <div class="botones">
                 <button id="juego"><span>Pedir Carta</span></button>
-                <button id="start"><span>Empezar a jugar</span></button>
+                <button id="start"><span>Seguir Apostando</span></button>
                 <button id="end"><span>Plantarse</span></button>
             </div>
         </div>

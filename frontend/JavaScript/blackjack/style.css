@@ -1,6 +1,6 @@
 body {
     background: url('https://images7.alphacoders.com/369/369182.jpg') center no-repeat;
-    
+
 
     height: 100vh;
     margin: 0;
@@ -25,14 +25,30 @@ body {
     box-shadow: -1px 0px 19px 5px rgba(0, 0, 0, 0.733) inset;
     border: 15px solid #3a2b19;
     border-radius: 105px;
-    
+
 
     background: linear-gradient(50deg, rgb(6, 49, 28) 0%, rgba(9, 121, 45, 1) 48%, rgb(11, 66, 34) 97%)center no-repeat;
 
     text-align: center;
+    position: relative;
 }
 
-.fichas button{
+.container #tooltiptext {
+    width: 170px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 5px;
+
+    /* Posición del tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -45px;
+    transform: translate(-50%);
+}
+
+.fichas button {
     cursor: pointer;
 
     width: 100px;
@@ -42,17 +58,25 @@ body {
 
     color: white;
     font-weight: bolder;
-    /* fon */
+    position: relative;
+
 }
-.fichas button:nth-child(1){
+
+.fichas button:hover {
+    bottom: 5px;
+}
+
+.fichas button:nth-child(1) {
     background: url(cards/ficha.png) center no-repeat;
     background-size: 90px 60px;
 }
-.fichas button:nth-child(2){
+
+.fichas button:nth-child(2) {
     background: url(cards/ficha2.png) center no-repeat;
     background-size: 90px 60px;
 }
-.fichas button:nth-child(3){
+
+.fichas button:nth-child(3) {
     background: url(cards/ficha3.png) center no-repeat;
     background-size: 80px 60px;
 }
@@ -69,6 +93,14 @@ body {
     align-items: center;
     justify-content: space-evenly;
 }
+
+img {
+    transition: all 0.5s;
+}
+.card {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
 
 .result {
     text-align: center;
