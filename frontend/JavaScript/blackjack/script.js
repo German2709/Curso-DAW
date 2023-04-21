@@ -5,8 +5,8 @@ let puntosC = document.getElementById('puntosCasa');
 let puntosJ = document.getElementById('puntosJugador');
 let result = document.getElementById('resultado');
 let winner = document.getElementById('ganador');
-let mensaje= document.getElementById('tooltiptext');
-// let reparto=document.getElementById('reparto');
+let mensaje = document.getElementById('tooltiptext');
+let mazo = document.getElementById('mazo');
 
 let agregar = document.getElementById('juego');
 agregar.addEventListener("click", jugar);
@@ -50,12 +50,16 @@ let cartasCasa = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 // Juego del jugador
 let cartasJugador = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
 
-
 function empezarJuego() {
     jugadaJugador = [];
     jugadaCasa = [];
-    casa.style.visibility='hidden';
-    jugador.style.visibility='hidden';
+    repartir("devolverCartas");
+    // casa.style.visibility = 'hidden';
+    casa.style.transition = 'all 0s';
+    // jugador.style.visibility = 'hidden';
+    jugador.style.transition = 'all 0s';
+    cards[1].classList.add('card');
+    cards[0].classList.add('card');
     puntosCasa = 0;
     puntosJugador = 0;
     valorApuesta = 0;
@@ -148,13 +152,13 @@ function mostrarCartas() {
     jugador.innerHTML = '';
 
     for (let i = 0; i < jugadaJugador.length; i++) {
-        jugador.innerHTML += "<img class='card' src='cards/" + jugadaJugador[i] + "-" + baraja[i] + ".png'>";
+        jugador.innerHTML += "<img src='cards/" + jugadaJugador[i] + "-" + baraja[i] + ".png'>";
     }
     for (let i = 0; i < jugadaCasa.length; i++) {
         if (jugadaCasa.length < 2) {
-            casa.innerHTML += "<img class='card' src='cards/" + jugadaCasa[i] + "-" + baraja[i] + ".png'>" + "<img class='card' src='cards/0-0.png'>";
+            casa.innerHTML += "<img src='cards/" + jugadaCasa[i] + "-" + baraja[i] + ".png'>" + "<img src='cards/0-0.png'>";
         } else {
-            casa.innerHTML += "<img class='card' src='cards/" + jugadaCasa[i] + "-" + baraja[i] + ".png'>";
+            casa.innerHTML += "<img src='cards/" + jugadaCasa[i] + "-" + baraja[i] + ".png'>";
         }
     }
 }
@@ -165,25 +169,28 @@ function gameover() {
     fin = true;
     if (puntosJugador > 21) {
         winner.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
+        winner.style.color = "red";
         result.style.display = "none";
         agregar.style.display = "none";
         end.style.display = "none";
         start.style.display = 'block';
     } else if (puntosCasa > 21) {
         winner.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
+        winner.style.color = "blue";
         result.style.display = "none";
         agregar.style.display = "none";
         saldoTotal += valorApuesta * 2;
         dinero.innerHTML = saldoTotal + "€";
     } else if (puntosCasa == 21) {
         winner.innerHTML = "Casa tiene 21. Vuelve a jugar"
+        winner.style.color = "red";
         result.style.display = "none";
         agregar.style.display = "none";
-    // }else if (puntosJugador == 21) {
-    //     winner.innerHTML = "Felicidades, sacaste 21!!!";
-    //     result.style.display = "none";
-    //     saldoTotal += valorApuesta * 2;
-    //     dinero.innerHTML = saldoTotal + "€";
+        // }else if (puntosJugador == 21) {
+        //     winner.innerHTML = "Felicidades, sacaste 21!!!";
+        //     result.style.display = "none";
+        //     saldoTotal += valorApuesta * 2;
+        //     dinero.innerHTML = saldoTotal + "€";
     } else {
         fin = false;
         return false;
@@ -194,10 +201,12 @@ function gameover() {
 function ganador() {
     // se agrega una nueva carta si "fin" es false(o sea si no sobrepasa a 21)
     if (puntosJugador > puntosCasa && !fin) {
+        result.style.color = "blue";
         result.innerHTML = "Va ganando el jugador";
         return;
 
     } else if (puntosCasa > puntosJugador && !fin) {
+        result.style.color = "red";
         result.innerHTML = "Va ganando la casa";
         return;
 
@@ -216,6 +225,7 @@ function plantar() {
         }, 1000);
     } else if (puntosCasa > puntosJugador && puntosCasa <= 21) {
         result.style.display = "none";
+        winner.style.color = "red";
         winner.innerHTML = "Casa ha ganado";
     } else if (puntosCasa == puntosJugador) {
         result.style.display = "none";
@@ -236,29 +246,73 @@ function jugar(jugada) {
     switch (jugada) {
         case "casa":
             jugadaCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);
+            repartir("naipeBaraja");
             break;
         default:
             jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
             break;
     }
-
     //Esta condicion hace que se calcule los puntos cuando el jugador tenga 2 o más.
     if (jugadaJugador.length >= 2) calcularPuntos("dealer");
 
 }
 let valorApuesta = 0;
-let cards = document.getElementsByClassName('card');
+// let cartaMazo = document.getElementById('carta3');
+let cards = document.getElementsByClassName('cartas-mesa');
 apuesta.innerHTML = valorApuesta + "€";
 
-// function repartir() {
-//     for (let i = 0; i < cards.length; i++) {
-//         cards[i].classList.remove('card');
-//         // cards[i].classList.remove('card');
-//     }
-// }
+// crear el mazo de cartas apiladas
+for (let i = 1; i < 26; i++) {
+    mazo.innerHTML += "<img id='naipes " + [i] + " ' class='naipe' src='cards/0-0.png'>";
+}
+let cartaTop = document.getElementsByClassName('naipe');
+for (let i = 0; i < cartaTop.length; i++) {
+    cartaTop[i].style.right = 116 + (i) + 'px';
+    if (i % 2 == 0) {
+        cartaTop[i].style.borderRight = '1px solid black';
+    }
+}
+
+function repartir(reparto) {
+    let j = 0;
+    switch (reparto) {
+        case "barajaMesa":
+            for (let i = cartaTop.length - 1; i > cartaTop.length - 5; i--) {
+                j++;
+                setTimeout(() => {
+
+                    cartaTop[i].classList.add('card');
+                    cartaTop[i].style.transition = "all 1s";
+
+                }, 200 * j);
+            }
+        case "naipesMesa":
+            setTimeout(() => {
+
+                cards[1].classList.remove('card');
+                cards[0].classList.remove('card');
+
+                result.style.display = "block";
+                calcularPuntos("dealer");
+            }, 350 * j);
+
+            break;
+        case "naipeBaraja":
+            for (let n = cartaTop.length-5; n > cartaTop.length-12; n--) {
+                n--;
+            }
+            // cartaTop[n].classList.add('card');
+            break;
+        case "devolverCartas":
+            for (let i = cartaTop.length - 1; i > cartaTop.length - 5; i--) {
+                cartaTop[i].classList.remove('card');
+            }
+            break;
+    }
+}
 function apostar(x) {
     // se resta la apuesta del saldo y se muestra valorApuesta de la apusta
-    // repartir();
+    repartir("barajaMesa");
     saldoTotal -= x;
     valorApuesta += x;
     apuesta.innerHTML = valorApuesta + "€";
@@ -266,13 +320,12 @@ function apostar(x) {
     agregar.style.display = "block";
     start.style.display = "block";
     end.style.display = "block";
-    casa.style.visibility = 'visible';
-    jugador.style.visibility = 'visible';
+    // casa.style.visibility = 'visible';
+    casa.style.transition = 'all 1s';
+    // jugador.style.visibility = 'visible';
+    jugador.style.transition = 'all 1s';
     start.style.display = 'none';
-    result.style.display = "block";
-    mensaje.style.visibility="hidden";
-    cards.removeAttribute('class');
+    mensaje.style.visibility = "hidden";
 
-    calcularPuntos("dealer");
 }
 empezarJuego();

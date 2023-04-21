@@ -5,7 +5,7 @@ body {
     height: 100vh;
     margin: 0;
 
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 .tablero {
@@ -45,17 +45,27 @@ body {
     position: absolute;
     z-index: 1;
     top: -45px;
-    transform: translate(-50%);
+    transform: translate(-30%);
+}
+#mazo img{
+    /* border-right: 1px solid;
+    border-top: 1px solid; */
+    position: absolute;
+    z-index: 0;
 }
 
 .fichas button {
     cursor: pointer;
 
-    width: 100px;
+    width: 60px;
     height: 60px;
-    margin-bottom: 22px;
-    border: none;
+    margin-bottom: 22px;    
+    margin-left: 8%;
 
+    border: 1px solid black;
+    border-radius: 200px 200px 200px 200px;
+    box-shadow: -3px 1px 0px 0px rgba(0,0,0,1.70);
+    
     color: white;
     font-weight: bolder;
     position: relative;
@@ -79,6 +89,7 @@ body {
 .fichas button:nth-child(3) {
     background: url(cards/ficha3.png) center no-repeat;
     background-size: 80px 60px;
+    z-index: 2;
 }
 
 .container p {
@@ -94,9 +105,6 @@ body {
     justify-content: space-evenly;
 }
 
-img {
-    transition: all 0.5s;
-}
 .card {
     transform: translateY(-100px);
     opacity: 0;
@@ -130,14 +138,6 @@ img {
 
 button:hover {
     bottom: 5px;
-}
-
-#resultado {
-    color: blue;
-}
-
-#ganador {
-    color: red;
 }
 
 .botones button span {
