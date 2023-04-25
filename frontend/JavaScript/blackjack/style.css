@@ -48,10 +48,11 @@ body {
     transform: translate(-30%);
 }
 #mazo img{
-    /* border-right: 1px solid;
-    border-top: 1px solid; */
     position: absolute;
     z-index: 0;
+}
+.naipe{
+    transition: all 1s;
 }
 
 .fichas button {
