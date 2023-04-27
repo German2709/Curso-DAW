@@ -247,10 +247,11 @@ function jugar(jugada) {
             jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
             break;
     }
-    //Esta condicion hace que se calcule los puntos cuando el jugador tenga 2 o más.
+    //Esta condición hace que se calcule los puntos cuando el jugador tenga 2 o más cartas.
     if (jugadaJugador.length >= 2) {
         calcularPuntos("dealer");
     }
+    // Esta condición hace que cuando el jugador o la casa tengan más de 2 cartas y pida carta se creará el efecto en el mazo 
     if (jugadaJugador.length > 2 || jugadaCasa.length > 2) {
         niapesMazo[niapesMazo.length - contadorBaraja].classList.add('card');
         niapesMazo[niapesMazo.length - contadorBaraja].style.transition = "all 1s";

@@ -1,6 +1,6 @@
 body {
-    background: url('https://images7.alphacoders.com/369/369182.jpg') center no-repeat;
-
+    background: url('https://static.vecteezy.com/system/resources/previews/016/124/961/non_2x/poker-and-casino-playing-card-background-in-red-vector.jpg');
+    background-size: cover;
 
     height: 100vh;
     margin: 0;
@@ -17,17 +17,29 @@ body {
     margin-top: 90px;
 }
 
-.container {
-    padding-top: 40px;
-    height: 45rem;
+.marco {
     width: 60%;
 
-    box-shadow: -1px 0px 19px 5px rgba(0, 0, 0, 0.733) inset;
-    border: 15px solid #3a2b19;
-    border-radius: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url('https://w0.peakpx.com/wallpaper/750/864/HD-wallpaper-dark-brown-wood-texture-cherry-wood-texture-wooden-dark-background-natural-textures.jpg');
+    border-radius: 53px;
+    box-shadow: -1px 0px 9px 5px rgb(0, 0, 0) ;
+
+    padding: 25px;
+}
+
+.container {
+    width: 100%;
+
+    box-shadow: -1px 0px 19px 15px rgba(0, 0, 0, 0.733) inset;
+    border-radius: 53px;
 
 
-    background: linear-gradient(50deg, rgb(6, 49, 28) 0%, rgba(9, 121, 45, 1) 48%, rgb(11, 66, 34) 97%)center no-repeat;
+    background: url('cards/moqueta.jpg') center no-repeat;
+    background-size: cover;
 
     text-align: center;
     position: relative;
@@ -47,11 +59,14 @@ body {
     top: -45px;
     transform: translate(-30%);
 }
-#mazo img{
+
+#mazo img {
     position: absolute;
     z-index: 0;
+    margin-top: 22px;
 }
-.naipe{
+
+.naipe {
     transition: all 1s;
 }
 
@@ -60,21 +75,26 @@ body {
 
     width: 60px;
     height: 60px;
-    margin-bottom: 22px;    
-    margin-left: 8%;
+    margin-top: 42px;
+    margin-bottom: 22px;
+    margin-bottom: 22px;
+    margin-left: 64px;
 
     border: 1px solid black;
     border-radius: 200px 200px 200px 200px;
-    box-shadow: -3px 1px 0px 0px rgba(0,0,0,1.70);
-    
+    box-shadow: -3px 1px 0px 0px rgba(0, 0, 0, 1.70);
+
     color: white;
     font-weight: bolder;
     position: relative;
+    transition: all 1s;
 
 }
 
 .fichas button:hover {
-    bottom: 5px;
+    /* bottom: 5px; */
+    transform: rotateY(360deg);
+    /* transform: scale(1.150); */
 }
 
 .fichas button:nth-child(1) {
@@ -109,7 +129,7 @@ body {
 .card {
     transform: translateY(-100px);
     opacity: 0;
-  }
+}
 
 .result {
     text-align: center;
