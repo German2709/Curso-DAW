@@ -94,7 +94,7 @@ function juego() {
 
     // Recorremos la palabra caracter a caracter en busca de coicidencias con la letra pulsada
     for (let i = 0; i < palabra.length; i++) {
-        console.log(palabra[i]);
+        // console.log(palabra[i]);
 
         // Comprobamos si la letra de la palabra coicide con la letra del boton
         if (palabra[i] == letra) {
@@ -109,12 +109,13 @@ function juego() {
             // Si entra en el else, es q no han habido coincidencias
             // La condicion if solo se cumple cuando la posicion i de la array no tiene ningun valor
             aciertos[i] = "_";
-
         }
     }
+    // Si no hay aciertos se ira armando al ahorcado en el cuadro
+    let ahorcado = document.getElementsByClassName('hidden')
     // Si no hay éxitos al pulsar el botón me resto una vida
     if (exitos == 0) {
-        vidas--;
+        vidas-=1;
         this.style.backgroundColor = 'red';
     } else {
         this.style.backgroundColor = 'green';
@@ -125,20 +126,20 @@ function juego() {
     displayPalabra.innerHTML = texto;
     console.log(letra);
 
-    // al final comprobamos si hemos ganado
+    // al final comprobamos si hemos perdido
     ganar();
 }
 
 // Creamos una función donde comprobemos si hemos ganado la partida y en ese caso, mostrar un mensaje
 function ganar() {
     // Comprobar que el número de aciertos es igual a la longitud de la palabra.
-    if (contador == palabra.length) {
-        // mensaje de has ganado
-        setTimeout(function () {
-            // Le pones un retardo para que se pueda visualizar el resultado antes de mostrar el mensaje
-            // window.alert('Has Ganado');
-            // location.reload();
-        }, 500);
+    if (vidas == 0) {
+    //     // mensaje de has ganado
+    //     // setTimeout(function () {
+    //         // Le pones un retardo para que se pueda visualizar el resultado antes de mostrar el mensaje
+    //         window.alert('Has Perdido Pringao. Vuelve a jugar');
+    //         // location.reload();
+    //     // }, 500);
 
     }
 
