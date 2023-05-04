@@ -57,7 +57,7 @@ let aciertos = [];
 let contador = 0;
 
 // vidas del usuario
-let vidas=5;
+let vidas = 5;
 
 // Digamos que tenemos la palabra "perro" y pulsamos a O
 // Queremos guardar aquellas letras que hemos acertado
@@ -90,7 +90,7 @@ function juego() {
     letra = letra.toLowerCase();
 
     // Contamos los éxitos cada vez que pulsamos un botón, si no hay, restamos una vida
-    let exitos=0;
+    let exitos = 0;
 
     // Recorremos la palabra caracter a caracter en busca de coicidencias con la letra pulsada
     for (let i = 0; i < palabra.length; i++) {
@@ -111,12 +111,12 @@ function juego() {
             aciertos[i] = "_";
         }
     }
-    // Si no hay aciertos se ira armando al ahorcado en el cuadro
-    let ahorcado = document.getElementsByClassName('hidden')
+
     // Si no hay éxitos al pulsar el botón me resto una vida
     if (exitos == 0) {
-        vidas-=1;
+        vidas -= 1;
         this.style.backgroundColor = 'red';
+        // console.log(ahorcado[ahorcado.length-i].classList.remove('hidden'));
     } else {
         this.style.backgroundColor = 'green';
     }
@@ -130,17 +130,18 @@ function juego() {
     ganar();
 }
 
+
 // Creamos una función donde comprobemos si hemos ganado la partida y en ese caso, mostrar un mensaje
 function ganar() {
     // Comprobar que el número de aciertos es igual a la longitud de la palabra.
     if (vidas == 0) {
-    //     // mensaje de has ganado
-    //     // setTimeout(function () {
-    //         // Le pones un retardo para que se pueda visualizar el resultado antes de mostrar el mensaje
-    //         window.alert('Has Perdido Pringao. Vuelve a jugar');
-    //         // location.reload();
-    //     // }, 500);
-
+        let ahorcado = document.getElementsByClassName('hidden');
+        for (let i = 0; i < ahorcado.length; i++) {
+            if (exitos > 1) {
+                parte.push(ahorcado[Math.floor(Math.random() * ahorcado.length)]);
+                ahorcado[i].classList.remove('hidden');
+            }
+        }
     }
 
     // Comprobar que ya no hay guines en el array aciertos.
@@ -149,7 +150,7 @@ function ganar() {
 
     // Recorremos el array de aciertos en busca de guiones
     for (let i = 0; i < aciertos.length; i++) {
-        if (aciertos[i]== "_") {
+        if (aciertos[i] == "_") {
             guiones++;
         }
 
@@ -162,4 +163,11 @@ function ganar() {
         }, 500);
     }
 
+}
+// Si no hay aciertos se ira armando al ahorcado en el cuadro
+let parte=[];
+
+for (let i = 0; i < parte.length; i++) {
+    // parte[i];
+    // console.log(parte[i]);
 }
